@@ -5,11 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Contentarea({ content }) {
   useEffect(() => {
-    // Update the document title using the browser API
-
-    //var $this = $(ReactDOM.findDOMNode(this));
     const content = document.getElementById('content');
-    console.log(content);
     const bodyHeight =
         window.innerHeight ||
         document.documentElement.clientHeight ||
@@ -18,8 +14,6 @@ export default function Contentarea({ content }) {
         .getElementsByClassName('inner-content')[0]
         .getBoundingClientRect().height,
       headerHeight = document.getElementsByTagName('header')[0];
-    console.log(bodyHeight); //ok
-    console.log(containerHeight);
     if (bodyHeight > containerHeight) {
       headerHeight.style.height = bodyHeight + 'px';
     } else {
