@@ -1,0 +1,6 @@
+gatsby/node_modules
+gatsby/.cache
+sanity/sample-data
+sanity/node_modules
+generals
+theme
