@@ -1,21 +1,51 @@
-import { MdApps } from 'react-icons/md';
-
 export default {
   name: 'category',
   title: 'Category',
   type: 'document',
-  icon: MdApps,
+  liveEdit: false,
   fields: [
     {
-      name: 'title',
-      title: 'Title',
+      name: 'name',
+      title: 'Name',
       type: 'string',
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      description:
+        'Some frontend will require a slug to be set to be able to show the person',
+      options: {
+        source: 'name',
+        maxLength: 96,
+      },
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          styles: [{ title: 'Normal', value: 'normal' }],
+          lists: [],
+        },
+      ],
     },
   ],
-  liveEdit: true,
+  preview: {
+    select: {
+      title: 'name',
+      media: 'image',
+    },
+  },
 };

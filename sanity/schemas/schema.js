@@ -14,6 +14,7 @@ import mainImage from './mainImage';
 import figure from './figure';
 import image from './image';
 import companyInfo from './companyInfo';
+import classification from './classification';
 
 export default createSchema({
   // We name our schema
@@ -26,6 +27,7 @@ export default createSchema({
     blockContent,
     blockText,
     category,
+    classification,
     post,
     mainImage,
     figure,

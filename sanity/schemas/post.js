@@ -38,10 +38,10 @@ export default {
       type: 'mainImage',
     },
     {
-      name: 'categories',
-      title: 'Categories',
+      name: 'relatedCategories',
+      title: 'Related Categories',
       type: 'array',
-      of: [{ type: 'reference', to: { type: 'category' } }],
+      of: [{ type: 'classification' }],
     },
     {
       name: 'body',
