@@ -18,37 +18,37 @@ export default function Nav() {
       <div className="menu-box">
         <ul className="menu">
           <li>
-            <Link to="index.html" className="active">
+            <Link to="/index" className="active">
               <span>Home</span>
             </Link>
           </li>
           <li>
-            <Link to="about.html">
+            <Link to="/about">
               <span>About</span>
             </Link>
           </li>
           <li>
-            <Link to="blog.html">
+            <Link to="/blog">
               <span>Blog</span>
             </Link>
           </li>
           <li>
-            <Link to="services.html">
+            <Link to="/services">
               <span>Services</span>
             </Link>
           </li>
           <li>
-            <Link to="single-post.html">
+            <Link to="/single-post">
               <span>Single Post</span>
             </Link>
           </li>
           <li>
-            <Link to="single-work.html">
-              <span>Single Project</span>
+            <Link to="/projects">
+              <span>Projects</span>
             </Link>
           </li>
           <li>
-            <Link to="contact.html">
+            <Link to="/contact">
               <span>Contact</span>
             </Link>
           </li>

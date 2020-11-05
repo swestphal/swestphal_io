@@ -5,13 +5,15 @@ import Nav from './Nav';
 import Footer from './Footer';
 import Contentarea from './Contentarea';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import GlobalStyles from '../styles/GlobalStyles';
 import Typography from '../styles/Typography';
+import GlobalStyles from '../styles/GlobalStyles';
+import OwnStyles from '../styles/OwnStyles';
 
 export default function Layout({ children }) {
   return (
     <>
       <GlobalStyles />
+      <OwnStyles />
       <Typography />
       <div id="container">
         <Nav />

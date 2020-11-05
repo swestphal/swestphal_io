@@ -44,7 +44,10 @@ export default {
     {
       name: 'mainImage',
       title: 'Main image',
-      type: 'mainImage',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
     },
 
     {

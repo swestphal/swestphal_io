@@ -11,7 +11,7 @@ export default function Contentarea({ content }) {
         document.documentElement.clientHeight ||
         document.body.clientHeight,
       containerHeight = document
-        .getElementsByClassName('inner-content')[0]
+        .getElementsByClassName('content__inner')[0]
         .getBoundingClientRect().height,
       headerHeight = document.getElementsByTagName('header')[0];
     if (bodyHeight > containerHeight) {
@@ -23,7 +23,9 @@ export default function Contentarea({ content }) {
   return (
     <>
       <div id="content">
-        <div className="inner-content">{content}</div>
+        <div className="content__inner">
+          <div className="pageContent">{content}</div>
+        </div>
       </div>
     </>
   );
