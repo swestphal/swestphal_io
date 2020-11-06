@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import 'normalize.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Contentarea({ content }) {
   useEffect(() => {
@@ -13,7 +12,7 @@ export default function Contentarea({ content }) {
       containerHeight = document
         .getElementsByClassName('content__inner')[0]
         .getBoundingClientRect().height,
-      headerHeight = document.getElementsByTagName('header')[0];
+      headerHeight = document.getElementById('sidebar');
     if (bodyHeight > containerHeight) {
       headerHeight.style.height = bodyHeight + 'px';
     } else {
@@ -23,9 +22,7 @@ export default function Contentarea({ content }) {
   return (
     <>
       <div id="content">
-        <div className="content__inner">
-          <div className="pageContent">{content}</div>
-        </div>
+        <div className="content__inner">{content}</div>
       </div>
     </>
   );

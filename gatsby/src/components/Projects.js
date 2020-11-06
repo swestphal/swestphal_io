@@ -2,64 +2,51 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import { AiOutlineFolder } from 'react-icons/ai';
 
-const ProjectGridStyles = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 4rem;
-  grid-auto-rows: auto auto 500px;
-`;
+const ProjectGridStyles = styled.div``;
 
-const ProjectStyles = styled.div`
-  display: grid;
-  /* Take your row sizing not from the pizzaStyles div, but from the  PizzaGridStyles grid */
-  @supports not (grid-template-rows: subgrid) {
-    --rows: auto auto 1fr;
-  }
-  grid-template-rows: var(--rows, subgrid);
-  grid-row: span 3;
-  grid-gap: 1rem;
-  h2,
-  p {
-    margin: 0;
-  }
-`;
+const ProjectStyles = styled.div``;
 
 function SingleProject({ project }) {
   return (
-    <ProjectStyles>
-      <div className="projects project__single">
-        <div className="project__inner">
-          <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
-          <div className="project__content">
+    <div className="grid__item">
+      <div className="card post post--project ">
+        <div className="post__inner row row--space">
+          <Link to="/single-post">
+            <div className="post__image">
+              <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
+            </div>
+          </Link>
+          <div className="post__content">
             <h2>
               <Link to="/single-post">{project.title}</Link>
             </h2>
             <p>{project.excerpt}</p>
+
+            <ul className="post__meta">
+              <li>
+                <Link to="#" className="listgroup">
+                  <span className="listgroup__icon">
+                    <AiOutlineFolder />
+                  </span>
+                  <span className="listgroup__content">
+                    <p>{project.relatedCategories[0].classification.name}</p>
+                    <p>{project.relatedCategories[0].skills.join(', ')}</p>
+                  </span>
+                </Link>
+              </li>
+            </ul>
           </div>
-          <ul className="project__meta">
-            <li>
-              <Link to="#">
-                <i className="fa fa-comment"></i>3 comments
-              </Link>
-            </li>
-            <li>
-              <Link to="#">
-                <i className="fa fa-calendar"></i>
-                {project.relatedCategories[0].classification.name}:&nbsp;
-                {project.relatedCategories[0].skills.join(',')}
-              </Link>
-            </li>
-          </ul>
         </div>
       </div>
-    </ProjectStyles>
+    </div>
   );
 }
 
 export default function ProjectList({ projects }) {
   return (
-    <ProjectGridStyles>
+    <ProjectGridStyles className="grid">
       {projects.map((project) => (
         <SingleProject key={project.id} project={project} />
       ))}
