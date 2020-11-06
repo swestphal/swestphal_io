@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
-import grid from './grid';
 
 /*-------------------------------------------------
  Table of Css
 
     1. General Code
-    2. Font
-    3. Sidebar with Nav
-    4. Page Content Area
-    5. Card
-    5. Post
+    2. Grid / Grid-System
+    3. Font
+    4. Sidebar with Nav
+    5. Sidebar Social&Info
+    6. Page Content Area
+    7. Card
+    8. Post
 
 -------------------------------------------------*/
 const OwnStyles = createGlobalStyle`
@@ -105,7 +106,7 @@ ul li {
 }
 
 /*-------------------------------------------------------*/
-/* 2. Font
+/* 3. Font
 /*-------------------------------------------------------*/
 
 html, .root {
@@ -203,7 +204,7 @@ sub {
 }
 
 /*-------------------------------------------------------*/
-/* 3. Sidebar with Nav
+/* 4. Sidebar with Nav
 /*-------------------------------------------------------*/
 
 #sidebar {
@@ -323,7 +324,6 @@ ul.menu li:first-child a {
 
 ul.menu > li.active {
     background: #ffed27;
-    //border-bottom: 1px dashed #d6d6d6;
     border-right: 0;
     position:relative;
 }
@@ -332,7 +332,7 @@ ul.menu > li > a:hover {
     transition: all 0.15s linear;
   
     background: #ffed27;
-    /border-bottom: 1px dashed #d6d6d6;
+ 
 }
 
 ul.menu > li.active:after {    
@@ -359,7 +359,7 @@ ul.drop-down {
     position: absolute;
     top: 0;
     width: 220px;
-    visibility: hidden\0/;
+    visibility: hidden;
     opacity: 0;
     z-index: 3;
     text-align: left;
@@ -393,7 +393,7 @@ ul.drop-down li a:hover {
 
 
 /*-------------------------------------------------*/
-/* 3. Sidebar Social & Infos
+/* 5. Sidebar Social & Infos
 /*-------------------------------------------------*/
 
 .sidebar__menu {
@@ -436,7 +436,7 @@ ul.drop-down li a:hover {
 }
 
 /*-------------------------------------------------------*/
-/* 4. Page Content Area
+/* 6. Page Content Area
 /*-------------------------------------------------------*/
     
 #content {
@@ -450,7 +450,7 @@ ul.drop-down li a:hover {
 }
 
 /*-------------------------------------------------------*/
-/* 5. Card
+/* 7. Card
 /*-------------------------------------------------------*/   
    
 .card {
@@ -459,7 +459,7 @@ ul.drop-down li a:hover {
 
 
 /*-------------------------------------------------------*/
-/* 6. Post
+/* 8. Post
 /*-------------------------------------------------------*/
 
 
