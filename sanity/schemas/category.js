@@ -21,6 +21,16 @@ export default {
       },
     },
     {
+      name: 'index',
+      title: 'Index',
+      type: 'number',
+    },
+    {
+      name: 'colour',
+      title: 'Colour',
+      type: 'string',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -28,18 +38,11 @@ export default {
         hotspot: true,
       },
     },
+
     {
-      name: 'description',
-      title: 'Description',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: [],
-        },
-      ],
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
     },
   ],
   preview: {

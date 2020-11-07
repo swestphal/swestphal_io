@@ -28,13 +28,8 @@ export default function Nav() {
         <div className="sidebar__menu">
           <ul className="menu">
             <li>
-              <Link to="/index" className="active">
+              <Link to="/" className="active">
                 <span>Home</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/about">
-                <span>About</span>
               </Link>
             </li>
             <li>
@@ -45,11 +40,6 @@ export default function Nav() {
             <li>
               <Link to="/services">
                 <span>Services</span>
-              </Link>
-            </li>
-            <li>
-              <Link to="/single-post">
-                <span>Single Post</span>
               </Link>
             </li>
             <li className="active">

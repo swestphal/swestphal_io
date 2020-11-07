@@ -6,7 +6,7 @@ export default function ProjectsPage({ data, pageContext }) {
   const projects = data.projects.nodes;
   return (
     <>
-      <h1>projects</h1>
+      <h1>Projects</h1>
       <ProjectList projects={projects} />
     </>
   );
@@ -31,7 +31,7 @@ export const query = graphql`
           }
           _key
           _type
-          alt
+
           _rawAsset
           _rawHotspot
           _rawCrop
@@ -74,7 +74,6 @@ export const query = graphql`
             asset {
               _id
             }
-            alt
           }
         }
         relatedCategories {

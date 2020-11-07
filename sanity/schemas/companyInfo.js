@@ -43,5 +43,23 @@ export default {
       title: 'Country',
       type: 'string',
     },
+    {
+      name: 'aboutTitle',
+      title: 'About - Title',
+      type: 'string',
+    },
+    {
+      name: 'aboutBody',
+      title: 'About - Text',
+      type: 'blockContent',
+    },
+    {
+      name: 'aboutMainImage',
+      title: 'About - Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
   ],
 };
