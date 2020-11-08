@@ -230,8 +230,8 @@ ul ul, ol ol, ul ol, ol ul {
 a {
     text-decoration:none;
     color:inherit;
-    overflow:hidden;
     &.link {
+        overflow:hidden
         position:relative;
         display:inline-block;
     }
@@ -351,10 +351,9 @@ ul.drop-down li a {
     text-decoration: none;
     line-height: 20px;
     transition: all 0.3 linear;
-
 }
 
-ul.menu > li:before {
+ul.menu > li a:before {
 
         background-image: linear-gradient(to right,#a7a7a7 46%,rgba(255,255,255,0) 0%);
         background-position: bottom;
@@ -364,7 +363,7 @@ ul.menu > li:before {
         content: "";
         display: inline-block;
         position: absolute;
-        bottom: -1px;
+        bottom: 0;
         height: 1px;
         left:1px;
         z-index:1;
@@ -389,20 +388,18 @@ ul.menu:before {
     }
 
 
-ul.menu > li.active {
+ul.menu > li a[aria-current="page"] {
     background: #ffed27;
     border-right: 0;
     position:relative;
 }
 
-ul.menu > li > a:hover {
+ul.menu > li:hover>a{
     transition: all 0.15s linear;
-  
     background: #ffed27;
- 
 }
 
-ul.menu > li.active:after {    
+ul.menu > li a[aria-current='page']:after {    
     content: "";
      position: absolute;
      width: 40px;
@@ -450,7 +447,7 @@ li.drop:hover > ul.drop-down {
     transition: transform 0.4s, opacity 0.1s;
 }
 
-ul.drop-down li {
+ul.drop-down li a{
     position: relative;
 }
 

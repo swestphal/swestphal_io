@@ -28,7 +28,7 @@ export default function Nav() {
         <div className="sidebar__menu">
           <ul className="menu">
             <li>
-              <Link to="/" className="active">
+              <Link to="/">
                 <span>Home</span>
               </Link>
             </li>
