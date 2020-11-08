@@ -43,6 +43,7 @@ function SingleProject({ project }) {
     </div>
   );
 }
+// todo loop through multiple categories of project
 
 export default function ProjectList({ projects }) {
   return (
