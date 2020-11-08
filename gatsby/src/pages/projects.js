@@ -21,8 +21,14 @@ export default function ProjectsPage({ data, pageContext }) {
 //        filter: { toppings: { elemMatch: { name: { regex: $toppingRegex } } } }
 
 export const query = graphql`
-  query ProjectQuery {
-    projects: allSanityProject {
+  query ProjectQuery($category: [String]) {
+    projects: allSanityProject(
+      filter: {
+        relatedCategories: {
+          elemMatch: { classification: { name: { in: $category } } }
+        }
+      }
+    ) {^
       nodes {
         id
         title
