@@ -1,11 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
-import styled from 'styled-components';
 
 function countProjectsInCategories(projects) {
   // Return the projects with counts
-  //console.log('projects:');
-  //console.log(projects);
+
   const counts = projects
     .map((project) => project.relatedCategories)
     .flat()
@@ -35,9 +33,7 @@ function countProjectsInCategories(projects) {
 }
 
 export default function CategoriesFilter({ activeCategory }) {
-  //console.log(activeCategory);
-  // Get a list of all the categorys
-  // Get a list of all the Pizzas with their categorys
+  // Get a list of all the projects with their categories
   const { categories, projects } = useStaticQuery(graphql`
     query {
       projects: allSanityProject {
@@ -55,23 +51,18 @@ export default function CategoriesFilter({ activeCategory }) {
   `);
   // Count how many projects are in each category
   const categoriesWithCounts = countProjectsInCategories(projects.nodes);
-  // Loop over the list of categorys and display the category and the count of projects in that category
-  // Link it up.. ...  . . .
-
+  // Loop over the list of categories in project
   return (
     <div className="filter ">
-      <Link className="badge " to="/projects">
-        <span className="name">All</span>
-        <span className="count">{projects.nodes.length}</span>
+      <Link className="badge all" to="/projects">
+        <span className="badge__name">All</span>
+        <span className="badge__count">{projects.nodes.length}</span>
       </Link>
       {categoriesWithCounts.map((category) => (
         <Link
           to={`/category/${category.name}`}
           key={category.id}
-          className={
-            ` badge ${category.colour}` +
-            (category.name === activeCategory ? ' active' : '')
-          }
+          className={` badge ${category.colour}`}
         >
           <span className="badge__name">{category.name}</span>
           <span className="badge__count">{category.count}</span>
