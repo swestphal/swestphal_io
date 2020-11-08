@@ -267,6 +267,31 @@ sub {
   bottom: -0.25em;
 }
 
+
+
+h3,h4{
+    &.php {
+        color:#E48E00;
+    }
+    &.xd {
+        color:#f92dc0;
+    }
+    &.react {
+        color:#3CD7FC;
+    }
+    &.wp {
+        color:#22759A;
+    }
+    &.gatsby {
+        color:#6C4693;
+    }
+    &.javascript{
+        color:#FBC732;
+    }
+}
+
+
+
 /*-------------------------------------------------------*/
 /* 4. Sidebar with Nav
 /*-------------------------------------------------------*/
@@ -576,19 +601,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
   
 /*-------------------------------------------------------*/
-/* 10. about Page
+/* 9. about Page
 /*-------------------------------------------------------*/ 
 
 .about .grid {
     
 }
 
-
-/*-------------------------------------------------------*/
-/* 10. Service
-/*-------------------------------------------------------*/
-    
-    
 /*-------------------------------------------------------*/
 /* 10. Service
 /*-------------------------------------------------------*/
@@ -605,25 +624,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         .service__icon{
             filter:grayscale(0);
        }
-       h3 {
-            &.php {
-                color:#E48E00;
-            }
-            &.xd {
-                color:#f92dc0;
-            }
-            &.react {
-                color:#3CD7FC;
-            }
-            &.wp {
-                color:#22759A;
-            }
-            &.gatsby {
-                color:#6C4693;
-            }
-        }
+      
     }
-    }
+}
     
 .masonry-root {
   display: flex;
@@ -821,7 +824,60 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 
 
-
+/*-------------------------------------------------------*/
+/* 11.  badge
+/*-------------------------------------------------------*/
+.filter {   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+  }
+.badge {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 0 1rem;
+    align-items: center;
+    padding: 5px;
+    background: grey;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: clamp(1.5rem, 1.4vw, 2.5rem);
+    .badge__count {
+      background: white;
+      padding: 5px 5px 0;
+    }
+    &[aria-current='page'] {
+        background-color: #ececec;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    }
+}
+.badge {
+    border-left:10px solid white;
+    &.php {
+        border-color:#E48E00;
+        background:#E48E00;
+    }
+    &.xd {
+        border-color:#f92dc0;
+        background:#f92dc0;
+    }
+    &.react {
+        border-color:#3CD7FC;
+        background:#3CD7FC;
+    }
+    &.wp {
+        border-color:#22759A;
+        background:#22759A;
+    }
+    &.gatsby {
+        border-color:#6C4693;
+        background: #6C4693;
+    }
+    &.javascript{
+        border-color:#FBC732;
+        background:#FBC732;
+    }
 } 
 `;
 

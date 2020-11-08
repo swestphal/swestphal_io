@@ -1,12 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import ProjectList from '../components/Projects';
+import CategoriesFilter from '../components/CategoriesFilter';
 
 export default function ProjectsPage({ data, pageContext }) {
+  console.log(pageContext);
   const projects = data.projects.nodes;
   return (
     <>
       <h1>Projects</h1>
+      <CategoriesFilter activeCategory={pageContext.category} />
       <ProjectList projects={projects} />
     </>
   );
