@@ -1,18 +1,70 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { AboutSingle } from '../components/About';
-import Testimonials from '../components/Testimonials';
-import ServiceList from '../components/Services';
-import Skills from '../components/Skills';
-import ProjectList from '../components/Projects';
+
 import Blog from '../components/Blog';
+import CategoriesFilter from '../components/CategoriesFilter';
+import ProjectList from '../components/Projects';
 
 export default function BlogPage({ data, pageContext }) {
+  console.log('data');
+  console.log(data);
+  console.log('pageContext');
+  console.log(pageContext);
+  const posts = data.posts.nodes;
   return (
-    <div className="index">
-      <div className="">
-        <Blog />
-      </div>
-    </div>
+    <>
+      <h1>Blog</h1>
+      <Blog posts={posts} />
+    </>
   );
 }
+
+export const query = graphql`
+  query PostsQuery($category: [String]) {
+    posts: allSanityPost(
+      filter: {
+        relatedCategories: {
+          elemMatch: { classification: { name: { in: $category } } }
+        }
+      }
+    ) {
+      nodes {
+        id
+        body {
+          _key
+          _type
+          style
+          list
+          _rawChildren
+        }
+        excerpt {
+          _key
+          _type
+          style
+          list
+          _rawChildren
+        }
+        mainImage {
+          _key
+
+          asset {
+            fluid(maxWidth: 600) {
+              ...GatsbySanityImageFluid
+            }
+          }
+          _rawAsset
+          _rawHotspot
+          _rawCrop
+        }
+        title
+        relatedCategories {
+          classification {
+            name
+            colour
+          }
+          skills
+        }
+      }
+    }
+  }
+`;

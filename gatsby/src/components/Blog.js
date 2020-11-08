@@ -1,89 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { masonry } from '../assets/js/masonry';
-export default function Blog({ content }) {
-  const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
-  useEffect(() => {
-    masonry();
-    function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-      masonry();
-    }
-    window.addEventListener('resize', handleResize);
-    return (_) => {
-      window.removeEventListener('resize', handleResize);
-    };
-  });
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
+import { AiOutlineFolder } from 'react-icons/ai';
+
+function SinglePost({ post }) {
+  let image = post.mainImage;
+
   return (
-    <>
-      <div className="masonry-root">
-        <div className="masonry-cell">
-          <div className="masonry-item">1</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">2</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">3</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">4</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">5</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">6</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">7</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">8</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">9</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">10</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">11</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">12</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">13</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">14</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">15</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">16</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">17</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">18</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">19</div>
-        </div>
-        <div className="masonry-cell">
-          <div className="masonry-item">20</div>
+    <div className="fmasonry-cell">
+      <div className="card post post--project">
+        <div className="post__inner row row--space">
+          <Link to="/single-post">
+            {image ? (
+              <div className="post__image">
+                <Img
+                  fluid={post.mainImage.asset.fluid}
+                  alt={post.title}
+                  onLoad={() => {
+                    console.log('loaded');
+                  }}
+                />
+              </div>
+            ) : (
+              <p>Default subtitle</p>
+            )}
+          </Link>
+          <div className="post__content">
+            <h2>
+              <Link to="/single-post">{post.title}</Link>
+            </h2>
+            <p></p>
+
+            <ul className="post__meta">
+              <li>
+                <Link to="#" className="listgroup">
+                  <span className="listgroup__icon">
+                    <AiOutlineFolder />
+                  </span>
+                  <span className="listgroup__content"></span>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </>
+    </div>
+  );
+}
+
+export default function Blog({ posts }) {
+  return (
+    <div className="fmasonry">
+      {posts.map((post) => (
+        <SinglePost key={post.id} post={post} />
+      ))}
+    </div>
   );
 }

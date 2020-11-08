@@ -625,200 +625,23 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     }
 }
     
-.masonry-root {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+
+
+/* The Masonry Container */
+.fmasonry {
+   column-width: 300px;
+    column-gap: 1em;
 }
-.masonry-root .masonry-cell {
-  flex: 1;
-  margin: 4px;
+
+
+.fmasonry-cell { 
+    margin-bottom: 1em;
+    padding: 1em;
+    -webkit-column-break-inside: avoid;
+    -moz-column-break-inside: avoid;
+    column-break-inside: avoid;
 }
-.masonry-root .masonry-cell .masonry-item {
-  background: #EC985A;
-  color: white;
-  margin: 4px;
-  text-align: center;
-  font-family: system-ui;
-  font-weight: 900;
-  font-size: 32px;
-}
-.masonry-root .masonry-cell:nth-child(1) .masonry-item {
-  height: 120px;
-  line-height: 120px;
-}
-.masonry-root .masonry-cell:nth-child(2) .masonry-item {
-  height: 173px;
-  line-height: 173px;
-}
-.masonry-root .masonry-cell:nth-child(3) .masonry-item {
-  height: 111px;
-  line-height: 111px;
-}
-.masonry-root .masonry-cell:nth-child(4) .masonry-item {
-  height: 140px;
-  line-height: 140px;
-}
-.masonry-root .masonry-cell:nth-child(5) .masonry-item {
-  height: 139px;
-  line-height: 139px;
-}
-.masonry-root .masonry-cell:nth-child(6) .masonry-item {
-  height: 157px;
-  line-height: 157px;
-}
-.masonry-root .masonry-cell:nth-child(7) .masonry-item {
-  height: 119px;
-  line-height: 119px;
-}
-.masonry-root .masonry-cell:nth-child(8) .masonry-item {
-  height: 71px;
-  line-height: 71px;
-}
-.masonry-root .masonry-cell:nth-child(9) .masonry-item {
-  height: 154px;
-  line-height: 154px;
-}
-.masonry-root .masonry-cell:nth-child(10) .masonry-item {
-  height: 116px;
-  line-height: 116px;
-}
-.masonry-root .masonry-cell:nth-child(11) .masonry-item {
-  height: 156px;
-  line-height: 156px;
-}
-.masonry-root .masonry-cell:nth-child(12) .masonry-item {
-  height: 84px;
-  line-height: 84px;
-}
-.masonry-root .masonry-cell:nth-child(13) .masonry-item {
-  height: 155px;
-  line-height: 155px;
-}
-.masonry-root .masonry-cell:nth-child(14) .masonry-item {
-  height: 154px;
-  line-height: 154px;
-}
-.masonry-root .masonry-cell:nth-child(15) .masonry-item {
-  height: 88px;
-  line-height: 88px;
-}
-.masonry-root .masonry-cell:nth-child(16) .masonry-item {
-  height: 128px;
-  line-height: 128px;
-}
-.masonry-root .masonry-cell:nth-child(17) .masonry-item {
-  height: 140px;
-  line-height: 140px;
-}
-.masonry-root .masonry-cell:nth-child(18) .masonry-item {
-  height: 123px;
-  line-height: 123px;
-}
-.masonry-root .masonry-cell:nth-child(19) .masonry-item {
-  height: 181px;
-  line-height: 181px;
-}
-.masonry-root .masonry-cell:nth-child(20) .masonry-item {
-  height: 125px;
-  line-height: 125px;
-}
-.masonry-root .masonry-cell:nth-child(21) .masonry-item {
-  height: 191px;
-  line-height: 191px;
-}
-.masonry-root .masonry-cell:nth-child(22) .masonry-item {
-  height: 116px;
-  line-height: 116px;
-}
-.masonry-root .masonry-cell:nth-child(23) .masonry-item {
-  height: 150px;
-  line-height: 150px;
-}
-.masonry-root .masonry-cell:nth-child(24) .masonry-item {
-  height: 84px;
-  line-height: 84px;
-}
-.masonry-root .masonry-cell:nth-child(25) .masonry-item {
-  height: 101px;
-  line-height: 101px;
-}
-.masonry-root .masonry-cell:nth-child(26) .masonry-item {
-  height: 102px;
-  line-height: 102px;
-}
-.masonry-root .masonry-cell:nth-child(27) .masonry-item {
-  height: 115px;
-  line-height: 115px;
-}
-.masonry-root .masonry-cell:nth-child(28) .masonry-item {
-  height: 179px;
-  line-height: 179px;
-}
-.masonry-root .masonry-cell:nth-child(29) .masonry-item {
-  height: 170px;
-  line-height: 170px;
-}
-.masonry-root .masonry-cell:nth-child(30) .masonry-item {
-  height: 171px;
-  line-height: 171px;
-}
-.masonry-root .masonry-cell:nth-child(31) .masonry-item {
-  height: 76px;
-  line-height: 76px;
-}
-.masonry-root .masonry-cell:nth-child(32) .masonry-item {
-  height: 98px;
-  line-height: 98px;
-}
-.masonry-root .masonry-cell:nth-child(33) .masonry-item {
-  height: 137px;
-  line-height: 137px;
-}
-.masonry-root .masonry-cell:nth-child(34) .masonry-item {
-  height: 113px;
-  line-height: 113px;
-}
-.masonry-root .masonry-cell:nth-child(35) .masonry-item {
-  height: 91px;
-  line-height: 91px;
-}
-.masonry-root .masonry-cell:nth-child(36) .masonry-item {
-  height: 97px;
-  line-height: 97px;
-}
-.masonry-root .masonry-cell:nth-child(37) .masonry-item {
-  height: 150px;
-  line-height: 150px;
-}
-.masonry-root .masonry-cell:nth-child(38) .masonry-item {
-  height: 166px;
-  line-height: 166px;
-}
-.masonry-root .masonry-cell:nth-child(39) .masonry-item {
-  height: 120px;
-  line-height: 120px;
-}
-.masonry-root .masonry-cell:nth-child(40) .masonry-item {
-  height: 146px;
-  line-height: 146px;
-}
-.masonry-root .masonry-cell:nth-child(41) .masonry-item {
-  height: 66px;
-  line-height: 66px;
-}
-.masonry-root .masonry-cell:nth-child(42) .masonry-item {
-  height: 164px;
-  line-height: 164px;
-}
-.masonry-root .masonry-cell:nth-child(43) .masonry-item {
-  height: 159px;
-  line-height: 159px;
-}
-.masonry-root .masonry-cell:nth-child(44) .masonry-item {
-  height: 138px;
-  line-height: 138px;
-}
+
 
 
 /*-------------------------------------------------------*/
