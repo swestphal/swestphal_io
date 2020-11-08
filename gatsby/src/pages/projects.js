@@ -28,7 +28,7 @@ export const query = graphql`
           elemMatch: { classification: { name: { in: $category } } }
         }
       }
-    ) {^
+    ) {
       nodes {
         id
         title
