@@ -43,6 +43,9 @@ export default function CategoriesFilter({ activeCategory }) {
               name
               id
               colour
+              slug {
+                current
+              }
             }
           }
         }
@@ -60,7 +63,7 @@ export default function CategoriesFilter({ activeCategory }) {
       </Link>
       {categoriesWithCounts.map((category) => (
         <Link
-          to={`/category/${category.name}`}
+          to={`/projects/${category.name}`}
           key={category.id}
           className={` badge ${category.colour}`}
         >
