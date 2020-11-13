@@ -19,6 +19,7 @@ function countProjectsInCategories(projects) {
           id: category.classification.id,
           name: category.classification.name,
           colour: category.classification.colour,
+          slug: category.classification.slug.current,
           count: 1,
         };
       }
@@ -32,7 +33,7 @@ function countProjectsInCategories(projects) {
   return sortedCategories;
 }
 
-export default function CategoriesFilter({ activeCategory }) {
+export default function CategoriesFilter({ activeCategory, currentPage }) {
   // Get a list of all the projects with their categories
   const { categories, projects } = useStaticQuery(graphql`
     query {
@@ -55,6 +56,7 @@ export default function CategoriesFilter({ activeCategory }) {
   // Count how many projects are in each category
   const categoriesWithCounts = countProjectsInCategories(projects.nodes);
   // Loop over the list of categories in project
+
   return (
     <div className="filter ">
       <Link className="badge all" to="/projects">
@@ -63,9 +65,13 @@ export default function CategoriesFilter({ activeCategory }) {
       </Link>
       {categoriesWithCounts.map((category) => (
         <Link
-          to={`/projects/${category.name}`}
+          to={`/projects/${category.slug}`}
+          getProps={({ isPartiallyCurrent }) =>
+            isPartiallyCurrent
+              ? { className: `${category.colour} badge active` }
+              : { className: `${category.colour} badge ` }
+          }
           key={category.id}
-          className={` badge ${category.colour}`}
         >
           <span className="badge__name">{category.name}</span>
           <span className="badge__count">{category.count}</span>

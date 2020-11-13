@@ -18,7 +18,7 @@ function countProjectsInCategories(projects) {
           id: category.classification.id,
           name: category.classification.name,
           colour: category.classification.colour,
-          slug: category.classification.slug.current,
+          slug: `/${category.classification.slug.current}`,
           count: 1,
         };
       }
@@ -28,16 +28,13 @@ function countProjectsInCategories(projects) {
     id: 0,
     name: 'All',
     colour: 'none',
-    slug: 'projects',
-    count: 10,
+    slug: '',
+    count: 3,
   };
   // sort them based on their count
-  console.log(counts);
   const sortedCategories = Object.values(counts).sort(
     (a, b) => b.count - a.count
   );
-
-  console.log(sortedCategories);
   return sortedCategories;
 }
 
@@ -79,19 +76,28 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
 
   const categoriesWithCounts = countProjectsInCategories(data.projects.nodes);
   categoriesWithCounts.forEach((category) => {
-    console.log(category);
     const pageCount = Math.ceil(category.count / pageSize);
     Array.from({ length: pageCount }).forEach((a, i) => {
+      const rootSlug = 'projects';
+      let catSlug = `${category.slug}`;
+      if (category === 'All') catSlug = '';
+      let numSlug = `/${i + 1}`;
+      if (i === 0) numSlug = '';
+      const slug = rootSlug + catSlug + numSlug;
+      const catName = category.name;
+      console.log(category);
+      console.log(catName);
+      console.log(slug);
+
       actions.createPage({
-        path: `projects/${category.slug}/${i + 1}`,
+        path: `${slug}`,
         component: categoryTemplate,
         context: {
           skip: i * pageSize,
           currentPage: i + 1,
           pageSize,
-          category: category.name,
-          //  Regex for Topping
-          // toppingRegex: `/${topping.name}/i`,
+          categoryName: catName,
+          categorySlug: category.slug,
         },
       });
     });

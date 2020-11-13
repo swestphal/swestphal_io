@@ -676,7 +676,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     background-color: #ececec;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
    
-    &.all[aria-current='page'] {
+    &.all.active {
 
             background:black;
             color:white;
@@ -686,37 +686,37 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         }
     &.php {
         border-color:#E48E00;
-        &[aria-current='page']  {
+        &.active  {
             background:#E48E00;
         }
     }
     &.xd {
         border-color:#f92dc0;
-         &[aria-current='page']  {
+         &.active  {
             background:#f92dc0;
         }
     }
     &.react {
         border-color:#3CD7FC;
-         &[aria-current='page'] {
+         &.active {
             background:#3CD7FC;
         }
     }
     &.wp {
         border-color:#22759A;
-        &[aria-current='page']  {
+        &.active  {
             background:#22759A;
         }
     }
     &.gatsby {
         border-color:#6C4693;
-         &[aria-current='page']  {
+         &.active  {
             background: #6C4693;
         }
     }
     &.javascript{
         border-color:#FBC732;
-         &[aria-current='page']  {
+         &.active  {
             background:#FBC732;
         }
     }

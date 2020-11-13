@@ -2,32 +2,39 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import ProjectList from '../components/Projects';
 import CategoriesFilter from '../components/CategoriesFilter';
+import Pagination from '../components/Pagination';
 
 export default function ProjectsPage({ data, pageContext }) {
-  console.log(pageContext);
   const projects = data.projects.nodes;
   return (
     <>
       <h1>Projects</h1>
-      <CategoriesFilter activeCategory={pageContext.category} />
+      <Pagination
+        pageSize={pageContext.pageSize}
+        totalCount={pageContext.totalCount}
+        currentPage={pageContext.currentPage || ''}
+        skip={pageContext.skip}
+        base="/projects"
+        categorySlug={pageContext.categorySlug}
+        categoryName={pageContext.categoryName}
+      />
+      <CategoriesFilter
+        activeCategory={pageContext.categorySlug}
+        currentPage={pageContext.currentPage}
+      />
       <ProjectList projects={projects} />
     </>
   );
 }
 
-// for regex:
-// query ProjectQuery($toppingRegex: String) {
-//    projects: allSanityProject(
-//        filter: { toppings: { elemMatch: { name: { regex: $toppingRegex } } } }
-
 export const query = graphql`
-  query ProjectQuery($category: [String], $skip: Int, $pageSize: Int) {
+  query ProjectQuery($categoryName: [String], $skip: Int, $pageSize: Int) {
     projects: allSanityProject(
       skip: $skip
       limit: $pageSize
       filter: {
         relatedCategories: {
-          elemMatch: { classification: { name: { in: $category } } }
+          elemMatch: { classification: { name: { in: $categoryName } } }
         }
       }
     ) {
