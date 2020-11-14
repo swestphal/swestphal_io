@@ -721,6 +721,44 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         }
     }
 } 
+
+/*-------------------------------------------------------*/
+/* 11.  pagination
+/*-------------------------------------------------------*/
+.pagination {
+    padding:2rem 0;
+    ul {
+        display:flex;
+        align-items:center;
+        li {
+           
+            a {
+                margin:0 .5rem;
+                text-align:center;
+                line-height:40px;
+                width:40px;
+                height:40px;
+                border:1px solid grey;
+                display:inline-block;
+                
+                &[aria-current]:not([disabled]),
+                &.active{
+                    background:#ffed27;
+                }
+                
+                &[disabled]{
+                    opacity:0.3;
+                    pointer-events:none;
+                }
+            } 
+            &:first-of-type a,
+            &:last-of-type a{
+                width:80px;
+            }  
+            
+        }
+    }
+}
 `;
 
 export default OwnStyles;

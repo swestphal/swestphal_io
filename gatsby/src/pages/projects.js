@@ -5,10 +5,10 @@ import CategoriesFilter from '../components/CategoriesFilter';
 import Pagination from '../components/Pagination';
 
 export default function ProjectsPage({ data, pageContext }) {
+  console.log(pageContext);
   const projects = data.projects.nodes;
   return (
     <>
-      <h1>Projects</h1>
       <Pagination
         pageSize={pageContext.pageSize}
         totalCount={pageContext.totalCount}
@@ -28,13 +28,13 @@ export default function ProjectsPage({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query ProjectQuery($categoryName: [String], $skip: Int, $pageSize: Int) {
+  query ProjectQuery($categoryName: String, $skip: Int, $pageSize: Int) {
     projects: allSanityProject(
       skip: $skip
       limit: $pageSize
       filter: {
         relatedCategories: {
-          elemMatch: { classification: { name: { in: $categoryName } } }
+          elemMatch: { classification: { name: { regex: $categoryName } } }
         }
       }
     ) {

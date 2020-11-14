@@ -26,7 +26,7 @@ function countProjectsInCategories(projects) {
     }, {});
   counts[0] = {
     id: 0,
-    name: 'All',
+    name: '',
     colour: 'none',
     slug: '',
     count: 3,
@@ -96,8 +96,9 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
           skip: i * pageSize,
           currentPage: i + 1,
           pageSize,
-          categoryName: catName,
-          categorySlug: category.slug,
+          totalCount: category.count,
+          categoryName: `/${catName}/i`,
+          categorySlug: catSlug,
         },
       });
     });
@@ -119,7 +120,6 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
 }
 
 export async function createPages(params) {
-  console.log('pages');
   // Create pages dynamically
   // Wait for all promises to be resolved before finishing this function
   await Promise.all([
