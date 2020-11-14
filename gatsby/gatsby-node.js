@@ -57,6 +57,11 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
       }
       projects: allSanityProject {
         nodes {
+          id
+          title
+          slug {
+            current
+          }
           relatedCategories {
             classification {
               id
@@ -71,6 +76,19 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
       }
     }
   `);
+  // turn each project in a single page
+  const projectTemplate = path.resolve('./src/templates/Project.js');
+  data.projects.nodes.forEach((project) => {
+    actions.createPage({
+      component: projectTemplate,
+      path: `project/${project.slug.current}`,
+      context: {
+        name: project.name,
+        slug: project.slug.current,
+      },
+    });
+  });
+
   // get count of pages of that category
   const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
 
@@ -97,7 +115,8 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
           currentPage: i + 1,
           pageSize,
           totalCount: category.count,
-          categoryName: `/${catName}/i`,
+          categoryRegexName: `/${catName}/i`,
+          categoryName: `${catName}`,
           categorySlug: catSlug,
         },
       });

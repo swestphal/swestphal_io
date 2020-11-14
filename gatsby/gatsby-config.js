@@ -13,7 +13,7 @@ export default {
     description: 'The best development place in Herrnhut',
   },
   plugins: [
-    'gatsby-plugin-styled-components',
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
       options: {

@@ -1,6 +1,7 @@
 const masonry = function () {
   let minColWidth = 330;
   let rootElements = document.getElementsByClassName('masonry-root');
+
   let roots = Array.prototype.map.call(rootElements, function (rootElement) {
     let cellElements = rootElement.getElementsByClassName('masonry-cell');
     let cells = Array.prototype.map.call(cellElements, function (cellElement) {
@@ -61,7 +62,7 @@ const masonry = function () {
         for (let cell of column.cells) {
           cell.element.style.order = order++;
           // set the cell's flex-basis to 0
-          cell.element.style.flexBasis = 0;
+          cell.element.style.flexBasis = 100;
         }
         // set flex-basis of the last cell to fill the
         // leftover space at the bottom of the column
@@ -73,6 +74,7 @@ const masonry = function () {
           column.outerHeight -
           1 +
           'px';
+        console.log(column.cells);
       }
 
       // set the masonry height to trigger

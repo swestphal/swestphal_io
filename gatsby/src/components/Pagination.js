@@ -9,6 +9,7 @@ export default function Pagination({
   base,
   categorySlug,
   categoryName,
+  categoryRegexName,
 }) {
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;

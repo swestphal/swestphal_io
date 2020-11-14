@@ -6,11 +6,11 @@ export function AboutSingle({ about }) {
     <div className="grid__item ">
       <div className="section section__about">
         <div className="section__inner row ">
-          <div className="section__image">
+          <div className="cell section__image">
             <Img fixed={about.aboutMainImage.asset.fixed} alt="About me" />
           </div>
 
-          <div className="section__content">
+          <div className="cell no-flex section__content">
             <h2>{about.aboutTitle}</h2>
             <p>{about.aboutBody[0]._rawChildren[0].text}</p>
           </div>

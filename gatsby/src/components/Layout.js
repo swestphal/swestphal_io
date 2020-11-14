@@ -15,7 +15,7 @@ export default function Layout({ children }) {
       <Typography />
       <div id="container">
         <Nav />
-        <Contentarea content={children}></Contentarea>
+        <Contentarea content={children} />
       </div>
       <Footer />
     </>

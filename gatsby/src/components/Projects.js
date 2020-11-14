@@ -46,7 +46,6 @@ function SingleProject({ project }) {
 // todo loop through multiple categories of project
 
 export default function ProjectList({ projects }) {
-  console.log(projects);
   return (
     <ProjectGridStyles className="grid">
       {projects.map((project) => (
