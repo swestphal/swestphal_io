@@ -15,6 +15,8 @@ import figure from './figure';
 import image from './image';
 import companyInfo from './companyInfo';
 import classification from './classification';
+import estimate from './estimate';
+import estimateCategory from './estimateCategory';
 
 export default createSchema({
   // We name our schema
@@ -33,5 +35,7 @@ export default createSchema({
     figure,
     image,
     companyInfo,
+    estimate,
+    estimateCategory,
   ]),
 });
