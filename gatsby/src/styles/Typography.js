@@ -1,16 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
 
-import courier from '../assets/fonts/courierNew.woff';
-import noodle from '../assets/fonts/noodle.woff';
+import enriqueta from '../assets/fonts/Enriqueta-Regular.ttf';
+import jura from '../assets/fonts/Jura-Regular.ttf';
+
+import caudex from '../assets/fonts/Caudex-Regular.ttf';
 
 const Typography = createGlobalStyle`
   @font-face {
-    font-family: 'Courier New';
-    src: url(${courier});
+    font-family: 'enriqueta';
+    src: url(${enriqueta});
   }
   @font-face {
-    font-family: 'noodle';
-    src: url(${noodle});
+    font-family: 'caudex';
+    src: url(${caudex});
+  }
+  @font-face {
+    font-family: 'jura';
+    src: url(${jura});
   }
  
   `;
