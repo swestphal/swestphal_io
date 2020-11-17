@@ -4,11 +4,6 @@ import 'normalize.css';
 import { masonry } from '../assets/js/masonry';
 
 export default function Contentarea({ content }) {
-  const [dimensions, setDimensions] = React.useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
-
   return (
     <>
       <div id="content">

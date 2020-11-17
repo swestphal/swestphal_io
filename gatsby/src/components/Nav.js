@@ -20,60 +20,62 @@ export default function Nav() {
           containerSelectorFocus="#container"
           stickyEnableRange={[756, Infinity]}
         >
-          <div className="sidebar__logo">
-            <Link to="index-2.html">
-              <Img alt="" src="images/logo.png" />
-            </Link>
-          </div>
+          <div id="sidebar__inner">
+            <div className="sidebar__logo">
+              <Link to="index-2.html">
+                <Img alt="" src="images/logo.png" />
+              </Link>
+            </div>
 
-          <Link to="#" className="elemadded responsive-link">
-            Menu
-          </Link>
-
-          <div className="sidebar__menu">
-            <ul className="menu">
-              <li>
-                <Link to="/">
-                  <span>Home</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/blog">
-                  <span>Blog</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/services">
-                  <span>Services</span>
-                </Link>
-              </li>
-              <li className="active">
-                <Link to="/projects">
-                  <span>Projects</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact">
-                  <span>Contact</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="sidebar__infos">
-            <Link to="#" className="link infos__icons--mail">
-              <AiFillMail />
-              hello@swestphal.io
+            <Link to="#" className="elemadded responsive-link">
+              Menu
             </Link>
-            <Link to="#" className="link infos__icons--phone">
-              <AiFillPhone />
-              +49 1234 678
-            </Link>
-            <p className="infos__copyright">
-              <AiFillCopyrightCircle /> {new Date().getFullYear()} Simone
-              Westphal
-              <br />
-            </p>
+            <div className="sidebar__infos">
+              <Link to="#" className="link infos__icons--mail">
+                <AiFillMail />
+                hello@swestphal.io
+              </Link>
+              <Link to="#" className="link infos__icons--phone">
+                <AiFillPhone />
+                +49 1234 678
+              </Link>
+            </div>
+            <div className="sidebar__menu">
+              <ul className="menu">
+                <li>
+                  <Link to="/">
+                    <span>Home</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog">
+                    <span>Blog</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services">
+                    <span>Services</span>
+                  </Link>
+                </li>
+                <li className="active">
+                  <Link to="/projects">
+                    <span>Projects</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact">
+                    <span>Contact</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="sidebar__infos">
+              <p className="infos__copyright">
+                <AiFillCopyrightCircle /> {new Date().getFullYear()} Simone
+                Westphal
+              </p>
+            </div>
           </div>
         </Sticky>
       </header>
