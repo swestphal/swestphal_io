@@ -38,15 +38,6 @@ body.active {
 }
 
 
-#container {
-    height: 100%;
-    opacity: 1;
-    transition: all 0.17s ease-in-out;
-}
-
-#container.active {
-    opacity: 1;
-}
 
 ul {
     padding: 0;
@@ -311,22 +302,63 @@ h3,h4{
     }
 }
 
+/*-------------------------------------------------------*/
+/* 6. Page Layout (Sidebar & Content)
+/*-------------------------------------------------------*/
+    
+#content {
+  
+   margin-left: 15em;
+   padding: 1em;
+   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
+   
+   
+}
+
+#container {
+    height: 100%;
+    opacity: 1;
+    transition: all 0.17s ease-in-out;
+     position: relative;
+    overflow: hidden;
+}
+
+#container.active {
+    opacity: 1;
+}
 
 
-/*-------------------------------------------------------*/
-/* 4. Sidebar with Nav
-/*-------------------------------------------------------*/
+.main {
+  padding-left: 40%;
+  width: auto;
+}
+
 
 #sidebar {
     display: block;
     width: 14em;
     float: left;
+    height:2000px;
     background: #fff;
     text-align: right;
     z-index: 4;
     position: relative;
     box-shadow: 0 0 10px #000;
+
 }
+
+
+
+.is-fixed {
+  position: fixed;
+  top: 20px;
+  width: 258px;
+}
+
+
+/*-------------------------------------------------------*/
+/* 4. Sidebar with Nav
+/*-------------------------------------------------------*/
 
 
 ul.menu,
@@ -374,7 +406,7 @@ ul.menu > li a:before {
         left:1px;
         z-index:1;
     }
-    
+
 ul.menu {
     position:relative;
 }
@@ -492,6 +524,9 @@ ul.drop-down li a:hover {
     margin:  2rem 24px 2rem 0;
     a {
         padding:8px 0;
+        &:before {
+            content:none;
+        }
     }
     .infos__copyright {
         padding-top:2rem;
@@ -512,18 +547,9 @@ ul.drop-down li a:hover {
     }
 }
 
-/*-------------------------------------------------------*/
-/* 6. Page Content Area
-/*-------------------------------------------------------*/
-    
-#content {
-   height:100vh;
-   margin-left: 15em;
-   padding: 1em;
-   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
-   
-   
-}
+
+
+
 
 /*-------------------------------------------------------*/
 /* 7. Card
