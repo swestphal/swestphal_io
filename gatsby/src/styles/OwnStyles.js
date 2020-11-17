@@ -102,7 +102,7 @@ ul li {
     display: grid;
     grid-auto-flow: dense;
     grid-gap: 2em;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .grid--lg {
@@ -348,10 +348,20 @@ h3,h4{
 }
 
 .page {
-    padding-top:2em;
+    padding:2em 0 3em;
 }
 
-
+.page-projects {
+    @media(min-width:480px) and (max-width:1158px){
+        .post__inner {
+            flex-direction:row;
+            .post__image-wrapper {
+                width:50%;
+            }
+            
+        }
+    }
+}
 
 /*-------------------------------------------------------*/
 /* 4. Sidebar with Nav
