@@ -25,7 +25,7 @@ html{
 
 body {
     opacity:1;
-    background: #fff;
+    background: black;
     height: 100%;
 }
 
@@ -228,6 +228,11 @@ h5, .h5 {
 h1,h2,h3,h4,h5 {
     font-family:'jura',sans-serif;
     text-transform:uppercase;
+    color:black;
+}
+h1 {
+    margin-top  0;
+    text-shadow: 4px 4px 0px #fded27;
 }
 
 p, ul, ol, pre, table, blockquote {
@@ -307,10 +312,11 @@ h3,h4{
 /*-------------------------------------------------------*/
     
 #content {
-  
+   min-height:100vh;
    margin-left: 14em;
    padding: 0 1em 0 2em;
-   background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
+   background-color:white;
+   background: white,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
        box-shadow:inset 7px -8px 14px -8px #000;
    
 }
@@ -339,13 +345,57 @@ h3,h4{
     width: 14em;
     float: left;
     height:100vh;
-    background: #fff;
+    background: black;
     text-align: right;
     z-index: 4;
     position: relative;
+}
 
+@media(max-width:900px) {
+    #sidebar {
+        height:auto;
+        width:100%;
+    }
+    
+    #content {
+        min-height:1px;
+        width:100%;
+        margin:0;
+    }
    
 }
+
+.burger {
+    position: absolute;
+    top: 5%;
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    div {
+        width: 2rem;
+        height: 0.25rem;
+        background: white;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+    }
+}
+
+
 
 .page {
     padding:2em 0 3em;
@@ -387,7 +437,7 @@ ul.drop-down li a {
     display: block;
     width: 100%;
     padding: .25em .75em .25em 1.25em;
-    color: #000;
+    color: #d2d2d2;
     font-family: 'jura', sans-serif;
     font-size: 1.77777778em;
     line-height: 1.4375em;
@@ -435,6 +485,7 @@ ul.menu:before {
 
 ul.menu > li a[aria-current="page"] {
     background: #ffed27;
+    color:black;
     border-right: 0;
     position:relative;
       height:100%;
@@ -443,6 +494,7 @@ ul.menu > li a[aria-current="page"] {
 ul.menu > li:hover>a{
     transition: all 0.15s linear;
     background: #ffed27;
+    color:black;
 }
 
 
@@ -515,6 +567,7 @@ ul.drop-down li a:hover {
 
 .sidebar__menu {
     padding-top:4rem;
+   
 }
 .sidebar__social {
    margin:  2rem 24px 2rem 0;    
@@ -531,8 +584,9 @@ ul.drop-down li a:hover {
 .sidebar__infos {
     margin:  0em 1.5em 2rem 0;
     a {
+        color:#d2d2d2;
         padding:8px 0;
-        font-size:18px;
+        font-size:.75em;
         display:block;
         &:before {
             content:none;
@@ -630,29 +684,29 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 /*-------------------------------------------------------*/
 /* 10. Service
 /*-------------------------------------------------------*/
-
-.service {
-    &__single {
-        flex-direction:row;
-      
-    }
-    &__heading {
-        margin-top:0;
+.page-index {
+    .service {
+        &__single {
+            flex-direction:row;
+          
+        }
+        &__heading {
+            margin-top:0;
+        }
+        
+        &__icon {
+            display:block;
+            filter: grayscale(100%);
+        }
+        &__single:hover {
+            .service__icon{
+                filter:grayscale(0);
+           }
+          
+        }
     }
     
-    &__icon {
-        display:block;
-        filter: grayscale(100%);
-    }
-    &__single:hover {
-        .service__icon{
-            filter:grayscale(0);
-       }
-      
-    }
 }
-    
-
 
 /* The Masonry Container */
 .fmasonry {
@@ -800,7 +854,35 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             
         }
     }
+    
 }
+.estimate {
+    button {
+        margin-right:.25em;
+        h4 {
+            font-size:16px;
+            margin-top:0;
+            
+        }
+    }
+    .estimate__item {
+        p {
+            font-size:16px;
+            margin-bottom:0;
+            display:inline-block;
+        }
+        button {
+            border:none;
+            background:none;
+            color:red;
+            position:relative;
+            top:-5px;
+            cursor:pointer;
+            outline:none;
+        }
+    }
+}
+
 `;
 
 export default OwnStyles;

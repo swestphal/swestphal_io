@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import { bool } from 'prop-types';
 import {
   AiFillFacebook,
   AiFillGithub,
@@ -12,7 +13,11 @@ import {
 } from 'react-icons/ai';
 import Sticky from 'wil-react-sticky';
 
+import { StyledNav } from './Nav.styled';
+import Burger from './Burger';
+
 export default function Nav() {
+  const [open, setOpen] = useState(false); // hidden when layout is rendered
   return (
     <>
       <header id="sidebar">
@@ -28,7 +33,7 @@ export default function Nav() {
             </div>
 
             <Link to="#" className="elemadded responsive-link">
-              Menu
+              <Burger open={open} setOpen={setOpen} />
             </Link>
             <div className="sidebar__infos">
               <Link to="#" className="link infos__icons--mail">
@@ -40,35 +45,35 @@ export default function Nav() {
                 +49 1234 678
               </Link>
             </div>
-            <div className="sidebar__menu">
+            <StyledNav className="sidebar__menu" open={open}>
               <ul className="menu">
-                <li>
+                <li onClick={() => setOpen(!open)}>
                   <Link to="/">
                     <span>Home</span>
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => setOpen(!open)}>
                   <Link to="/blog">
                     <span>Blog</span>
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => setOpen(!open)}>
                   <Link to="/services">
                     <span>Services</span>
                   </Link>
                 </li>
-                <li className="active">
+                <li onClick={() => setOpen(!open)}>
                   <Link to="/projects">
                     <span>Projects</span>
                   </Link>
                 </li>
-                <li>
+                <li onClick={() => setOpen(!open)}>
                   <Link to="/contact">
                     <span>Contact</span>
                   </Link>
                 </li>
               </ul>
-            </div>
+            </StyledNav>
 
             <div className="sidebar__infos">
               <p className="infos__copyright">
@@ -82,3 +87,6 @@ export default function Nav() {
     </>
   );
 }
+Nav.propTypes = {
+  open: bool.isRequired,
+};
