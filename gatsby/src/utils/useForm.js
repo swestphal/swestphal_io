@@ -16,6 +16,6 @@ export default function useForm(defaults) {
       [e.target.name]: value,
     });
   }
-  console.log(values);
+
   return { values, updateValue };
 }

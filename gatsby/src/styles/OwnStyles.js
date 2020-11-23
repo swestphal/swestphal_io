@@ -71,10 +71,10 @@ ul li {
     
     
     &__content {
-        margin-left:;
-        display:inline-block;
+        margin-left:0;
+        display:block;
         font-size:.75em;
-        line-height:1em;
+        line-height:1.2em;
         p {
             margin:0;
             color:gray;
@@ -655,7 +655,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             display: flex;
             flex-direction: column;
         a {
-            overflow:hidden;
+    
             display:block;
         }
         
@@ -881,8 +881,24 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             outline:none;
         }
     }
+ }   
+    
+    
+.form {
+    &__container {
+        padding:.25em 0;
+        display:flex;
+        justify-content:space-between;
+        textarea {
+            width:100%;
+            height:3.25em;
+        }
+    }
+    fieldset{
+        margin-bottom:2em;
+    }
+ 
 }
-
 `;
 
 export default OwnStyles;

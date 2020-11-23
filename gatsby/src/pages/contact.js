@@ -13,46 +13,75 @@ export default function ContactPage({ data }) {
   const { values, updateValue } = useForm({
     name: '',
     email: '',
+    textmessage: '',
   });
-  const { estimate, addToEstimate, removeFromEstimate } = useService({
-    data,
+  const {
+    estimate,
+    addToEstimate,
+    removeFromEstimate,
+    error,
+    loading,
+    message,
+    submitContactform,
+  } = useService({
+    categories: data.categories.nodes,
     inputs: values,
   });
+
   const categories = data.categories.nodes;
-  console.log(categories);
+
   return (
-    <div>
+    <div className="page page-contact">
+      <h1>Want to start a new project?</h1>
       <SEO title="Get in contact" />
-      <form>
-        <fieldset>
+      <form className="form" onSubmit={submitContactform}>
+        <fieldset disabled={loading}>
           <legend>Your Info</legend>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={values.name}
-            onChange={updateValue}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            value={values.email}
-            onChange={updateValue}
-          />
+          <div className="grid grid--lg estimate">
+            <div className="grid-item ">
+              <div className="form__container">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={values.name}
+                  onChange={updateValue}
+                />
+              </div>
+              <div className="form__container">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  value={values.email}
+                  onChange={updateValue}
+                />
+              </div>
+            </div>
+            <div className="grid-item">
+              <div className="form__container">
+                <textarea
+                  name="textmessage"
+                  id="textmessage"
+                  placeholder="...leave me a message"
+                  value={values.textmessage}
+                  onChange={updateValue}
+                />
+              </div>
+            </div>
+          </div>
         </fieldset>
-        <div className="grid grid--lg">
-          <fieldset className="grid--item">
-            <legend>Topics</legend>
+        <div className="grid grid--lg estimate">
+          <fieldset className="grid--item" disabled={loading}>
+            <legend>You Are Interested In...</legend>
             <div>
               {categories.map((category, index) => (
-                <div className="order__service-items " key={index}>
-                  <div className="row row--gutters row--aligncenter service__single">
+                <div className="estimate__service-items " key={index}>
+                  <div className="row ">
                     <div className="service__icon cell" />
                     <div className="service__heading cell">
-                      <h3 className={category.colour}>Name: {category.name}</h3>
                       {category.relatedCategories.map((item, i) => (
                         <div className="cell" key={i}>
                           <button
@@ -70,22 +99,22 @@ export default function ContactPage({ data }) {
               ))}
             </div>
           </fieldset>
-
-          <fieldset className="estimate__calculation grid--item">
-            <legend>Estimate</legend>
-            <Estimate
-              key={estimate.id}
-              estimate={estimate}
-              removeFromEstimate={removeFromEstimate}
-              categories={categories}
-            />
-          </fieldset>
-          <fieldset className="estimate__calculation grid--item">
-            <legend>
-              Yout total is {calculateServiceTotal(estimate, categories)}
-            </legend>
-            <h3>Your total is _______</h3>
-          </fieldset>
+          <div className="grid--item">
+            <fieldset className="estimate__calculation " disabled={loading}>
+              <legend>Your Wishlist</legend>
+              <Estimate
+                key={estimate.id}
+                estimate={estimate}
+                removeFromEstimate={removeFromEstimate}
+                categories={categories}
+              />
+            </fieldset>
+            {error ? <p> {error} </p> : ''}
+            {message ? <p> {message} </p> : ''}
+            <button type="submit" disabled={loading}>
+              {loading ? 'Send your request ...' : 'Send my request'}
+            </button>
+          </div>
         </div>
       </form>
     </div>
