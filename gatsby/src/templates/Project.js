@@ -9,8 +9,8 @@ export default function SingleProjectPage({ data: { project } }) {
     <>
       <SEO title={project.title} image={project.mainImage?.asset?.fluid?.src} />
       <div className="project">
-        <div className="grid">
-          <div className="grid__item">
+        <div className="grid grid--lg">
+          <div className="grid__item ">
             <div className="post__image">
               <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
             </div>

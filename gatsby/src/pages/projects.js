@@ -9,7 +9,8 @@ export default function ProjectsPage({ data, pageContext }) {
   console.log(pageContext);
   const projects = data.projects.nodes;
   return (
-    <>
+    <div className="page page-projects">
+      <h1>I enjoyed working on it!</h1>
       <SEO
         title={
           pageContext.categoryName
@@ -17,21 +18,23 @@ export default function ProjectsPage({ data, pageContext }) {
             : `All Projects`
         }
       />
-      <Pagination
-        pageSize={pageContext.pageSize}
-        totalCount={pageContext.totalCount}
-        currentPage={pageContext.currentPage || ''}
-        skip={pageContext.skip}
-        base="/projects"
-        categorySlug={pageContext.categorySlug}
-        categoryRegexName={pageContext.categoryRegexName}
-      />
-      <CategoriesFilter
-        activeCategory={pageContext.categorySlug}
-        currentPage={pageContext.currentPage}
-      />
-      <ProjectList projects={projects} />
-    </>
+      <div className="page-projects --has-no-first-grid">
+        <CategoriesFilter
+          activeCategory={pageContext.categorySlug}
+          currentPage={pageContext.currentPage}
+        />
+        <Pagination
+          pageSize={pageContext.pageSize}
+          totalCount={pageContext.totalCount}
+          currentPage={pageContext.currentPage || ''}
+          skip={pageContext.skip}
+          base="/projects"
+          categorySlug={pageContext.categorySlug}
+          categoryRegexName={pageContext.categoryRegexName}
+        />
+        <ProjectList projects={projects} />
+      </div>
+    </div>
   );
 }
 
@@ -50,6 +53,9 @@ export const query = graphql`
       nodes {
         id
         title
+        slug {
+          current
+        }
         mainImage {
           asset {
             fluid(maxWidth: 400) {
@@ -107,9 +113,13 @@ export const query = graphql`
           _key
           _type
           _rawClassification
+
           classification {
             id
             name
+            slug {
+              current
+            }
             image {
               _key
               _type

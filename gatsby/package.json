@@ -1,7 +1,7 @@
 {
   "name": "swestphal",
   "private": true,
-  "description": "swestphal made with gatsby",
+  "description": "swestphal.io",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -23,6 +23,7 @@
     }
   },
   "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.7",
     "babel-plugin-styled-components": "^1.11.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.24.91",
@@ -37,8 +38,9 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
+    "react-icons": "^3.11.0",
     "styled-components": "^5.2.0",
-    "react-icons": "^3.11.0"
+    "wil-react-sticky": "^1.0.5"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

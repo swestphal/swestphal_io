@@ -11,7 +11,8 @@ export default function AboutPage({ data, pageContext }) {
   const categories = data.categories.nodes;
 
   return (
-    <div className="index">
+    <div className="page page-index ">
+      <h1>Custom WebDevelopment</h1>
       <div className="grid grid--lg">
         <AboutSingle about={about} />
         <ServiceList categories={categories} />
@@ -25,13 +26,7 @@ export const query = graphql`
     about: allSanityCompanyInfo {
       nodes {
         id
-        aboutBody {
-          _key
-          _type
-          style
-          list
-          _rawChildren
-        }
+        _rawAboutBody
         aboutTitle
         aboutMainImage {
           asset {
@@ -48,11 +43,14 @@ export const query = graphql`
         }
       }
     }
-    categories: allSanityCategory(sort: { fields: index, order: ASC }) {
+    categories: allSanityCategory(
+      sort: { fields: index, order: ASC }
+      filter: { isTab: { eq: true } }
+    ) {
       nodes {
         name
         id
-        _rawBody
+        _rawExcerpt
         colour
         image {
           asset {

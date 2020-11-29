@@ -89,16 +89,15 @@ ul li {
 }
 
 
-
-
-
 /*-------------------------------------------------------*/
 /* 2. Grid / Grid-System
 /*-------------------------------------------------------*/
 
 
 .grid {
-    max-width: calc(100vw - 14em);
+    @media(min-width:960px) {
+        max-width: calc(100vw - 13em);
+    }
     display: grid;
     grid-auto-flow: dense;
     grid-gap: 2em;
@@ -313,7 +312,7 @@ h3,h4{
     
 #content {
    min-height:100vh;
-   margin-left: 14em;
+   margin-left: 13em;
    padding: 0 1em 0 2em;
    background-color:white;
    background: white,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
@@ -342,7 +341,7 @@ h3,h4{
 
 #sidebar {
     display: block;
-    width: 14em;
+    width: 13em;
     float: left;
     height:100vh;
     background: black;
@@ -483,7 +482,8 @@ ul.menu:before {
     }
 
 
-ul.menu > li a[aria-current="page"] {
+ul.menu > li a[aria-current="page"],
+ ul.menu > li a.active{
     background: #ffed27;
     color:black;
     border-right: 0;
@@ -498,7 +498,8 @@ ul.menu > li:hover>a{
 }
 
 
-ul.menu > li a[aria-current='page']:after {    
+ul.menu > li a[aria-current='page']:after,
+ ul.menu > li a.active:after{    
  content: "";
     position: absolute;
     width: 1.4em;
@@ -694,16 +695,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             margin-top:0;
         }
         
-        &__icon {
-            display:block;
-            filter: grayscale(100%);
-        }
-        &__single:hover {
-            .service__icon{
-                filter:grayscale(0);
-           }
-          
-        }
+       
     }
     
 }
@@ -734,7 +726,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     gap: 1rem;
     margin-bottom: 2em;
  
-    .badge {
+    
+}
+.badge {
         display: grid;
         grid-template-columns: auto 1fr;
         grid-gap: 0 1rem;
@@ -744,6 +738,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         text-decoration: none;
         font-family:'jura';
         color:black; 
+        min-height:2.3em;
     }
     .badge {
         border:1px solid white;
@@ -752,9 +747,11 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
         background-color: #ececec;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
        
-        &.active{
+        &.badge--active{
             border-color:black;
-            color:white
+            .badge__name {
+                color:white;
+            }
              .badge__count {
                 color:black;
                 }
@@ -811,7 +808,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
           color:black;
         }
     } 
-}
 /*-------------------------------------------------------*/
 /* 11.  pagination
 /*-------------------------------------------------------*/
@@ -897,8 +893,25 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     fieldset{
         margin-bottom:2em;
     }
- 
+    button.disabled {
+        opacity:.3;
+    }
 }
+
+.tab {
+    &__nav {
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+    &__container {
+        padding: 1em 1.5em 0 1em;
+    }
+}
+
+
 `;
 
 export default OwnStyles;

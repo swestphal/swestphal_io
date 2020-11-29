@@ -4,6 +4,5 @@ sanity/sample-data
 sanity/node_modules
 gatsby/public/
 gatsby/.env
-gatsby
 generals
 theme

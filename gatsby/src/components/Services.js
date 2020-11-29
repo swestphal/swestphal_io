@@ -1,20 +1,26 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
+import BlockContent from '@sanity/block-content-to-react';
 
 function SingleService({ category }) {
   return (
     <li>
-      <div className="row row--gutters row--aligncenter service__single">
+      <div className="row row--gutters  service__single">
         <div className="service__icon cell">
-          <Img fixed={category.image.asset.fixed} alt="About me" />
+          {category.image !== null ? (
+            <Img fixed={category.image.asset.fixed} alt="About me" />
+          ) : (
+            ''
+          )}
         </div>
         <div className="row">
-          <div className="service__heading cell">
-            <h3 className={category.colour}>{category.name}</h3>
-          </div>
+          <h3 className={`service__heading cell h4 ${category.colour}`}>
+            {category.name}
+          </h3>
+
           <div className="service__content cell">
-            <p>{category._rawBody[0].children[0].text}</p>
+            <BlockContent blocks={category._rawExcerpt} />
           </div>
         </div>
       </div>
@@ -23,14 +29,17 @@ function SingleService({ category }) {
 }
 
 export default function ServiceList({ categories }) {
-  console.log(categories);
   return (
     <div className="grid__item ">
       <div className="section service">
         <ul>
-          {categories.map((category) => (
-            <SingleService key={category.id} category={category} />
-          ))}
+          {categories.map((category) =>
+            category.image !== null ? (
+              <SingleService key={category.id} category={category} />
+            ) : (
+              ''
+            )
+          )}
         </ul>
       </div>
     </div>

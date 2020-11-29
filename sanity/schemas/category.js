@@ -26,6 +26,16 @@ export default {
       type: 'number',
     },
     {
+      name: 'isTab',
+      title: 'Show in Tab',
+      type: 'boolean',
+    },
+    {
+      name: 'isOnFront',
+      title: 'Show on frontpage',
+      type: 'boolean',
+    },
+    {
       name: 'colour',
       title: 'Colour',
       type: 'string',
@@ -38,13 +48,18 @@ export default {
         hotspot: true,
       },
     },
-
+    {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'blockText',
+    },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     },
   ],
+
   preview: {
     select: {
       title: 'name',

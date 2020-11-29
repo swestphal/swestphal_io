@@ -16,8 +16,12 @@ import Sticky from 'wil-react-sticky';
 import { StyledNav } from './Nav.styled';
 import Burger from './Burger';
 
-export default function Nav() {
+export default function Nav({ location }) {
   const [open, setOpen] = useState(false); // hidden when layout is rendered
+  console.log(location);
+  function isParentPage(path) {
+    if (location.pathname.includes(path)) return true;
+  }
   return (
     <>
       <header id="sidebar">
@@ -27,20 +31,17 @@ export default function Nav() {
         >
           <div id="sidebar__inner">
             <div className="sidebar__logo">
-              <Link to="index-2.html">
-                <Img alt="" src="images/logo.png" />
-              </Link>
+              <p>logo</p>
             </div>
 
-            <Link to="#" className="elemadded responsive-link">
-              <Burger open={open} setOpen={setOpen} />
-            </Link>
+            <Burger open={open} setOpen={setOpen} />
+
             <div className="sidebar__infos">
-              <Link to="#" className="link infos__icons--mail">
+              <Link to="/" className="link infos__icons--mail">
                 <AiFillMail />
                 hello@swestphal.io
               </Link>
-              <Link to="#" className="link infos__icons--phone">
+              <Link to="/" className="link infos__icons--phone">
                 <AiFillPhone />
                 +49 1234 678
               </Link>
@@ -53,22 +54,25 @@ export default function Nav() {
                   </Link>
                 </li>
                 <li onClick={() => setOpen(!open)}>
-                  <Link to="/blog">
+                  <Link to="/blog/">
                     <span>Blog</span>
                   </Link>
                 </li>
                 <li onClick={() => setOpen(!open)}>
-                  <Link to="/services">
+                  <Link to="/services/">
                     <span>Services</span>
                   </Link>
                 </li>
                 <li onClick={() => setOpen(!open)}>
-                  <Link to="/projects">
+                  <Link
+                    to="/projects/"
+                    className={isParentPage('projects') ? 'active' : ''}
+                  >
                     <span>Projects</span>
                   </Link>
                 </li>
                 <li onClick={() => setOpen(!open)}>
-                  <Link to="/contact">
+                  <Link to="/contact/">
                     <span>Contact</span>
                   </Link>
                 </li>

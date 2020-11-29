@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { masonry } from '../assets/js/masonry';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { AiOutlineFolder } from 'react-icons/ai';
+import { masonry } from '../assets/js/masonry';
 
 function SinglePost({ post }) {
-  let image = post.mainImage;
+  const image = post.mainImage;
 
   return (
     <div className="fmasonry-cell">
-      <div className="card post post--project">
-        <div className="post__inner row row--space">
+      <div className="card post ">
+        <div className="post__inner ">
           <Link to="/single-post">
             {image ? (
               <div className="post__image">
@@ -30,15 +30,13 @@ function SinglePost({ post }) {
             <h2>
               <Link to="/single-post">{post.title}</Link>
             </h2>
-            <p></p>
-
             <ul className="post__meta">
               <li>
                 <Link to="#" className="listgroup">
                   <span className="listgroup__icon">
                     <AiOutlineFolder />
                   </span>
-                  <span className="listgroup__content"></span>
+                  <span className="listgroup__content" />
                 </Link>
               </li>
             </ul>

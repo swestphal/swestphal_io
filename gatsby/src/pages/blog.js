@@ -6,16 +6,12 @@ import CategoriesFilter from '../components/CategoriesFilter';
 import ProjectList from '../components/Projects';
 
 export default function BlogPage({ data, pageContext }) {
-  console.log('data');
-  console.log(data);
-  console.log('pageContext');
-  console.log(pageContext);
   const posts = data.posts.nodes;
   return (
-    <>
-      <h1>Blog</h1>
+    <div className="page page-blog">
+      <h1>I was thinking about...</h1>
       <Blog posts={posts} />
-    </>
+    </div>
   );
 }
 

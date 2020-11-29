@@ -8,13 +8,13 @@ import Typography from '../styles/Typography';
 
 import OwnStyles from '../styles/OwnStyles';
 
-export default function Layout({ children }) {
+export default function Layout({ children, location }) {
   return (
     <>
       <OwnStyles />
       <Typography />
       <div id="container">
-        <Nav />
+        <Nav location={location} />
         <Contentarea content={children} />
       </div>
       <Footer />

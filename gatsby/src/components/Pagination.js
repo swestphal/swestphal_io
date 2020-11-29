@@ -11,10 +11,11 @@ export default function Pagination({
   categoryName,
   categoryRegexName,
 }) {
+  console.log(`->>>>>>> ${totalCount}`);
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
-  const hasNextPage = nextPage <= totalCount;
+  const hasNextPage = nextPage <= totalPages;
   const hasPrevPage = prevPage > 0;
   const categoryPath = categoryName !== 'All' ? `${categorySlug}` : ``;
 
@@ -33,7 +34,7 @@ export default function Pagination({
           </Link>
         </li>
 
-        {Array.from({ length: totalCount }).map((_, i) => (
+        {Array.from({ length: totalPages }).map((_, i) => (
           <li>
             <Link
               className={currentPage === 1 && i === 0 ? 'active' : ''}

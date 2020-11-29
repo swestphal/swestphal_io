@@ -29,7 +29,7 @@ function countProjectsInCategories(projects) {
     name: '',
     colour: 'none',
     slug: '',
-    count: 3,
+    count: projects.length,
   };
   // sort them based on their count
   const sortedCategories = Object.values(counts).sort(
@@ -91,7 +91,8 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
 
   // get count of pages of that category
   const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
-
+  console.log('-------------');
+  console.log(pageSize);
   const categoriesWithCounts = countProjectsInCategories(data.projects.nodes);
   categoriesWithCounts.forEach((category) => {
     const pageCount = Math.ceil(category.count / pageSize);
@@ -103,9 +104,6 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
       if (i === 0) numSlug = '';
       const slug = rootSlug + catSlug + numSlug;
       const catName = category.name;
-      console.log(category);
-      console.log(catName);
-      console.log(slug);
 
       actions.createPage({
         path: `${slug}`,

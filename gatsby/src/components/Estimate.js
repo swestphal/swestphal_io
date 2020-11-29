@@ -18,7 +18,7 @@ export default function Estimate({ estimate, categories, removeFromEstimate }) {
                   <button
                     type="button"
                     className="remove"
-                    title="Remove  from estimate"
+                    title="Remove from wishlist"
                     onClick={() => removeFromEstimate(index)}
                   >
                     &times;

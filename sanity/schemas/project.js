@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'index',
+      title: 'Index',
+      type: 'number',
+    },
+    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -66,6 +71,13 @@ export default {
       title: 'Related projects',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }],
+    },
+  ],
+  orderings: [
+    {
+      title: 'Order ascending',
+      name: 'indexAsc',
+      by: [{ field: 'index', direction: 'asc' }],
     },
   ],
   preview: {

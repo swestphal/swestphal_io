@@ -11,30 +11,28 @@ const ProjectStyles = styled.div``;
 function SingleProject({ project }) {
   return (
     <div className="grid__item">
-      <div className="card post post--project ">
-        <div className="post__inner row row--space">
-          <Link to="/single-post">
+      <div className="card post ">
+        <div className="post__inner ">
+          <Link to={`/${project.slug.current}`} className="post__image-wrapper">
             <div className="post__image">
               <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
             </div>
           </Link>
           <div className="post__content">
-            <h2>
-              <Link to="/single-post">{project.title}</Link>
-            </h2>
+            <h3>
+              <Link to={`/${project.slug.current}`}>{project.title}</Link>
+            </h3>
             <p>{project.excerpt}</p>
 
             <ul className="post__meta">
               <li>
-                <Link to="#" className="listgroup">
-                  <span className="listgroup__icon">
-                    <AiOutlineFolder />
-                  </span>
-                  <span className="listgroup__content">
-                    <p>{project.relatedCategories[0].classification.name}</p>
-                    <p>{project.relatedCategories[0].skills.join(', ')}</p>
-                  </span>
-                </Link>
+                <span className="listgroup__content">
+                  {project.relatedCategories.map((cat, _) => (
+                    <Link to={`/projects/${cat.classification.slug.current}`}>
+                      {cat.classification.name}
+                    </Link>
+                  ))}
+                </span>
               </li>
             </ul>
           </div>

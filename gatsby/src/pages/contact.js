@@ -11,9 +11,9 @@ import calculateServiceTotal from '../utils/calculateServiceTotal';
 
 export default function ContactPage({ data }) {
   const { values, updateValue } = useForm({
-    name: '',
-    email: '',
-    textmessage: '',
+    name: false,
+    email: false,
+    textmessage: false,
   });
   const {
     estimate,
@@ -23,6 +23,7 @@ export default function ContactPage({ data }) {
     loading,
     message,
     submitContactform,
+    virtualCats,
   } = useService({
     categories: data.categories.nodes,
     inputs: values,
@@ -85,6 +86,9 @@ export default function ContactPage({ data }) {
                       {category.relatedCategories.map((item, i) => (
                         <div className="cell" key={i}>
                           <button
+                            className={
+                              virtualCats[i].isActive ? 'disabled' : ''
+                            }
                             key={i}
                             type="button"
                             onClick={() => addToEstimate({ id: item._key })}

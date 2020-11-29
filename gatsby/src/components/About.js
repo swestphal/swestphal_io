@@ -1,7 +1,9 @@
 import React from 'react';
 import Img from 'gatsby-image';
+import BlockContent from '@sanity/block-content-to-react';
 
 export function AboutSingle({ about }) {
+  console.log(about.aboutBody);
   return (
     <div className="grid__item ">
       <div className="section section__about">
@@ -12,7 +14,7 @@ export function AboutSingle({ about }) {
 
           <div className="cell no-flex section__content">
             <h2>{about.aboutTitle}</h2>
-            <p>{about.aboutBody[0]._rawChildren[0].text}</p>
+            <BlockContent blocks={about._rawAboutBody} />
           </div>
         </div>
       </div>
