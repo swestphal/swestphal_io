@@ -11,7 +11,7 @@ export default function Pagination({
   categoryName,
   categoryRegexName,
 }) {
-  console.log(`->>>>>>> ${totalCount}`);
+  console.log(totalCount);
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;

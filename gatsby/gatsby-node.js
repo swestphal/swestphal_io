@@ -26,10 +26,10 @@ function countProjectsInCategories(projects) {
     }, {});
   counts[0] = {
     id: 0,
-    name: '',
+    name: 'All',
     colour: 'none',
     slug: '',
-    count: projects.length,
+    count: 20,
   };
   // sort them based on their count
   const sortedCategories = Object.values(counts).sort(
@@ -91,33 +91,46 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
 
   // get count of pages of that category
   const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
-  console.log('-------------');
-  console.log(pageSize);
   const categoriesWithCounts = countProjectsInCategories(data.projects.nodes);
   categoriesWithCounts.forEach((category) => {
     const pageCount = Math.ceil(category.count / pageSize);
     Array.from({ length: pageCount }).forEach((a, i) => {
       const rootSlug = 'projects';
-      let catSlug = `${category.slug}`;
-      if (category === 'All') catSlug = '';
+      const catSlug = `${category.slug}`;
       let numSlug = `/${i + 1}`;
       if (i === 0) numSlug = '';
       const slug = rootSlug + catSlug + numSlug;
       const catName = category.name;
 
-      actions.createPage({
-        path: `${slug}`,
-        component: categoryTemplate,
-        context: {
-          skip: i * pageSize,
-          currentPage: i + 1,
-          pageSize,
-          totalCount: category.count,
-          categoryRegexName: `/${catName}/i`,
-          categoryName: `${catName}`,
-          categorySlug: catSlug,
-        },
-      });
+      if (catName !== 'All') {
+        actions.createPage({
+          path: `${slug}`,
+          component: categoryTemplate,
+          context: {
+            skip: i * pageSize,
+            currentPage: i + 1,
+            pageSize,
+            totalCount: category.count,
+            categoryRegexName: `/${catName}/i`,
+            categoryName: `${catName}`,
+            categorySlug: catSlug,
+          },
+        });
+      } else {
+        actions.createPage({
+          path: `${rootSlug + numSlug}`,
+          component: categoryTemplate,
+          context: {
+            skip: i * pageSize,
+            currentPage: i + 1,
+            pageSize,
+            totalCount: 20,
+            categoryRegexName: ``,
+            categoryName: `${catName}`,
+            categorySlug: '',
+          },
+        });
+      }
     });
   });
   // 3. createPage for that category

@@ -3,7 +3,6 @@ import Img from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
 
 export function AboutSingle({ about }) {
-  console.log(about.aboutBody);
   return (
     <div className="grid__item ">
       <div className="section section__about">

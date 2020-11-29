@@ -27,8 +27,6 @@
       <change beforePath="$PROJECT_DIR$/gatsby/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-node.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/public/page-data/dev-404-page/page-data.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/About.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Blog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" afterDir="false" />
@@ -42,7 +40,6 @@
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/blog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/contact.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/utils/useService.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/utils/useService.js" afterDir="false" />
@@ -102,7 +99,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606231712066</updated>
       <workItem from="1606231714955" duration="19297000" />
-      <workItem from="1606558662274" duration="32943000" />
+      <workItem from="1606558662274" duration="37596000" />
     </task>
     <servers />
   </component>
