@@ -23,12 +23,5 @@ export default {
         token: process.env.SANITY_TOKEN,
       },
     },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: `${__dirname}/src/pages`,
-        ignore: ['projects.js'],
-      },
-    },
   ],
 };
