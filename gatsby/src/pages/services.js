@@ -8,17 +8,24 @@ const TabNavButton = styled.button`
   border-color: ${(props) => props.colour};
   &.badge--active {
     background: ${(props) => props.colour};
+    border-color: ${(props) => props.colour};
     + .tab__container {
+      margin-top: -7px;
       line-height: initial;
       padding: 1em 1.5em 0 1em;
       color: black;
       height: auto;
       transition: all 0.2s ease-in-out;
+      border: 2px solid ${(props) => props.colour};
     }
+  }
+  &.badge:hover {
+    background: ${(props) => props.colour};
+    color: white;
+    transition: all 0.2s ease-in-out;
   }
 `;
 const TabContainerStyles = styled.div`
-  border: 1px solid ${(props) => props.colour};
   @media (max-width: 1359px) {
     display: none;
   }

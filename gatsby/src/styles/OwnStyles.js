@@ -285,26 +285,7 @@ sub {
 
 
 
-h3,h4{
-    &.php {
-        color:#E48E00;
-    }
-    &.xd {
-        color:#f92dc0;
-    }
-    &.react {
-        color:#3CD7FC;
-    }
-    &.wp {
-        color:#22759A;
-    }
-    &.gatsby {
-        color:#6C4693;
-    }
-    &.javascript{
-        color:#FBC732;
-    }
-}
+
 
 /*-------------------------------------------------------*/
 /* 6. Page Layout (Sidebar & Content)
@@ -766,42 +747,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
             
             }
         }
-        &.php {
-            border-color:#E48E00;
-            &.active  {
-                background:#E48E00;
-            }
-        }
-        &.xd {
-            border-color:#f92dc0;
-             &.active  {
-                background:#f92dc0;
-            }
-        }
-        &.react {
-            border-color:#3CD7FC;
-             &.active {
-                background:#3CD7FC;
-            }
-        }
-        &.wp {
-            border-color:#22759A;
-            &.active  {
-                background:#22759A;
-            }
-        }
-        &.gatsby {
-            border-color:#6C4693;
-             &.active  {
-                background: #6C4693;
-            }
-        }
-        &.javascript{
-            border-color:#FBC732;
-             &.active  {
-                background:#FBC732;
-            }
-        }
+        
         .badge__count {
           background: white;
           padding: .25em .5em;

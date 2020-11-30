@@ -23,6 +23,7 @@ export default function ProjectsPage({ data, pageContext }) {
           activeCategory={pageContext.categorySlug}
           currentPage={pageContext.currentPage}
         />
+        <ProjectList projects={projects} />
         <Pagination
           pageSize={pageContext.pageSize}
           totalCount={pageContext.totalCount}
@@ -32,7 +33,6 @@ export default function ProjectsPage({ data, pageContext }) {
           categorySlug={pageContext.categorySlug}
           categoryRegexName={pageContext.categoryRegexName}
         />
-        <ProjectList projects={projects} />
       </div>
     </div>
   );

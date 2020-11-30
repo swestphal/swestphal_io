@@ -2,10 +2,16 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
+import styled from 'styled-components';
 
+const StyledServiceItem = styled.li`
+  .service__heading {
+    color: ${(props) => props.colour};
+  }
+`;
 function SingleService({ category }) {
   return (
-    <li>
+    <StyledServiceItem colour={category.colour}>
       <div className="row row--gutters  service__single">
         <div className="service__icon cell">
           {category.image !== null ? (
@@ -15,16 +21,14 @@ function SingleService({ category }) {
           )}
         </div>
         <div className="row">
-          <h3 className={`service__heading cell h4 ${category.colour}`}>
-            {category.name}
-          </h3>
+          <h3 className="service__heading cell h4">{category.name}</h3>
 
           <div className="service__content cell">
             <BlockContent blocks={category._rawExcerpt} />
           </div>
         </div>
       </div>
-    </li>
+    </StyledServiceItem>
   );
 }
 
