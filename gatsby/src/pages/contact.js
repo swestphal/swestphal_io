@@ -1,6 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import calculateServicePrice from '../utils/calculateServicePrice';
@@ -8,6 +9,11 @@ import formatMoney from '../utils/formatMoney';
 import useService from '../utils/useService';
 import Estimate from '../components/Estimate';
 import calculateServiceTotal from '../utils/calculateServiceTotal';
+
+const StyledEstimateButton = styled.button`
+  border: 1px solid ${(props) => props.colour};
+  border-left: 5px solid ${(props) => props.colour};
+`;
 
 export default function ContactPage({ data }) {
   const { values, updateValue } = useForm({
@@ -77,31 +83,29 @@ export default function ContactPage({ data }) {
         <div className="grid grid--lg estimate">
           <fieldset className="grid--item" disabled={loading}>
             <legend>You Are Interested In...</legend>
-            <div>
-              {categories.map((category, index) => (
-                <div className="estimate__service-items " key={index}>
-                  <div className="row ">
-                    <div className="service__icon cell" />
-                    <div className="service__heading cell">
-                      {category.relatedCategories.map((item, i) => (
-                        <div className="cell" key={i}>
-                          <button
-                            className={
-                              virtualCats[i].isActive ? 'disabled' : ''
-                            }
-                            key={i}
-                            type="button"
-                            onClick={() => addToEstimate({ id: item._key })}
-                          >
-                            <h4>{item.name}</h4>
-                          </button>
-                        </div>
-                      ))}
-                    </div>
+
+            {categories.map((category, index) => (
+              <div className="estimate__service-items " key={index}>
+                <div className="row ">
+                  <div className="service__icon cell" />
+                  <div className="service__heading cell">
+                    {category.relatedCategories.map((item, i) => (
+                      <div className="cell" key={i}>
+                        <StyledEstimateButton
+                          colour={item.colour}
+                          className={virtualCats[i].isActive ? 'disabled' : ''}
+                          key={i}
+                          type="button"
+                          onClick={() => addToEstimate({ id: item._key })}
+                        >
+                          <h4>{item.name}</h4>
+                        </StyledEstimateButton>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </fieldset>
           <div className="grid--item">
             <fieldset className="estimate__calculation " disabled={loading}>
@@ -132,6 +136,7 @@ export const query = graphql`
         name
         _key
         relatedCategories {
+          colour
           price
           name
           _key

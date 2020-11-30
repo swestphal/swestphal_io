@@ -29,6 +29,11 @@ export default {
       type: 'blockText',
     },
     {
+      name: 'colour',
+      title: 'Colour',
+      type: 'string',
+    },
+    {
       name: 'price',
       title: 'Price',
       type: 'number',

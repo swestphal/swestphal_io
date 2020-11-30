@@ -6,7 +6,6 @@ import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';
 
 export default function ProjectsPage({ data, pageContext }) {
-  console.log(pageContext);
   const projects = data.projects.nodes;
   return (
     <div className="page page-projects">

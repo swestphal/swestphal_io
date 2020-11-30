@@ -1,5 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
+const StyledEstimateItem = styled.div`
+  p {
+    color: ${(props) => props.colour};
+  }
+`;
 export default function Estimate({ estimate, categories, removeFromEstimate }) {
   return (
     <>
@@ -13,7 +19,11 @@ export default function Estimate({ estimate, categories, removeFromEstimate }) {
 
             if (category !== undefined)
               return (
-                <div className="estimate__item" key={singleEstimate.id}>
+                <StyledEstimateItem
+                  colour={category.colour}
+                  className="estimate__item"
+                  key={singleEstimate.id}
+                >
                   <p>{category.name}</p>
                   <button
                     type="button"
@@ -23,7 +33,7 @@ export default function Estimate({ estimate, categories, removeFromEstimate }) {
                   >
                     &times;
                   </button>
-                </div>
+                </StyledEstimateItem>
               );
           })}
         </div>

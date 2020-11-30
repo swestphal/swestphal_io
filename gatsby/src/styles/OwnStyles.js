@@ -37,7 +37,9 @@ body.active {
   box-sizing: border-box;
 }
 
-
+button {
+border:none;
+}
 
 ul {
     padding: 0;

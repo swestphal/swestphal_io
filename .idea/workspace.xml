@@ -24,7 +24,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-node.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/About.js" afterDir="false" />
@@ -47,6 +46,8 @@
       <change beforePath="$PROJECT_DIR$/gatsby/src/utils/useService.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/utils/useService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/category.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/classification.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/classification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/estimate.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/estimate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/estimateCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/estimateCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/project.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606231712066</updated>
       <workItem from="1606231714955" duration="19297000" />
-      <workItem from="1606558662274" duration="43712000" />
+      <workItem from="1606558662274" duration="46018000" />
     </task>
     <servers />
   </component>
