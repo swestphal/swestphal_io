@@ -30,6 +30,7 @@
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Blog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Estimate.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Estimate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/EstimateContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/EstimateContext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" afterDir="false" />
@@ -37,13 +38,11 @@
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/SEO.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/SEO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/contact.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/utils/useService.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/utils/useService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/category.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/classification.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/classification.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/estimate.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/estimate.js" afterDir="false" />
@@ -71,7 +70,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gatsby/src/pages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gatsby/src/components" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
@@ -87,6 +86,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gatsby/src/components" />
       <recent name="$PROJECT_DIR$/gatsby/src/pages" />
     </key>
   </component>
@@ -102,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606231712066</updated>
       <workItem from="1606231714955" duration="19297000" />
-      <workItem from="1606558662274" duration="51464000" />
+      <workItem from="1606558662274" duration="54130000" />
     </task>
     <servers />
   </component>
@@ -146,10 +146,10 @@
     </state>
     <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606590573434" />
     <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606636069466" />
-    <state x="671" y="409" width="586" height="490" key="find.popup" timestamp="1606926640073">
+    <state x="671" y="409" width="586" height="490" key="find.popup" timestamp="1606928490646">
       <screen x="0" y="23" width="1920" height="1015" />
     </state>
-    <state x="671" y="409" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606926640073" />
+    <state x="671" y="409" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606928490646" />
     <state x="671" y="409" width="586" height="548" key="find.popup/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606652454356" />
   </component>
 </project>

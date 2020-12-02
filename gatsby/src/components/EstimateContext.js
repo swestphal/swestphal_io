@@ -9,7 +9,8 @@ export function EstimateProvider({ children }) {
   const [estimate, setEstimate] = useState([]);
   return (
     <EstimateContext.Provider value={[estimate, setEstimate]}>
-      {children}
+
+        {children}
     </EstimateContext.Provider>
   );
 }
