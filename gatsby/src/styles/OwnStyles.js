@@ -335,10 +335,11 @@ sub {
     position: relative;
 }
 
-@media(max-width:900px) {
+@media(max-width:979px) {
     #sidebar {
         height:auto;
         width:100%;
+        
     }
     
     #content {
@@ -382,7 +383,10 @@ sub {
 
 
 .page {
-    padding:2em 0 3em;
+ padding:9em 0 3em;
+    @media(min-width:980px) {
+        padding:2em 0 3em;
+    }
 }
 
 .page-projects {
@@ -552,8 +556,9 @@ ul.drop-down li a:hover {
 /*-------------------------------------------------*/
 
 .sidebar__menu {
-    padding-top:4rem;
-   
+    @media(max-width:979px) {
+        margin-top  1em;
+    }
 }
 .sidebar__social {
    margin:  2rem 24px 2rem 0;    
@@ -594,7 +599,18 @@ ul.drop-down li a:hover {
         top: 5px;
         left:-10px;
     }
-    
+    @media(max-width:979px) {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-end;
+        margin-bottom:0;
+        a+a {
+            margin-left:2em;
+        }
+        .infos__copyright{
+         display:none;
+         }
+    } 
 }
 
 

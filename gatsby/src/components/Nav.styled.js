@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
-  @media (max-width: 980px) {
+  @media (max-width: 979px) {
     &:after {
       content: '';
-      background: blue;
       width: calc(100vw + 2em);
       height: inherit;
       display: block;

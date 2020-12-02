@@ -12,6 +12,10 @@ import {
   AiFillCopyrightCircle,
 } from 'react-icons/ai';
 import Sticky from 'wil-react-sticky';
+// import Logo from '../assets/images/simonewestphal.png';
+//  <div className="sidebar__logo">
+//               <img src={Logo} alt="Logo" />
+//             </div>
 
 import { StyledNav } from './Nav.styled';
 import Burger from './Burger';
@@ -29,10 +33,6 @@ export default function Nav({ location }) {
           stickyEnableRange={[756, Infinity]}
         >
           <div id="sidebar__inner">
-            <div className="sidebar__logo">
-              <p>&nbsp;</p>
-            </div>
-
             <Burger open={open} setOpen={setOpen} />
 
             <div className="sidebar__infos">
