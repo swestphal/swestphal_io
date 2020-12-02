@@ -18,7 +18,6 @@ import Burger from './Burger';
 
 export default function Nav({ location }) {
   const [open, setOpen] = useState(false); // hidden when layout is rendered
-  console.log(location);
   function isParentPage(path) {
     if (location.pathname.includes(path)) return true;
   }
@@ -31,7 +30,7 @@ export default function Nav({ location }) {
         >
           <div id="sidebar__inner">
             <div className="sidebar__logo">
-              <p>logo</p>
+              <p>&nbsp;</p>
             </div>
 
             <Burger open={open} setOpen={setOpen} />

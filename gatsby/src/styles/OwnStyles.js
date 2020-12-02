@@ -21,6 +21,8 @@ const OwnStyles = createGlobalStyle`
 
 html{
     height:100%;
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -579,8 +581,7 @@ ul.drop-down li a:hover {
     .infos__copyright {
         padding-top:1rem;
         font-size:14px;
-        position:absolute;
-    
+      
         bottom:0;
         right: 3em;
     

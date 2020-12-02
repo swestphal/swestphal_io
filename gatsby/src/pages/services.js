@@ -26,13 +26,15 @@ const TabNavButton = styled.button`
   }
 `;
 const TabContainerStyles = styled.div`
+  border: 2px solid ${(props) => props.colour};
+  position: relative;
+  top: -1px;
   @media (max-width: 1359px) {
     display: none;
   }
 `;
 
 const TabAccordionStyles = styled.div`
-  border: 1px solid ${(props) => props.colour};
   overflow: hidden;
   transition: all 0.1s ease-in-out;
   line-height: 0;
@@ -40,6 +42,7 @@ const TabAccordionStyles = styled.div`
   height: 0;
   padding: 0;
   @media (min-width: 1360px) {
+    border: 2px solid ${(props) => props.colour};
     display: none;
   }
 `;
@@ -64,7 +67,10 @@ export default function ServicesPage({ data, pageContext }) {
               >
                 <span className="badge__name">{service.name}</span>
               </TabNavButton>
-              <TabAccordionStyles className="tab__container">
+              <TabAccordionStyles
+                className="tab__container"
+                colour={service.colour}
+              >
                 {services[value]._rawBody && (
                   <BlockContent blocks={services[value]._rawBody} />
                 )}
@@ -72,7 +78,10 @@ export default function ServicesPage({ data, pageContext }) {
             </>
           ))}
         </div>
-        <TabContainerStyles className="tab__container --hide-on-small">
+        <TabContainerStyles
+          className="tab__container --hide-on-small"
+          colour={services[value].colour}
+        >
           {services[value]._rawBody && (
             <BlockContent blocks={services[value]._rawBody} />
           )}

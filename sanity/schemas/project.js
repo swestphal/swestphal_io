@@ -67,6 +67,11 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'features',
+      title: 'Features',
+      type: 'blockContent',
+    },
+    {
       name: 'relatedProjects',
       title: 'Related projects',
       type: 'array',

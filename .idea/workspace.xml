@@ -102,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606231712066</updated>
       <workItem from="1606231714955" duration="19297000" />
-      <workItem from="1606558662274" duration="46018000" />
+      <workItem from="1606558662274" duration="51464000" />
     </task>
     <servers />
   </component>
@@ -146,10 +146,10 @@
     </state>
     <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606590573434" />
     <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606636069466" />
-    <state x="671" y="409" width="586" height="548" key="find.popup" timestamp="1606652454356">
+    <state x="671" y="409" width="586" height="490" key="find.popup" timestamp="1606926640073">
       <screen x="0" y="23" width="1920" height="1015" />
     </state>
-    <state x="671" y="409" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606583487882" />
+    <state x="671" y="409" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606926640073" />
     <state x="671" y="409" width="586" height="548" key="find.popup/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606652454356" />
   </component>
 </project>
