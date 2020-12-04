@@ -27,8 +27,11 @@ function SingleProject({ project }) {
             <ul className="post__meta">
               <li>
                 <span className="listgroup__content">
-                  {project.relatedCategories.map((cat, _) => (
-                    <Link to={`/projects/${cat.classification.slug.current}`}>
+                  {project.relatedCategories.map((cat, i) => (
+                    <Link
+                      to={`/projects/${cat.classification.slug.current}`}
+                      key={`'skill_'+${i}`}
+                    >
                       {cat.classification.name}
                     </Link>
                   ))}

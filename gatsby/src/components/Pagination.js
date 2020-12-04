@@ -25,7 +25,7 @@ export default function Pagination({
   return (
     <div className="pagination">
       <ul>
-        <li>
+        <li key="list_00">
           <Link
             disabled={!hasPrevPage}
             to={`${base}${categoryPath}/${linkToPrev}`}
@@ -35,7 +35,7 @@ export default function Pagination({
         </li>
 
         {Array.from({ length: totalPages }).map((_, i) => (
-          <li>
+          <li key={`'list_' + ${i}`}>
             <Link
               className={currentPage === 1 && i === 0 ? 'active' : ''}
               to={`${base}${categorySlug}/${i === 0 ? '' : i + 1}`}
