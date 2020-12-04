@@ -295,15 +295,6 @@ sub {
 /* 6. Page Layout (Sidebar & Content)
 /*-------------------------------------------------------*/
     
-#content {
-   min-height:100vh;
-   margin-left: 13em;
-   padding: 0 1em 0 2em;
-   background-color:white;
-   background: white,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
-       box-shadow:inset 7px -8px 14px -8px #000;
-   
-}
 
 #container {
     height: 100%;
@@ -342,14 +333,24 @@ sub {
         
     }
     
-    #content {
-        min-height:1px;
-        width:100%;
-        margin:0;
-    }
+    
    
 }
 
+    #content {
+        min-height:1px;
+        width:100%;
+        padding:0 1em; 
+        background-color:white;
+        @media(min-width:980px) {
+           min-height:100vh;
+           width:unset;
+           margin-left: 13em;
+           padding: 0 1em 0 2em;
+           background: white,url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAHElEQVQYV2N8+/btf2FhYUYGKIAzMARgKjFUAABjLQgFowVeaQAAAABJRU5ErkJggg==) repeat;
+           box-shadow:inset 7px -8px 14px -8px #000;
+    }
+}
 .burger {
     position: absolute;
     top: 5%;
