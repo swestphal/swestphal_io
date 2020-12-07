@@ -51,10 +51,17 @@ export default function useService({ categories, inputs }) {
   // make a function remove things from order
 
   function removeFromEstimate(index) {
+    let catIndex = 0;
+    for (let i = 0; i < virtualCats.length; i++) {
+      if (virtualCats[i]._key === estimate[index].id) {
+        catIndex = i;
+      }
+    }
+
     const copies = [...virtualCats]; // 1. Make a shallow copy of the items
-    const copy = copies[index]; // 2. Make a shallow copy of the item you want to mutate
+    const copy = copies[catIndex]; // 2. Make a shallow copy of the item you want to mutate
     copy.isActive = false; // 3. Replace the property you're intested in
-    copies[index] = copy; // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
+    copies[catIndex] = copy; // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
     // 5. Set the state to our new copy
     setVirtualCats(copies);
 
