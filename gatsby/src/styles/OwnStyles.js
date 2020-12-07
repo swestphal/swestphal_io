@@ -91,7 +91,9 @@ ul li {
     }
     
 }
-
+.--right {
+  text-align:right;
+}
 
 /*-------------------------------------------------------*/
 /* 2. Grid / Grid-System
@@ -867,6 +869,32 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     button.disabled {
         opacity:.3;
     }
+  button[type="submit"] {
+    background:#ffed27;
+    padding: 10px 33px 10px 26px;
+    position: relative;
+    transition:all .2s ease-in;
+   z-index: 1;
+    cursor:pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1.3em;
+      height: 1.3em;
+      background: #ffed27;
+      transform: rotate(45deg);
+      top: .26em;
+      right: .7em;
+      z-index: -1;
+      transition: all .2s ease;
+    }
+    &:hover {
+      top:-1px;
+      &:after {
+        right: -.7em;
+      }
+    }
+  }
 }
 
 .tab {
