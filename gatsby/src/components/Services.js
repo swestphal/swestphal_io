@@ -32,20 +32,25 @@ function SingleService({ category }) {
   );
 }
 
-export default function ServiceList({ categories }) {
+export default function ServiceList({ categories, about }) {
   return (
-    <div className="grid__item ">
-      <div className="section service">
-        <ul>
-          {categories.map((category) =>
-            category.image !== null ? (
-              <SingleService key={category.id} category={category} />
-            ) : (
-              ''
-            )
-          )}
-        </ul>
+    <>
+      <div className="grid__item--lg ">
+        <div className="section service">
+          <ul>
+            {categories.map((category) =>
+              category.image !== null ? (
+                <SingleService key={category.id} category={category} />
+              ) : (
+                ''
+              )
+            )}
+          </ul>
+        </div>
       </div>
-    </div>
+      <div className=" section__image grid__item--right">
+        <Img fixed={about.aboutMainImage.asset.fixed} alt="About me" />
+      </div>
+    </>
   );
 }

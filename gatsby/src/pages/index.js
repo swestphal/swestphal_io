@@ -14,8 +14,8 @@ export default function AboutPage({ data, pageContext }) {
     <div className="page page-index ">
       <h1>Custom WebDevelopment</h1>
       <div className="grid grid--lg">
+        <ServiceList categories={categories} about={about} />
         <AboutSingle about={about} />
-        <ServiceList categories={categories} />
       </div>
     </div>
   );

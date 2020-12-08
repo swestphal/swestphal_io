@@ -101,30 +101,29 @@ ul li {
 
 
 .grid {
-    @media(min-width:960px) {
-        max-width: calc(100vw - 13em);
+    @media(min-width:980px) {
+        //max-width: calc(100vw - 13em);
     }
     display: grid;
     grid-auto-flow: dense;
     grid-gap: 2em;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .grid--lg {
+  @media(min-width:980px) {
     grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(calc((100vw - 21em) / 3), 1fr));
     grid-auto-flow: dense;
-    @media(min-width:1200px){
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-flow: dense;
-    }
+  }
 }
 
 .grid--fill {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .grid--fit {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .grid__item {
@@ -142,7 +141,9 @@ ul li {
 .grid__item--db {
     grid-column: span 2;
 }
-
+.grid__item--full {
+  grid-column: span 3;
+}
 
 .row {
     display:flex;
@@ -583,10 +584,14 @@ ul.drop-down li a:hover {
 .sidebar__infos {
     margin:  0em 1.5em 2rem 0;
     a {
+       cursor:pointer;
         color:#d2d2d2;
         padding:8px 0;
         font-size:.75em;
         display:block;
+      &:hover {
+        color:#ffed27;
+      }
         &:before {
             content:none;
         }
@@ -615,7 +620,7 @@ ul.drop-down li a:hover {
         a+a {
             margin-left:2em;
         }
-        .infos__copyright{
+        .s__copyright{
          display:none;
          }
     } 
@@ -958,9 +963,39 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
       z-index: 99;
     }
   }
-  
 }
+.page-index .grid {
+  .grid__item--full {
+    grid-column:1/3;
+  }
+  @media(max-width:979px) {
+    .grid__item--lg,
+    .grid__item--full,
+    .grid__item--right {
+      grid-column: span 3;
+    }
 
+    .grid__item--right {
+      text-align: right;
+    }
+  }
+  @media(min-width:980px) and (max-width:1400px) {
+    .grid__item--lg {
+      order: 1;
+      grid-column: span 2;
+    }
+
+    .grid__item--right {
+      grid-column: 3 /  3;
+      order : 3;
+    }
+
+    .grid__item--full {
+      order: 2; 
+      grid-column: span 2;
+    }
+  }
+}
 `;
 
 export default OwnStyles;
