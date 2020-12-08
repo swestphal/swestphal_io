@@ -30,20 +30,23 @@ export default function Nav({ location }) {
       <header id="sidebar">
         <Sticky
           containerSelectorFocus="#container"
-          stickyEnableRange={[756, Infinity]}
+          stickyEnableRange={[980, Infinity]}
         >
           <div id="sidebar__inner">
             <Burger open={open} setOpen={setOpen} />
 
             <div className="sidebar__infos">
-              <Link to="/" className="link infos__icons--mail">
+              <a
+                href="mailto:hello@swestphal.io"
+                className="link infos__icons--mail"
+              >
                 <AiFillMail />
                 hello@swestphal.io
-              </Link>
-              <Link to="/" className="link infos__icons--phone">
+              </a>
+              <a href="tel:4935873159989" className="link infos__icons--phone">
                 <AiFillPhone />
-                +49 1234 678
-              </Link>
+                +49 35873 / 15 99 89
+              </a>
             </div>
             <StyledNav className="sidebar__menu" open={open}>
               <ul className="menu">
