@@ -19,9 +19,7 @@ function SingleProject({ project }) {
             </div>
           </Link>
           <div className="post__content">
-            <h3>
-              <Link to={`/${project.slug.current}`}>{project.title}</Link>
-            </h3>
+            <h3>{project.title}</h3>
             <p>{project.excerpt}</p>
 
             <ul className="post__meta">
