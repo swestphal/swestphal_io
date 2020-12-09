@@ -19,21 +19,17 @@ function SingleProject({ project }) {
             </div>
           </Link>
           <div className="post__content">
-            <h3>{project.title}</h3>
-            <p>{project.excerpt}</p>
-
+            <h4>{project.title}</h4>
             <ul className="post__meta">
               <li>
-                <span className="listgroup__content">
-                  {project.relatedCategories.map((cat, i) => (
-                    <Link
-                      to={`/projects/${cat.classification.slug.current}`}
-                      key={`'skill_'+${i}`}
-                    >
-                      {cat.classification.name}
-                    </Link>
-                  ))}
-                </span>
+                {project.relatedCategories.map((cat, i) => (
+                  <Link
+                    to={`/projects/${cat.classification.slug.current}`}
+                    key={`'skill_'+${i}`}
+                  >
+                    {cat.classification.name}
+                  </Link>
+                ))}
               </li>
             </ul>
           </div>

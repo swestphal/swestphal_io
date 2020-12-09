@@ -398,17 +398,6 @@ sub {
     }
 }
 
-.page-projects {
-    @media(min-width:480px) and (max-width:1158px){
-        .post__inner {
-            flex-direction:row;
-            .post__image-wrapper {
-                width:50%;
-            }
-            
-        }
-    }
-}
 
 /*-------------------------------------------------------*/
 /* 4. Sidebar with Nav
@@ -635,7 +624,7 @@ ul.drop-down li a:hover {
 /*-------------------------------------------------------*/   
    
 .card {
-  box-shadow: 0 10px 12px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  box-shadow: 0 5px 13px 5px rgba(36,50,66,.12);
 }
 
 
@@ -647,7 +636,7 @@ ul.drop-down li a:hover {
 .post {
     height:100%;
     background-color: #ececec;
-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
    
    
   
@@ -676,13 +665,29 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     }
     
     &__image {
+      cursor:default;
         overflow:hidden;
     }
     
     
     
     &__meta {
-        margin-bottom:0;
+      margin:.5em 0 0;
+        a{
+          cursor:pointer;
+            margin-left:0;
+            display:block;
+            font-size:.75em;
+            line-height:1.2em;
+            p {
+            margin:0;
+            color:gray;
+            &:first-of-type {
+              color:black;
+              font-weight:bold;
+            }
+        }
+        }
     }
  
     
@@ -961,6 +966,29 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     z-index: 99;
     button {
       z-index: 99;
+    }
+  }
+}
+
+
+
+.page-projects {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  
+  .post__inner {
+    @media(min-width:480px) and (max-width:1158px) {
+      flex-direction: row;
+      .post__image-wrapper {
+        width: 50%;
+      }
+        .post__content {
+          padding:1em;
+          justify-content: flex-end;
+        }
+      
     }
   }
 }
