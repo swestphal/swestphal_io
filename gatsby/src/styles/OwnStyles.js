@@ -974,7 +974,7 @@ ul.drop-down li a:hover {
 
 .page-projects {
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr repeat(auto-fit, minmax(300px, 1fr));
   }
   
   
@@ -1023,6 +1023,12 @@ ul.drop-down li a:hover {
       grid-column: span 2;
     }
   }
+}
+html * {
+ transition: none!important;
+}
+.loaded * {
+ transition: initial!important;
 }
 `;
 

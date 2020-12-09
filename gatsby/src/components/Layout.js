@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import 'normalize.css';
 import Nav from './Nav';
@@ -9,11 +9,14 @@ import Typography from '../styles/Typography';
 import OwnStyles from '../styles/OwnStyles';
 
 export default function Layout({ children, location }) {
+  useEffect(() => {
+    document.body.classList.add('loaded');
+  });
   return (
     <>
       <OwnStyles />
       <Typography />
-      <div id="container">
+      <div id="container" className="preload">
         <Nav location={location} />
         <Contentarea content={children} />
       </div>
