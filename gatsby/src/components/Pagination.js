@@ -37,7 +37,11 @@ export default function Pagination({
         {Array.from({ length: totalPages }).map((_, i) => (
           <li key={`'list_' + ${i}`}>
             <Link
-              className={currentPage === 1 && i === 0 ? 'active' : ''}
+              className={
+                currentPage === 1 && i === 0
+                  ? 'active --dashed-border'
+                  : '--dashed-border'
+              }
               to={`${base}${categorySlug}/${i === 0 ? '' : i + 1}`}
             >
               {i + 1}
@@ -47,6 +51,7 @@ export default function Pagination({
 
         <li>
           <Link
+            className="--dashed-border"
             disabled={!hasNextPage}
             to={`${base}${categoryPath}/${linkToNext}`}
           >

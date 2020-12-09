@@ -396,6 +396,13 @@ sub {
     @media(min-width:980px) {
         padding:2em 0 3em;
     }
+  &__intro {
+    padding:1em;
+    margin-bottom:2em;
+    p:last-child {
+      margin-bottom:0;
+    }
+  }
 }
 
 
@@ -808,13 +815,12 @@ ul.drop-down li a:hover {
                 font-family: 'jura';
                 width: 2em;
                 height: 2em;
-                border: 1px solid grey;
                 display: inline-block;
                 text-transform: uppercase;
                 
                 &[aria-current]:not([disabled]),
                 &.active{
-                    background:#ffed27;
+                    background-color:#ffed27;
                 }
                 
                 &[disabled]{
@@ -865,18 +871,79 @@ ul.drop-down li a:hover {
     
 .form {
     &__container {
+     
         padding:.25em 0;
         display:flex;
         justify-content:space-between;
         textarea {
             width:100%;
-            height:3.25em;
+           
+          height: 100px;
+          margin-bottom: -5px;
         }
+          input:focus,
+          textarea:focus{outline: none;}
+          input,textarea {
+            position: relative;
+            padding: 5px 14px 7px;
+          }
     }
+  .grid--lg.estimate .grid-item {
+    align-self: end;
+  }
+  .input__container {
+    position: relative;
+    width:100%;
+   margin: 0 1em;
+  }
     fieldset{
         margin-bottom:2em;
+      
+      padding:0 2em 1.5em 2em;
+      background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
+      background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+      background-position: 0 0, 0 0, 100% 0, 0 100%;
+      background-repeat: no-repeat;
+      border:none;
     }
-    button.disabled {
+  legend {
+    background: white;
+    padding: 0 1em;
+    margin-bottom:1em;
+    text-transform: uppercase;
+    color: black;
+    font-family:'jura',sans-serif;
+    font-weight:bold;
+  }
+  /* Change the white to any color ;) */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  textarea:-webkit-autofill:active {
+    box-shadow: 0 0 0 100px white inset !important;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-bottom-color: #ccc;
+  }
+
+ 
+  .effect-9{border: 0;  border: 1px solid transparent; border-bottom-color: #ccc; transition: 0.4s;}
+  
+  .effect-9:focus{ transition: 0.4s;}
+
+  .effect-9 ~ .focus-border{position: absolute; height: 48px; bottom: 0; left: 0; width: 0; transition: 0.4s;}
+  .effect-9:focus ~ .focus-border{width:100%;   transition: 0.4s; border: 2px solid #fced28;}
+  .effect-9:focus ~ .focus-border:after{position: absolute;content:"";left:-1px;bottom:1px;display:block;height:100%;width:100%;   transition: 0.4s; border: 2px solid black;}
+
+  textarea.effect-9:focus ~ .focus-border {
+    height:100px;
+  }
+   
+  button.disabled {
         opacity:.3;
     }
   button[type="submit"] {
@@ -1024,11 +1091,22 @@ ul.drop-down li a:hover {
     }
   }
 }
-html * {
- transition: none!important;
+html body * {
+ transition: none;
+  opacity:0;
 }
-.loaded * {
- transition: initial!important;
+html body.loaded * {
+ transition: initial;
+  opacity:initial;
+}
+
+.--dashed-border {
+
+  background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
+  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+  border:none;
 }
 `;
 

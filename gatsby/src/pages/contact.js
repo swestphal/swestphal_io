@@ -48,34 +48,52 @@ export default function ContactPage({ data }) {
             <div className="grid-item ">
               <div className="form__container">
                 <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={values.name}
-                  onChange={updateValue}
-                />
+                <div className="input__container">
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={values.name}
+                    onChange={updateValue}
+                    className="effect-9"
+                  />
+                  <span className="focus-border">
+                    <i />
+                  </span>
+                </div>
               </div>
               <div className="form__container">
                 <label htmlFor="email">Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  value={values.email}
-                  onChange={updateValue}
-                />
+                <div className="input__container">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    value={values.email}
+                    onChange={updateValue}
+                    className="effect-9"
+                  />
+                  <span className="focus-border">
+                    <i />
+                  </span>
+                </div>
               </div>
             </div>
             <div className="grid-item">
               <div className="form__container">
-                <textarea
-                  name="textmessage"
-                  id="textmessage"
-                  placeholder="...leave me a message"
-                  value={values.textmessage}
-                  onChange={updateValue}
-                />
+                <div className="input__container">
+                  <textarea
+                    name="textmessage"
+                    id="textmessage"
+                    placeholder="...leave me a message"
+                    value={values.textmessage}
+                    onChange={updateValue}
+                    className="effect-9"
+                  />
+                  <span className="focus-border">
+                    <i />
+                  </span>
+                </div>
               </div>
             </div>
           </div>

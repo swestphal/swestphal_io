@@ -18,6 +18,14 @@ export default function ProjectsPage({ data, pageContext }) {
         }
       />
       <div className="page-projects --has-no-first-grid">
+        <div className="page__intro --dashed-border">
+          <p>
+            Here's a small selection of the latest websites I've built.
+            <br />
+            As well outsourced work from design agencies as direct work for
+            small to medium business.
+          </p>
+        </div>
         <CategoriesFilter
           activeCategory={pageContext.categorySlug}
           currentPage={pageContext.currentPage}
