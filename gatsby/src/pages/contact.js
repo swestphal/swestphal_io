@@ -44,8 +44,8 @@ export default function ContactPage({ data }) {
       <form className="form" onSubmit={submitContactform}>
         <fieldset disabled={loading}>
           <legend>Your Info</legend>
-          <div className="grid grid--lg estimate">
-            <div className="grid-item ">
+          <div className="grid grid--lg  estimate">
+            <div className="grid__item ">
               <div className="form__container">
                 <label htmlFor="name">Name</label>
                 <div className="input__container">
@@ -98,8 +98,8 @@ export default function ContactPage({ data }) {
             </div>
           </div>
         </fieldset>
-        <div className="grid grid--lg estimate">
-          <fieldset className="grid--item" disabled={loading}>
+        <div className="grid grid--lg grid--fit estimate">
+          <fieldset className="grid__item " disabled={loading}>
             <legend>You Are Interested In...</legend>
 
             {categories.map((category, index) => (
@@ -125,7 +125,7 @@ export default function ContactPage({ data }) {
               </div>
             ))}
           </fieldset>
-          <div className="grid--item">
+          <div className="grid__item ">
             <fieldset className="estimate__calculation " disabled={loading}>
               <legend>Your Wishlist</legend>
               <Estimate

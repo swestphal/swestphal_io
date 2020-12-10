@@ -108,19 +108,19 @@ ul li {
     display: grid;
     grid-auto-flow: dense;
     grid-gap: 2em;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 .grid--lg {
   @media(min-width:980px) {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(calc((100vw - 21em) / 3), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(calc((100vw - 21em) / 3), 1fr));
     grid-auto-flow: dense;
   }
 }
 
 .grid--fill {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .grid--fit {
@@ -997,6 +997,7 @@ ul.drop-down li a:hover {
     }
   }
   &__tabs {
+    padding-bottom:1em;
     margin-top:2.5em;
   }
   &__container {
@@ -1091,7 +1092,7 @@ ul.drop-down li a:hover {
 
 .page-projects {
   .grid {
-    grid-template-columns: 1fr repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr repeat(auto-fill, minmax(300px, 1fr));
   }
   
   
@@ -1141,14 +1142,12 @@ ul.drop-down li a:hover {
     }
   }
 }
-html body * {
+
+#container.preload * {
  transition: none;
   opacity:0;
 }
-html body.loaded * {
- transition: initial;
-  opacity:initial;
-}
+
 
 .--dashed-border {
   background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);

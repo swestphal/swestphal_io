@@ -10,7 +10,7 @@ import OwnStyles from '../styles/OwnStyles';
 
 export default function Layout({ children, location }) {
   useEffect(() => {
-    document.body.classList.add('loaded');
+    document.getElementById('container').classList.remove('preload');
   });
   return (
     <>
