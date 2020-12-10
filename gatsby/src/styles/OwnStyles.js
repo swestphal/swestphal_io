@@ -37,6 +37,7 @@ body.active {
 
 *, *:before, *:after {
   box-sizing: border-box;
+  outline: none;
 }
 
 button {
@@ -579,7 +580,23 @@ ul.drop-down li a:hover {
 
 .sidebar__infos {
     margin:  0em 1.5em 2rem 0;
-    a {
+   
+      @media(max-width:979px) {
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-end;
+        margin-bottom:0;
+        a+a {
+          margin-left:2em;
+        }
+        .s__copyright{
+          display:none;
+        }
+      } 
+      @media(max-width:600px) {
+          flex-direction:column;
+        }
+      a {
        cursor:pointer;
         color:#d2d2d2;
         padding:8px 0;
@@ -593,12 +610,15 @@ ul.drop-down li a:hover {
         }
     }
     .infos__copyright {
-        padding-top:1rem;
-        font-size:14px;
       
-        bottom:0;
+      display:none;
+      @media(min-width:980px) {
+        padding-top: 1rem;
+        font-size: 14px;
+
+        bottom: 0;
         right: 3em;
-    
+      }
     }
     .link {
         padding-left:10px;
@@ -608,18 +628,7 @@ ul.drop-down li a:hover {
         top: 5px;
         left:-10px;
     }
-    @media(max-width:979px) {
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
-        margin-bottom:0;
-        a+a {
-            margin-left:2em;
-        }
-        .s__copyright{
-         display:none;
-         }
-    } 
+    
 }
 
 
@@ -758,17 +767,16 @@ ul.drop-down li a:hover {
         grid-template-columns: auto 1fr;
         grid-gap: 0 1rem;
         align-items: center;
-        background: grey;
-        padding:.25em;
+     
+       
         text-decoration: none;
-        font-family:'jura';
+        font-family:'jura',sans-serif;
         color:black; 
         min-height:2.3em;
-    }
-    .badge {
+ 
         border:1px solid white;
         border-left:1em solid white;
-        padding-left : .75em;
+        padding : .25em .25em .25em .75em;
         background-color: #ececec;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='0.96' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
        
@@ -975,16 +983,58 @@ ul.drop-down li a:hover {
 }
 
 .tab {
-    &__nav {
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        gap: 0.25rem;
+  &__nav {
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    
+    &.badge:hover {
+      
+      color: white;
+      transition: all 0.2s ease-in-out;
     }
-    &__container {
-        padding: 1em 1.5em 0 1em;
+  }
+  &__tabs {
+    margin-top:2.5em;
+  }
+  &__container {
+    padding: 1em 1.5em 0 1em;
+    border: 2px solid red;
+    position: relative;
+    top: -1px;
+    
+  }
+  &__accordion {
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+    line-height: 0;
+    color: transparent;
+    height: 0;
+    padding: 0;
+    border:none;
+    &--active {
+      margin:1em 0 2em;
+      line-height: initial;
+      padding: 1em 1.5em 0 1em;
+      color: black;
+      height: auto;
+      transition: all 0.2s ease-in-out;
     }
+  }
+  &__tabs {
+    position: relative;
+    top: -1px;
+    @media (max-width: 1359px) {
+      display: none;
+    }
+  }
+  &__accordion {
+    @media (min-width: 1359px) {
+      display: none;
+    }
+  }
 }
 
 
@@ -1101,7 +1151,6 @@ html body.loaded * {
 }
 
 .--dashed-border {
-
   background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
   background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
   background-position: 0 0, 0 0, 100% 0, 0 100%;
