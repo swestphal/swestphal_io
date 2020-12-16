@@ -20,34 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c28f0b6-a01e-4d97-ae9d-4189cc076680" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/functions/hello/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/functions/hello/hello.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/functions/sendContactForm/sendContactForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/functions/sendContactForm/sendContactForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-browser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-ssr.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-ssr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/assets/images/simonewestphal.png" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/assets/images/simonewestphal.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Blog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Estimate.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Estimate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/EstimateContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/EstimateContext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Menu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Projects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/SEO.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/SEO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Projekte.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/blog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/kontakt.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projekte.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/utils/useService.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/utils/useService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/classification.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/classification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/estimate.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/estimate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/estimateCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/estimateCategory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanity/schemas/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +72,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/gatsby/src/components" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -80,7 +84,6 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="/usr/local/bin/node" />
-    <property name="run.prettier.on.save" value="true" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript.Templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -88,6 +91,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gatsby/src/components" />
       <recent name="$PROJECT_DIR$/gatsby/src/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sanity/sample-data" />
+      <recent name="$PROJECT_DIR$/gatsby/src/assets/images" />
+      <recent name="$PROJECT_DIR$/gatsby/public/static" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -102,7 +110,10 @@
       <option name="presentableId" value="Default" />
       <updated>1606231712066</updated>
       <workItem from="1606231714955" duration="19297000" />
-      <workItem from="1606558662274" duration="54130000" />
+      <workItem from="1606558662274" duration="57088000" />
+      <workItem from="1606932642778" duration="6914000" />
+      <workItem from="1607249143175" duration="563000" />
+      <workItem from="1608017262226" duration="24438000" />
     </task>
     <servers />
   </component>
@@ -119,37 +130,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1688" height="259" key="GridCell.Tab.0.bottom" timestamp="1606583239980">
-      <screen x="-1920" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1688" height="259" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.1920.1015@-1920.23.1920.1057" timestamp="1606583239980" />
-    <state width="1688" height="259" key="GridCell.Tab.0.center" timestamp="1606583239978">
-      <screen x="-1920" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1688" height="259" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.1920.1015@-1920.23.1920.1057" timestamp="1606583239978" />
-    <state width="1688" height="259" key="GridCell.Tab.0.left" timestamp="1606583239977">
-      <screen x="-1920" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1688" height="259" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.1920.1015@-1920.23.1920.1057" timestamp="1606583239977" />
-    <state width="1688" height="259" key="GridCell.Tab.0.right" timestamp="1606583239979">
-      <screen x="-1920" y="23" width="1920" height="1057" />
-    </state>
-    <state width="1688" height="259" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.1920.1015@-1920.23.1920.1057" timestamp="1606583239979" />
-    <state x="-1347" y="47" width="1261" height="651" key="dock-window-1" timestamp="1606570446071">
-      <screen x="-1920" y="23" width="1920" height="1057" />
-    </state>
-    <state x="-1347" y="47" width="1261" height="651" key="dock-window-1/1920.23.1920.1057/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606570446071" />
-    <state x="679" y="133" width="1261" height="651" key="dock-window-2" timestamp="1606636069466">
-      <screen x="0" y="23" width="1920" height="1015" />
-    </state>
-    <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606590573434" />
-    <state x="679" y="133" width="1261" height="651" key="dock-window-2/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606636069466" />
-    <state x="671" y="409" width="586" height="490" key="find.popup" timestamp="1606928490646">
-      <screen x="0" y="23" width="1920" height="1015" />
-    </state>
-    <state x="671" y="409" width="586" height="490" key="find.popup/-1920.23.1920.1057/0.23.1920.1015@0.23.1920.1015" timestamp="1606928490646" />
-    <state x="671" y="409" width="586" height="548" key="find.popup/1920.23.1920.1057/0.23.1920.1015/-1920.23.1920.1057@0.23.1920.1015" timestamp="1606652454356" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

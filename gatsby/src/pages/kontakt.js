@@ -19,7 +19,7 @@ export default function ContactPage({ data }) {
   const { values, updateValue } = useForm({
     name: false,
     email: false,
-    textmessage: false,
+    textmessage: '',
   });
   const {
     estimate,
@@ -30,6 +30,7 @@ export default function ContactPage({ data }) {
     message,
     submitContactform,
     virtualCats,
+    checkForm,
   } = useService({
     categories: data.categories.nodes,
     inputs: values,
@@ -39,11 +40,11 @@ export default function ContactPage({ data }) {
 
   return (
     <div className="page page-contact">
-      <h1>Want to start a new project?</h1>
+      <h1>Sie haben ein neues Projekt?</h1>
       <SEO title="Get in contact" />
-      <form className="form" onSubmit={submitContactform}>
+      <form className="form" onSubmit={checkForm}>
         <fieldset disabled={loading}>
-          <legend>Your Info</legend>
+          <legend>Ihre Kontaktdaten</legend>
           <div className="grid grid--lg  estimate">
             <div className="grid__item ">
               <div className="form__container">
@@ -63,7 +64,7 @@ export default function ContactPage({ data }) {
                 </div>
               </div>
               <div className="form__container">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">E-Mail</label>
                 <div className="input__container">
                   <input
                     type="text"
@@ -81,11 +82,11 @@ export default function ContactPage({ data }) {
             </div>
             <div className="grid-item">
               <div className="form__container">
-                <div className="input__container">
+                <div className="input__container --textarea">
                   <textarea
                     name="textmessage"
                     id="textmessage"
-                    placeholder="...leave me a message"
+                    placeholder="... Ihre Nachricht an mich"
                     value={values.textmessage}
                     onChange={updateValue}
                     className="effect-9"
@@ -100,7 +101,7 @@ export default function ContactPage({ data }) {
         </fieldset>
         <div className="grid grid--lg grid--fit estimate">
           <fieldset className="grid__item " disabled={loading}>
-            <legend>You Are Interested In...</legend>
+            <legend>Ich bin interessiert an...</legend>
 
             {categories.map((category, index) => (
               <div className="estimate__service-items " key={index}>
@@ -127,7 +128,7 @@ export default function ContactPage({ data }) {
           </fieldset>
           <div className="grid__item ">
             <fieldset className="estimate__calculation " disabled={loading}>
-              <legend>Your Wishlist</legend>
+              <legend>Ihre Wunschliste</legend>
               <Estimate
                 key={estimate.id}
                 estimate={estimate}
@@ -138,7 +139,7 @@ export default function ContactPage({ data }) {
             {error ? <p> {error} </p> : ''}
             {message ? <p> {message} </p> : ''}
             <button type="submit" disabled={loading}>
-              {loading ? 'Send your request ...' : 'Send my request'}
+              {loading ? 'Anfrage wird versendet ...' : 'Absenden'}
             </button>
           </div>
         </div>

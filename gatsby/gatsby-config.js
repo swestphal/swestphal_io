@@ -10,7 +10,7 @@ export default {
   siteMetadata: {
     title: 'swestphal.io',
     siteUrl: 'http://localhost:8888',
-    description: 'The best development place in Herrnhut',
+    description: 'Webentwicklung Simone Westphal',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -27,7 +27,19 @@ export default {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: ['projects.js'],
+        ignore: ['projekte.js'],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+          // Setting this parameter is optional
+          anonymize: true,
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development'],
       },
     },
   ],

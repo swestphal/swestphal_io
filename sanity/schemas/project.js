@@ -54,6 +54,15 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: 'imageGallery',
+      title: 'Image Gallery',
+      type: 'array',
+      of: [{ type: 'image' }],
+      options: {
+        layout: 'grid',
+      },
+    },
 
     {
       name: 'relatedCategories',
@@ -88,7 +97,7 @@ export default {
   preview: {
     select: {
       title: 'title',
-      media: 'image',
+      media: 'mainImage',
       tag0: 'tags.0.name',
       tag1: 'tags.1.name',
       tag2: 'tags.2.name',

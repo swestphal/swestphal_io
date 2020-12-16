@@ -24,7 +24,7 @@ function SingleProject({ project }) {
               <li>
                 {project.relatedCategories.map((cat, i) => (
                   <Link
-                    to={`/projects/${cat.classification.slug.current}`}
+                    to={`/projekte/${cat.classification.slug.current}`}
                     key={`'skill_'+${i}`}
                   >
                     {cat.classification.name}

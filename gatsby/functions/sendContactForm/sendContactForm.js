@@ -33,7 +33,7 @@ exports.handler = async (event, context) => {
     if (!body[field]) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ message: `Oops. Missing ${field} field` }),
+        body: JSON.stringify({ message: `Bitte Feld '${field}' ausfüllen.` }),
       };
     }
   }

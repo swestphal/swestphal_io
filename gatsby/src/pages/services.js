@@ -22,7 +22,7 @@ export default function ServicesPage({ data, pageContext }) {
   const [value, setValue] = useState(0);
   return (
     <section className="page page-services">
-      <h1>What I can do for you</h1>
+      <h1>Das mache ich...</h1>
       <div className="tab">
         <div className="tab__nav">
           {services.map((service, index) => (

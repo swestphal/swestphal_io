@@ -67,15 +67,15 @@ export default function Nav({ location }) {
                 </li>
                 <li onClick={() => setOpen(!open)}>
                   <Link
-                    to="/projects/"
-                    className={isParentPage('projects') ? 'active' : ''}
+                    to="/projekte/"
+                    className={isParentPage('projekte') ? 'active' : ''}
                   >
-                    <span>Projects</span>
+                    <span>Projekte</span>
                   </Link>
                 </li>
                 <li onClick={() => setOpen(!open)}>
-                  <Link to="/contact/">
-                    <span>Contact</span>
+                  <Link to="/kontakt/">
+                    <span>Kontakt</span>
                   </Link>
                 </li>
               </ul>

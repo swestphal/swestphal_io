@@ -33,13 +33,13 @@ export default {
   ],
   preview: {
     select: {
-      clasificationName: 'classification.name',
+      title: 'classification.0.name',
       skills: 'skills',
     },
     prepare(data) {
       return {
         ...data,
-        title: data.clasificationName,
+        title: data.title,
         subtitle: data.skills && data.skills.join(', '),
       };
     },

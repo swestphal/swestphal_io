@@ -1,35 +1,84 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
+import BlockContent from '@sanity/block-content-to-react';
 import { AiOutlineFolder } from 'react-icons/ai';
+import { useSwipeable } from 'react-swipeable';
+
+import { FiChevronLeft, FiChevronRight } from 'react-icons/all';
+import { FaQuoteRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
 
 export default function SingleProjectPage({ data: { project } }) {
+  const [slides, setSlide] = useState(project.imageGallery);
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const lastIndex = slides.length - 1;
+    if (index < 0) {
+      setIndex(lastIndex);
+    }
+    if (index > lastIndex) {
+      setIndex(0);
+    }
+  });
+  /* useEffect(() => {
+    const slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 3000);
+    return () => clearInterval(slider);
+  }, [index]); */
+  const handlers = useSwipeable({
+    onSwiped: (eventData) => console.log('User Swiped!', eventData),
+  });
   return (
     <>
       <SEO title={project.title} image={project.mainImage?.asset?.fluid?.src} />
-      <div className="project">
-        <div className="grid grid--lg">
-          <div className="grid__item ">
-            <div className="post__image">
-              <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
+      <div className="page project ">
+        <h1>{project.title}</h1>
+        <div className="">
+          <div className="slider " {...handlers}>
+            {slides.map((slide, slideIndex) => {
+              let position = 'nextSlide';
+              if (slideIndex === index) {
+                position = 'activeSlide';
+              }
+              if (
+                slideIndex === index - 1 ||
+                (index === 0 && slideIndex === slides.length - 1)
+              ) {
+                position = 'lastSlide';
+              }
+              const {
+                asset: { fluid },
+                asset: { id },
+              } = slide;
+
+              return (
+                <article className={`slider__container ${position}`} key={id}>
+                  <Img fluid={fluid} alt={project.name} />
+                </article>
+              );
+            })}
+            <div className="nav__container">
+              <button
+                className=" nav__prev"
+                onClick={() => setIndex(index - 1)}
+              >
+                <FiChevronLeft />
+              </button>
+              <button className="nav__next" onClick={() => setIndex(index + 1)}>
+                <FiChevronRight />
+              </button>
             </div>
-          </div>
-          <div className="grid__item">
-            <ul>
-              <li>iguhiuhiuhuh</li>
-              <li>iguhiuhiuhuh</li>
-              <li>iguhiuhiuhuh</li>
-              <li>iguhiuhiuhuh</li>
-            </ul>
           </div>
         </div>
         <div className="grid">
-          <div className="post__content">
-            <h2>
-              <Link to="/single-post">{project.title}</Link>
-            </h2>
-            <p>{project.excerpt}</p>
+          <div className="post__content row">
+            <div className="cell">
+              {project._rawFeatures && (
+                <BlockContent blocks={project._rawFeatures} />
+              )}
+            </div>
 
             <ul className="post__meta">
               <li>
@@ -56,6 +105,8 @@ export const query = graphql`
     project: sanityProject(slug: { current: { eq: $slug } }) {
       id
       title
+      _rawFeatures
+      _rawBody
       mainImage {
         asset {
           fluid(maxWidth: 400) {
@@ -68,6 +119,15 @@ export const query = graphql`
         _rawAsset
         _rawHotspot
         _rawCrop
+      }
+      imageGallery {
+        _key
+        asset {
+          id
+          fluid(maxWidth: 960) {
+            ...GatsbySanityImageFluid
+          }
+        }
       }
       relatedProjects {
         _key
@@ -87,6 +147,7 @@ export const query = graphql`
         }
         startedAt
         endedAt
+
         mainImage {
           crop {
             _key
@@ -141,6 +202,7 @@ export const query = graphql`
             }
           }
         }
+
         skills
       }
     }

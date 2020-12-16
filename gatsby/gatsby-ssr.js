@@ -8,3 +8,16 @@ export function wrapPageElement({ element, props }) {
 export function wrapRootElement({ element }) {
   return <EstimateProvider>{element}</EstimateProvider>;
 }
+
+export const shouldUpdateScroll = ({
+  routerProps: { location },
+  getSavedScrollPosition,
+}) => {
+  // Retain scroll position when user is on the projects page
+  const pagesToRetainScollPosition = location.pathname.includes('projekte');
+  if (pagesToRetainScollPosition) {
+    const currentPosition = getSavedScrollPosition(location);
+    window.scrollTo(currentPosition || [0, 0]);
+    return false;
+  }
+};

@@ -75,6 +75,17 @@ export default function useService({ categories, inputs }) {
   }
   // send data as a serverless function when they check out
 
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  function checkForm(e) {
+    if (validateEmail(inputs.email) && inputs.name && inputs.name.length >= 3)
+      submitContactform(e);
+    e.preventDefault();
+    setMessage(inputs.name ? 'E-Mail fehlt' : 'Bitte einen Namen eintragen');
+  }
   async function submitContactform(e) {
     e.preventDefault();
     setLoading(true);
@@ -85,6 +96,7 @@ export default function useService({ categories, inputs }) {
     const body = {
       name: inputs.name,
       email: inputs.email,
+      text: inputs.textmessage,
       estimate: attachNamesAndPricesFromEstimate(estimate, categories),
     };
 
@@ -108,7 +120,7 @@ export default function useService({ categories, inputs }) {
       setError(text.message);
     } else {
       setLoading(false);
-      setMessage('Contact form was submitted');
+      setMessage('Ihre Anfrage wurde gesendet');
     }
   }
 
@@ -121,5 +133,6 @@ export default function useService({ categories, inputs }) {
     message,
     virtualCats,
     submitContactform,
+    checkForm,
   };
 }

@@ -15,7 +15,7 @@ export const shouldUpdateScroll = ({
   getSavedScrollPosition,
 }) => {
   // Retain scroll position when user is on the projects page
-  const pagesToRetainScollPosition = location.pathname.includes('projects');
+  const pagesToRetainScollPosition = location.pathname.includes('projekte');
   if (pagesToRetainScollPosition) {
     const currentPosition = getSavedScrollPosition(location);
     window.scrollTo(currentPosition || [0, 0]);

@@ -77,7 +77,7 @@ export default function CategoriesFilter({ activeCategory, currentPage }) {
     <div className="filter ">
       <ul>
         <StyledListItem colour="#000">
-          <Link className="badge all" to="/projects">
+          <Link className="badge all" to="/projekte">
             <span className="badge__name">All</span>
             <span className="badge__count">{projects.nodes.length}</span>
           </Link>
@@ -85,7 +85,7 @@ export default function CategoriesFilter({ activeCategory, currentPage }) {
         {categoriesWithCounts.map((category, i) => (
           <StyledListItem colour={category.colour} key={`'filter_' + ${i}`}>
             <Link
-              to={`/projects/${category.slug}`}
+              to={`/projekte/${category.slug}`}
               getProps={({ isPartiallyCurrent }) =>
                 isPartiallyCurrent
                   ? { className: ` badge badge--active` }

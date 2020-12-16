@@ -40,7 +40,7 @@ function countProjectsInCategories(projects) {
 
 async function turnProjectCategoriesIntoPages({ graphql, actions }) {
   // 1. Get the template
-  const categoryTemplate = path.resolve('./src/pages/projects.js');
+  const categoryTemplate = path.resolve('./src/pages/projekte.js');
   // 2. query all the categories
   const { data } = await graphql(`
     query {
@@ -77,11 +77,11 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
     }
   `);
   // turn each project in a single page
-  const projectTemplate = path.resolve('./src/templates/Project.js');
+  const projectTemplate = path.resolve('./src/templates/Projekt.js');
   data.projects.nodes.forEach((project) => {
     actions.createPage({
       component: projectTemplate,
-      path: `project/${project.slug.current}`,
+      path: `projekt/${project.slug.current}`,
       context: {
         name: project.name,
         slug: project.slug.current,
@@ -95,7 +95,7 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
   categoriesWithCounts.forEach((category) => {
     const pageCount = Math.ceil(category.count / pageSize);
     Array.from({ length: pageCount }).forEach((a, i) => {
-      const rootSlug = 'projects';
+      const rootSlug = 'projekte';
       const catSlug = `${category.slug}`;
       let numSlug = `/${i + 1}`;
       if (i === 0) numSlug = '';

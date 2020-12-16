@@ -151,6 +151,7 @@ ul li {
     flex-direction:column;
     flex-wrap: wrap;   
     flex:1; 
+    flex-direction: row;
     &--space {
         justify-content:space-between;
     }
@@ -164,9 +165,9 @@ ul li {
  
 }
 .row--gutters {
-    margin-left:-20px;
+    margin-left:-2em;
     .cell{
-        padding-left:20px;
+        padding-left:2em;
     }
 }
 
@@ -237,7 +238,8 @@ h1,h2,h3,h4,h5 {
     text-transform:uppercase;
     color:black;
 }
-h1 {
+h1,
+.heading--hl{
     margin-top  0;
     text-shadow: 4px 4px 0px #fded27;
 }
@@ -539,7 +541,7 @@ ul.drop-down {
     
 }
 
-li.drop:hover > ul.drop-down {
+li.drop:hover > ul.drop-down { 
     visibility: visible;
     opacity: 1;
    
@@ -723,7 +725,9 @@ ul.drop-down li a:hover {
     .service {
         &__single {
             flex-direction:row;
-          
+          @media(min-width:1200px) and (max-width:1300px) {
+            flex-direction: column;
+          }
         }
         &__heading {
             margin-top:0;
@@ -815,8 +819,11 @@ ul.drop-down li a:hover {
         display:flex;
         align-items:center;
         li {
-           
+        
             a {
+              @media(max-width:550px) {
+                display:none;
+              }
                 margin: 0 .5rem;
                 text-align: center;
                 line-height: 1.9em;
@@ -825,24 +832,28 @@ ul.drop-down li a:hover {
                 height: 2em;
                 display: inline-block;
                 text-transform: uppercase;
-                
+            
+                &:hover:not([disabled]),
                 &[aria-current]:not([disabled]),
                 &.active{
                     background-color:#ffed27;
+                  display:block;
                 }
                 
                 &[disabled]{
                     opacity:0.3;
                     pointer-events:none;
                 }
-                
+        
             } 
             &:first-of-type a{
                 margin-left:0;
+             
             }
             &:first-of-type a,
             &:last-of-type a{
                 width:4em;
+                display:block;
             }  
             
         }
@@ -896,18 +907,42 @@ ul.drop-down li a:hover {
             padding: 5px 14px 7px;
           }
     }
-  .grid--lg.estimate .grid-item {
-    align-self: end;
+  .grid--lg.estimate {
+    @media(max-width:1200px) {
+      grid-template-columns: 1fr;
+      grid-gap: 0;
+    }
+    >.grid-item {
+      align-self: end;
+     
+
+    }
   }
   .input__container {
     position: relative;
-    width:100%;
-   margin: 0 1em;
+    width:inherit;
+    margin: 0 1em;
+    @media(max-width:880px) {
+      margin-right:0;
+    }
+    &.--textarea {
+      width:100%;
+      margin-right: 0;
+      @media(max-width:880px) {
+        margin-left:0;
+      }
+    }
+    
   }
+  label {
+     white-space: nowrap;
+   }
     fieldset{
-        margin-bottom:2em;
+      margin-bottom:2em;
+   
+   
+        padding: 0 2em 1.5em 2em;
       
-      padding:0 2em 1.5em 2em;
       background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
       background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
       background-position: 0 0, 0 0, 100% 0, 0 100%;
@@ -959,20 +994,8 @@ ul.drop-down li a:hover {
     padding: 10px 33px 10px 26px;
     position: relative;
     transition:all .2s ease-in;
-   z-index: 1;
+    z-index: 1;
     cursor:pointer;
-    &:after {
-      content: "";
-      position: absolute;
-      width: 1.3em;
-      height: 1.3em;
-      background: #ffed27;
-      transform: rotate(45deg);
-      top: .26em;
-      right: .7em;
-      z-index: -1;
-      transition: all .2s ease;
-    }
     &:hover {
       top:-1px;
       &:after {
@@ -998,14 +1021,16 @@ ul.drop-down li a:hover {
   }
   &__tabs {
     padding-bottom:1em;
-    margin-top:2.5em;
+    margin-top:1.5em;
   }
   &__container {
-    padding: 1em 1.5em 0 1em;
+    padding: 1em ;
     border: 2px solid red;
     position: relative;
     top: -1px;
-    
+    div p:last-of-type {
+      margin-bottom:0;
+    }
   }
   &__accordion {
     overflow: hidden;
@@ -1018,7 +1043,7 @@ ul.drop-down li a:hover {
     &--active {
       margin:1em 0 2em;
       line-height: initial;
-      padding: 1em 1.5em 0 1em;
+      padding: 1em;
       color: black;
       height: auto;
       transition: all 0.2s ease-in-out;
@@ -1043,14 +1068,16 @@ ul.drop-down li a:hover {
  */
 
 .slider {
-  margin:3em auto;
-  width:80vw;
-  height:300px;
-  max-width:800px;
+ 
+  width:calc(100vw - 200px - 13em);
+  height:calc((100vw - 200px - 13em)/ 1.33);
+  max-width:900px;
+  max-height: calc(900px / 1.33);
   overflow: hidden;
   text-align:center;
   position: relative;
   display: flex;
+  margin:0 auto;
   .slider__container {
     position: absolute;
     top: 0;
@@ -1059,7 +1086,7 @@ ul.drop-down li a:hover {
     height: 100%;
     /*opacity: 0;*/
     transition: all .3s ease-in;
-
+  
     &.activeSlide {
       opacity: 1;
       z-index: 5;
@@ -1092,16 +1119,13 @@ ul.drop-down li a:hover {
 
 .page-projects {
   .grid {
-    grid-template-columns: 1fr repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns:  repeat(auto-fill, minmax(320px, 1fr));
   }
   
   
   .post__inner {
     @media(min-width:480px) and (max-width:1158px) {
-      flex-direction: row;
-      .post__image-wrapper {
-        width: 50%;
-      }
+    
         .post__content {
           padding:1em;
           justify-content: flex-end;
@@ -1110,51 +1134,59 @@ ul.drop-down li a:hover {
     }
   }
 }
-.page-index .grid {
-  .grid__item--full {
-    grid-column:1/3;
-  }
-  @media(max-width:979px) {
-    .grid__item--lg,
-    .grid__item--full,
-    .grid__item--right {
+.page-index {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .item__image {
+      grid-column: 3/3;
+    }
+
+    .item__service {
       grid-column: span 3;
     }
 
-    .grid__item--right {
-      text-align: right;
-    }
-  }
-  @media(min-width:980px) and (max-width:1400px) {
-    .grid__item--lg {
-      order: 1;
-      grid-column: span 2;
-    }
 
-    .grid__item--right {
-      grid-column: 3 /  3;
-      order : 3;
-    }
+    @media (min-width: 980px) and (max-width: 1199px) {
+      .grid__item.item__image {
+        grid-column: 1/3;
+      }
 
-    .grid__item--full {
-      order: 2; 
-      grid-column: span 2;
+      .grid__item.item__service {
+        grid-column: span 3;
+      }
+
+    }
+    @media (min-width: 1200px) {
+      .grid__item.item__service {
+        grid-column: span 2;
+      }
+
+      .grid__item.item__image {
+        grid-column: 3/3;
+      }
+    }
+  } 
+  @media (min-width:1199px) {
+    .item__about {
+      margin: 0 15%;
     }
   }
 }
 
-#container.preload * {
- transition: none;
-  opacity:0;
-}
+  #container.preload * {
+    transition: none;
+    opacity:0;
+  }
 
 
-.--dashed-border {
-  background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
-  background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
-  background-position: 0 0, 0 0, 100% 0, 0 100%;
-  background-repeat: no-repeat;
-  border:none;
+  .--dashed-border {
+    background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
+    background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+    border:none;
+  }
 }
 `;
 

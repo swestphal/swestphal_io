@@ -27,6 +27,7 @@ export default function Pagination({
       <ul>
         <li key="list_00">
           <Link
+            className="--dashed-border"
             disabled={!hasPrevPage}
             to={`${base}${categoryPath}/${linkToPrev}`}
           >

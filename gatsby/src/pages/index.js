@@ -4,7 +4,7 @@ import { AboutSingle } from '../components/About';
 import Testimonials from '../components/Testimonials';
 import ServiceList from '../components/Services';
 import Skills from '../components/Skills';
-import ProjectList from '../components/Projects';
+import ProjectList from '../components/Projekte';
 
 export default function AboutPage({ data, pageContext }) {
   const [about] = data.about.nodes;
@@ -12,8 +12,8 @@ export default function AboutPage({ data, pageContext }) {
 
   return (
     <div className="page page-index ">
-      <h1>Custom WebDevelopment</h1>
-      <div className="grid grid--lg">
+      <h1>Professionelle Webentwicklung</h1>
+      <div>
         <ServiceList categories={categories} about={about} />
         <AboutSingle about={about} />
       </div>
@@ -30,7 +30,7 @@ export const query = graphql`
         aboutTitle
         aboutMainImage {
           asset {
-            fixed(width: 300) {
+            fixed(width: 360) {
               ...GatsbySanityImageFixed
             }
           }

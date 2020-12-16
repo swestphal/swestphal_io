@@ -35,8 +35,8 @@ function SingleService({ category }) {
 export default function ServiceList({ categories, about }) {
   return (
     <>
-      <div className="grid__item--lg ">
-        <div className="section service">
+      <div className="grid">
+        <div className="grid__item item__service">
           <ul>
             {categories.map((category) =>
               category.image !== null ? (
@@ -47,9 +47,10 @@ export default function ServiceList({ categories, about }) {
             )}
           </ul>
         </div>
-      </div>
-      <div className=" section__image grid__item--right">
-        <Img fixed={about.aboutMainImage.asset.fixed} alt="About me" />
+
+        <div className="item__image grid__item">
+          <Img fixed={about.aboutMainImage.asset.fixed} alt="About me" />
+        </div>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ProjectList from '../components/Projects';
+import ProjectList from '../components/Projekte';
 import CategoriesFilter from '../components/CategoriesFilter';
 import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';
@@ -20,10 +20,16 @@ export default function ProjectsPage({ data, pageContext }) {
       <div className="page-projects --has-no-first-grid">
         <div className="page__intro --dashed-border">
           <p>
-            Here's a small selection of the latest websites I've built.
+            Nachfolgend finden sie eine kleine Auswahl meiner öffentlich
+            zugänglichen Projekte.
             <br />
-            As well outsourced work from design agencies as direct work for
-            small to medium business.
+            Diese habe ich sowohl direkt für kleine und mittelständische
+            Unternehmen erstellt, als auch für Agenturen.
+          </p>
+          <p>
+            Bitte beachten Sie, dass ich einen Großteil meiner Arbeiten im
+            White-Label Bereich durchführe oder diese Projekte unter NDA stehen
+            und ich sie daher nicht veröffentlichen kann.
           </p>
         </div>
         <CategoriesFilter
@@ -36,7 +42,7 @@ export default function ProjectsPage({ data, pageContext }) {
           totalCount={pageContext.totalCount}
           currentPage={pageContext.currentPage || ''}
           skip={pageContext.skip}
-          base="/projects"
+          base="/projekte"
           categorySlug={pageContext.categorySlug}
           categoryRegexName={pageContext.categoryRegexName}
         />

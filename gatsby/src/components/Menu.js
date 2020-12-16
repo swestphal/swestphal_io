@@ -41,14 +41,14 @@ export default function Menu() {
         </li>
         <li>
           <Link
-            to="/projects/"
+            to="/projekte/"
             getProps={({ isPartiallyCurrent }) =>
               isPartiallyCurrent
                 ? { style: { ...linkStyles, ...activeStyle } }
                 : null
             }
           >
-            <span>Projects</span>
+            <span>Projekte</span>
           </Link>
         </li>
         <li>

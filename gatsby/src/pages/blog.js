@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import Blog from '../components/Blog';
 import CategoriesFilter from '../components/CategoriesFilter';
-import ProjectList from '../components/Projects';
+import ProjectList from '../components/Projekte';
 
 export default function BlogPage({ data, pageContext }) {
   const posts = data.posts.nodes;
