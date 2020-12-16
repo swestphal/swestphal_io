@@ -2,20 +2,7 @@ import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
-import category from '../../../sanity/schemas/category';
-
-const TabNavButton = styled.button`
-  border-color: ${(props) => props.colour};
-  &.badge--active {
-    background: ${(props) => props.colour};
-    border-color: ${(props) => props.colour};
-  }
-  &.badge:hover {
-    background: ${(props) => props.colour};
-    color: white;
-    transition: all 0.2s ease-in-out;
-  }
-`;
+import { StyledBadgeButton } from '../components/BadgeButton.styled';
 
 export default function ServicesPage({ data, pageContext }) {
   const [services, setServices] = useState(data.services.nodes);
@@ -27,7 +14,7 @@ export default function ServicesPage({ data, pageContext }) {
         <div className="tab__nav">
           {services.map((service, index) => (
             <>
-              <TabNavButton
+              <StyledBadgeButton
                 colour={service.colour}
                 key={`nav_${index}`}
                 onClick={() => setValue(index)}
@@ -36,7 +23,7 @@ export default function ServicesPage({ data, pageContext }) {
                 } badge `}
               >
                 <span className="badge__name">{service.name}</span>
-              </TabNavButton>
+              </StyledBadgeButton>
               <div
                 className={`${
                   (index === value && 'tab__accordion--active') || ''

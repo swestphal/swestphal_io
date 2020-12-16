@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { StyledPagination } from './Pagination.styled';
 
 export default function Pagination({
   pageSize,
@@ -11,7 +12,6 @@ export default function Pagination({
   categoryName,
   categoryRegexName,
 }) {
-  console.log(totalCount);
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
@@ -23,7 +23,7 @@ export default function Pagination({
   const linkToNext = currentPage < totalPages ? `${currentPage + 1}` : ``;
 
   return (
-    <div className="pagination">
+    <StyledPagination>
       <ul>
         <li key="list_00">
           <Link
@@ -60,6 +60,6 @@ export default function Pagination({
           </Link>
         </li>
       </ul>
-    </div>
+    </StyledPagination>
   );
 }

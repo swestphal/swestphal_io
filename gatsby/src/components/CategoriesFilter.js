@@ -1,22 +1,11 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
-
-const StyledListItem = styled.li`
-  display: inline-block;
-  margin: 0.5em 0.5em 0 0;
-
-  .badge {
-    border-color: ${(props) => props.colour};
-    &.badge--active,
-    &.badge:hover {
-      color: white;
-      transition: all 0.2s ease-in-out;
-      background: none;
-      background-color: ${(props) => props.colour};
-    }
-  }
-`;
+import {
+  StyledCategoriesFilter,
+  StyledListItem,
+} from './CategoriesFilter.styled';
+import { StyledBadgeLink } from './CategoriesBadgeLink.styled';
 
 function countProjectsInCategories(projects) {
   // Return the projects with counts
@@ -74,31 +63,28 @@ export default function CategoriesFilter({ activeCategory, currentPage }) {
   // Loop over the list of categories in project
 
   return (
-    <div className="filter ">
+    <StyledCategoriesFilter>
       <ul>
-        <StyledListItem colour="#000">
-          <Link className="badge all" to="/projekte">
+        <StyledListItem key="00" colour="#000">
+          <StyledBadgeLink className="badge all" to="/projekte">
             <span className="badge__name">All</span>
             <span className="badge__count">{projects.nodes.length}</span>
-          </Link>
+          </StyledBadgeLink>
         </StyledListItem>
         {categoriesWithCounts.map((category, i) => (
-          <StyledListItem colour={category.colour} key={`'filter_' + ${i}`}>
-            <Link
+          <StyledListItem key={`'filter_' + ${i}`}>
+            <StyledBadgeLink
+              className="badge"
               to={`/projekte/${category.slug}`}
-              getProps={({ isPartiallyCurrent }) =>
-                isPartiallyCurrent
-                  ? { className: ` badge badge--active` }
-                  : { className: ` badge ` }
-              }
               key={category.id}
+              colour={category.colour}
             >
               <span className="badge__name">{category.name}</span>
               <span className="badge__count">{category.count}</span>
-            </Link>
+            </StyledBadgeLink>
           </StyledListItem>
         ))}
       </ul>
-    </div>
+    </StyledCategoriesFilter>
   );
 }

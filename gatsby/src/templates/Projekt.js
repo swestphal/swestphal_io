@@ -74,7 +74,11 @@ export default function SingleProjectPage({ data: { project } }) {
         </div>
         <div className="grid">
           <div className="post__content row">
-            <div className="cell" />
+            <div className="cell">
+              {project._rawFeatures && (
+                <BlockContent blocks={project._rawFeatures} />
+              )}
+            </div>
 
             <ul className="post__meta">
               <li>
