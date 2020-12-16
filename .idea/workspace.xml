@@ -21,36 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c28f0b6-a01e-4d97-ae9d-4189cc076680" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/functions/hello/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/functions/hello/hello.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/functions/sendContactForm/sendContactForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/functions/sendContactForm/sendContactForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-browser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-ssr.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-ssr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/assets/images/simonewestphal.png" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/assets/images/simonewestphal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Projekte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/kontakt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projekte.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/utils/useService.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/utils/useService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/classification.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/classification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/schemas/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanity/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +84,7 @@
       <workItem from="1606558662274" duration="57088000" />
       <workItem from="1606932642778" duration="6914000" />
       <workItem from="1607249143175" duration="563000" />
-      <workItem from="1608017262226" duration="24438000" />
+      <workItem from="1608017262226" duration="25468000" />
     </task>
     <servers />
   </component>
