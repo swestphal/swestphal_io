@@ -14,6 +14,8 @@ export default {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+
     {
       resolve: 'gatsby-source-sanity',
       options: {
