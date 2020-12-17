@@ -74,17 +74,11 @@ export default function SingleProjectPage({ data: { project } }) {
         </div>
         <div className="grid">
           <div className="post__content row">
-            <div className="cell" />
-
             <ul className="post__meta">
               <li>
                 <Link to="#" className="listgroup">
                   <span className="listgroup__icon">
                     <AiOutlineFolder />
-                  </span>
-                  <span className="listgroup__content">
-                    <p>{project.relatedCategories[0].classification.name}</p>
-                    <p>{project.relatedCategories[0].skills.join(', ')}</p>
                   </span>
                 </Link>
               </li>
