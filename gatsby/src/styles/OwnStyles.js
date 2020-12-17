@@ -966,9 +966,9 @@ ul.drop-down li a:hover {
 .slider {
  
   width:calc(100vw - 200px - 13em);
-  height:calc((100vw - 200px - 13em)/ 1.33);
+  height:calc((100vw - 200px - 13em)/ 1.7);
   max-width:900px;
-  max-height: calc(900px / 1.33);
+  max-height: calc(900px / 1.7);
   overflow: hidden;
   text-align:center;
   position: relative;
@@ -981,7 +981,7 @@ ul.drop-down li a:hover {
     width: 100%;
     height: 100%;
     /*opacity: 0;*/
-    transition: all .3s ease-in;
+    transition: opacity .6s ease-in, transform .3s ease-in;
   
     &.activeSlide {
       opacity: 1;
@@ -1005,8 +1005,16 @@ ul.drop-down li a:hover {
   }
   .nav__container {
     z-index: 99;
+    width:100%;
     button {
       z-index: 99;
+      transform: translateY(-50%);
+      position: absolute;
+      top: 50%;
+      right:0;
+      &.nav__prev {
+        left:0;
+      }
     }
   }
 }
@@ -1083,7 +1091,9 @@ ul.drop-down li a:hover {
     background-repeat: no-repeat;
     border:none;
   }
-}
+  
+  
+  
 `;
 
 export default OwnStyles;
