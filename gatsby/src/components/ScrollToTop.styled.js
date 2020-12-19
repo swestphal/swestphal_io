@@ -35,8 +35,11 @@ export const StyledScrollToTop = styled.span`
     30% {
       transform: translateY(-10vh);
     }
+    60% {
+      transform: translateY(-100vh);
+    }
     100% {
-      transform: translateY(-80vh);
+      transform: translateY(-150vh);
     }
   }
   @keyframes shake {

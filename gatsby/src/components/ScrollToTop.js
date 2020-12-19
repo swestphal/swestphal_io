@@ -16,12 +16,14 @@ const ScrollToTop = () => {
   };
 
   const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     document.getElementById('ScrollRocket').classList.add('active');
   };
-
-  window.addEventListener('scroll', checkScrollTop);
-
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', checkScrollTop);
+  }
   return (
     <StyledScrollToTop id="ScrollRocket">
       <AiTwotoneRocket
