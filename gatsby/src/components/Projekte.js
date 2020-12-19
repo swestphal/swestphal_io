@@ -13,7 +13,10 @@ function SingleProject({ project }) {
     <div className="grid__item">
       <div className="card post ">
         <div className="post__inner ">
-          <Link to={`/${project.slug.current}`} className="post__image-wrapper">
+          <Link
+            to={`/projekt/${project.slug.current}`}
+            className="post__image-wrapper"
+          >
             <div className="post__image">
               <Img fluid={project.mainImage.asset.fluid} alt={project.name} />
             </div>

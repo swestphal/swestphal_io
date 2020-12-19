@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+
 import 'normalize.css';
 import CookieConsent from 'react-cookie-consent';
 import Nav from './Nav';
@@ -8,11 +8,13 @@ import Contentarea from './Contentarea';
 import Typography from '../styles/Typography';
 
 import OwnStyles from '../styles/OwnStyles';
+import { StyledLayout } from './Layout.styled';
 
 export default function Layout({ children, location }) {
   useEffect(() => {
     document.getElementById('container').classList.remove('preload');
   });
+
   return (
     <>
       <CookieConsent
@@ -40,11 +42,10 @@ export default function Layout({ children, location }) {
         </span>
       </CookieConsent>
       <OwnStyles />
-      <Typography />
-      <div id="container" className="preload">
+      <StyledLayout id="container" className="preload">
         <Nav location={location} />
         <Contentarea content={children} />
-      </div>
+      </StyledLayout>
       <Footer />
     </>
   );

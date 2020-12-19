@@ -2,15 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { bool } from 'prop-types';
-import {
-  AiFillFacebook,
-  AiFillGithub,
-  AiFillTwitterSquare,
-  AiFillInstagram,
-  AiFillPhone,
-  AiFillMail,
-  AiFillCopyrightCircle,
-} from 'react-icons/ai';
+import { AiFillPhone, AiFillMail, AiFillCopyrightCircle } from 'react-icons/ai';
 import Sticky from 'wil-react-sticky';
 // import Logo from '../assets/images/simonewestphal.png';
 //  <div className="sidebar__logo">
@@ -18,6 +10,7 @@ import Sticky from 'wil-react-sticky';
 //             </div>
 
 import { StyledNav } from './Nav.styled';
+import { StyledSidebar } from './Layout.styled';
 import Burger from './Burger';
 
 export default function Nav({ location }) {
@@ -27,7 +20,7 @@ export default function Nav({ location }) {
   }
   return (
     <>
-      <header id="sidebar">
+      <StyledSidebar id="sidebar">
         <Sticky
           containerSelectorFocus="#container"
           stickyEnableRange={[980, Infinity]}
@@ -68,7 +61,7 @@ export default function Nav({ location }) {
                 <li onClick={() => setOpen(!open)}>
                   <Link
                     to="/projekte/"
-                    className={isParentPage('projekte') ? 'active' : ''}
+                    className={isParentPage('projekt') ? 'active' : ''}
                   >
                     <span>Projekte</span>
                   </Link>
@@ -89,7 +82,7 @@ export default function Nav({ location }) {
             </div>
           </div>
         </Sticky>
-      </header>
+      </StyledSidebar>
     </>
   );
 }

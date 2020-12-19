@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 import { StyledBadgeButton } from '../components/BadgeButton.styled';
+import { StyledAkkordion } from '../components/AkkordionStyled';
 
 export default function ServicesPage({ data, pageContext }) {
   const [services, setServices] = useState(data.services.nodes);
   const [value, setValue] = useState(0);
+
   return (
     <section className="page page-services">
       <h1>Das mache ich...</h1>
-      <div className="tab">
+      <StyledAkkordion className="tab">
         <div className="tab__nav">
           {services.map((service, index) => (
             <>
@@ -45,7 +47,7 @@ export default function ServicesPage({ data, pageContext }) {
             <BlockContent blocks={services[value]._rawBody} />
           )}
         </div>
-      </div>
+      </StyledAkkordion>
     </section>
   );
 }

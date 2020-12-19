@@ -4,9 +4,9 @@ import Img from 'gatsby-image';
 import BlockContent from '@sanity/block-content-to-react';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { useSwipeable } from 'react-swipeable';
-
 import { FiChevronLeft, FiChevronRight } from 'react-icons/all';
 import { FaQuoteRight } from 'react-icons/fa';
+import StyledSlider from '../components/Slider.styled';
 import SEO from '../components/SEO';
 
 export default function SingleProjectPage({ data: { project } }) {
@@ -35,7 +35,7 @@ export default function SingleProjectPage({ data: { project } }) {
       <SEO title={project.title} image={project.mainImage?.asset?.fluid?.src} />
       <div className="page project ">
         <h1>{project.title}</h1>
-        <div className="">
+        <StyledSlider className="">
           <div className="slider " {...handlers}>
             {slides.map((slide, slideIndex) => {
               let position = 'nextSlide';
@@ -71,17 +71,13 @@ export default function SingleProjectPage({ data: { project } }) {
               </button>
             </div>
           </div>
-        </div>
+        </StyledSlider>
         <div className="grid">
           <div className="post__content row">
+            <div className="cell" />
+
             <ul className="post__meta">
-              <li>
-                <Link to="#" className="listgroup">
-                  <span className="listgroup__icon">
-                    <AiOutlineFolder />
-                  </span>
-                </Link>
-              </li>
+              <li />
             </ul>
           </div>
         </div>

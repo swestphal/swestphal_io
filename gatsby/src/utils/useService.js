@@ -1,15 +1,17 @@
 import React, { useContext, useState } from 'react';
-import EstimateContext from '../components/EstimateContext';
-import formatMoney from './formatMoney';
+// import EstimateContext from '../components/EstimateContext';
+// import formatMoney from './formatMoney';
 
-import calculateServiceTotal from './calculateServiceTotal';
+// import calculateServiceTotal from './calculateServiceTotal';
 import attachNamesAndPricesFromEstimate from './attachNamesAndPricesFromEstimate';
+// import category from '../../../sanity/schemas/category';
 
 export default function useService({ categories, inputs }) {
   // create some state to hold our order
   // const [estimate, setEstimate] = useState([]);
   // now access both our state and our updater function (setEstimate) via context
-  const [estimate, setEstimate] = useContext(EstimateContext);
+  // const [estimate, setEstimate] = useContext(EstimateContext);
+  const [estimate, setEstimate] = useState([]);
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(false);
@@ -23,6 +25,7 @@ export default function useService({ categories, inputs }) {
   // make a function add things to order
 
   function addToEstimate(orderedService) {
+    console.log('added');
     let oldItem;
     estimate.map((a) => {
       if (orderedService.id === a.id) oldItem = true;
@@ -35,6 +38,7 @@ export default function useService({ categories, inputs }) {
         const category = rel.findIndex(
           (category) => category._key === orderedService.id
         );
+
         return category;
       });
 
@@ -44,7 +48,8 @@ export default function useService({ categories, inputs }) {
       copies[index] = copy; // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
       // 5. Set the state to our new copy
       setVirtualCats(copies);
-
+      console.log(orderedService);
+      console.log(...estimate);
       setEstimate([...estimate, orderedService]);
     }
   }

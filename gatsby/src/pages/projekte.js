@@ -21,10 +21,8 @@ export default function ProjectsPage({ data, pageContext }) {
         <div className="page__intro --dashed-border">
           <p>
             Nachfolgend finden sie eine kleine Auswahl meiner öffentlich
-            zugänglichen Projekte.
-            <br />
-            Diese habe ich sowohl direkt für kleine und mittelständische
-            Unternehmen erstellt, als auch für Agenturen.
+            zugänglichen Projekte. Diese habe ich sowohl direkt für kleine und
+            mittelständische Unternehmen erstellt, als auch für Agenturen.
           </p>
           <p>
             Bitte beachten Sie, dass ich einen Großteil meiner Arbeiten im

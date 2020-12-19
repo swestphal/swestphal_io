@@ -45,6 +45,10 @@ export const StyledBadgeLink = styled((props) => <Link {...props} />)`
       background: black;
       color: white;
     }
+    &:hover {
+      color: white;
+      background: black;
+    }
   }
 
   .badge__count {
