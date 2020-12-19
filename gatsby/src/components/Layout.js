@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 import 'normalize.css';
 import CookieConsent from 'react-cookie-consent';
+import ScrollToTop from './ScrollToTop';
 import Nav from './Nav';
 import Footer from './Footer';
 import Contentarea from './Contentarea';
-import Typography from '../styles/Typography';
 
 import OwnStyles from '../styles/OwnStyles';
 import { StyledLayout } from './Layout.styled';
@@ -46,6 +46,7 @@ export default function Layout({ children, location }) {
         <Nav location={location} />
         <Contentarea content={children} />
       </StyledLayout>
+      <ScrollToTop />
       <Footer />
     </>
   );
