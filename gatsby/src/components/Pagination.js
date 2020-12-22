@@ -24,7 +24,7 @@ export default function Pagination({
 
   return (
     <StyledPagination>
-      <ul>
+      <ul className="pagination__bar">
         <li key="list_00">
           <Link
             className="--dashed-border"
