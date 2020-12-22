@@ -20,18 +20,23 @@ export const StyledLayout = styled.div`
 
   #sidebar {
     display: block;
-    width: 13em;
+    width: 15em;
     float: left;
     height: 100vh;
-    background: black;
     text-align: right;
     z-index: 4;
-    position: relative;
-    &__inner {
-      width: 13em;
+    position: fixed;
+    overflow: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
-
+  #sidebar__inner {
+    width: 13em;
+    background: black;
+  }
   @media (max-width: 979px) {
     #sidebar {
       height: auto;
