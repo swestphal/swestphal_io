@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
 import ProjectList from '../components/Projekte';
 import CategoriesFilter from '../components/CategoriesFilter';
@@ -7,6 +7,10 @@ import SEO from '../components/SEO';
 
 export default function ProjectsPage({ data, pageContext }) {
   const projects = data.projects.nodes;
+  const myRef = useRef(null);
+  const scroll = () => {
+    myRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="page page-projects">
       <h1>I enjoyed working on it!</h1>
@@ -34,7 +38,7 @@ export default function ProjectsPage({ data, pageContext }) {
           activeCategory={pageContext.categorySlug}
           currentPage={pageContext.currentPage}
         />
-        <ProjectList projects={projects} />
+        <ProjectList ref={myRef} projects={projects} />
         <Pagination
           pageSize={pageContext.pageSize}
           totalCount={pageContext.totalCount}
@@ -43,6 +47,7 @@ export default function ProjectsPage({ data, pageContext }) {
           base="/projekte"
           categorySlug={pageContext.categorySlug}
           categoryRegexName={pageContext.categoryRegexName}
+          onClick={scroll}
         />
       </div>
     </div>
@@ -67,9 +72,35 @@ export const query = graphql`
         slug {
           current
         }
+
+        secondaryBackground {
+          asset {
+            fluid(maxWidth: 800) {
+              ...GatsbySanityImageFluid
+            }
+            url
+          }
+        }
+        secondaryLogo {
+          asset {
+            fluid(maxWidth: 510) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+        secondaryImage {
+          asset {
+            fluid(maxHeight: 400) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+
+        secondaryColour
+        _rawExcerpt
         mainImage {
           asset {
-            fluid(maxWidth: 400) {
+            fluid(maxWidth: 510) {
               ...GatsbySanityImageFluid
             }
           }
@@ -89,6 +120,7 @@ export const query = graphql`
             current
           }
           publishedAt
+
           excerpt {
             _key
             _type
@@ -96,8 +128,7 @@ export const query = graphql`
             list
             _rawChildren
           }
-          startedAt
-          endedAt
+
           mainImage {
             crop {
               _key
