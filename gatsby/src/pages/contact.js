@@ -33,11 +33,11 @@ const ContactPage = ({ data }) => {
   const categories = data.categories.nodes;
   return (
     <div className="page page-contact">
-      <h1>Sie haben ein neues Projekt?</h1>
+      <h1>New project planned?</h1>
       <SEO title="Get in contact" />
       <form className="form" onSubmit={checkForm}>
         <fieldset disabled={loading}>
-          <legend>Ihre Kontaktdaten</legend>
+          <legend>Your contact details</legend>
           <div className="grid grid--lg  estimate">
             <div className="grid__item ">
               <div className="form__container">
@@ -57,7 +57,7 @@ const ContactPage = ({ data }) => {
                 </div>
               </div>
               <div className="form__container">
-                <label htmlFor="email">E-Mail</label>
+                <label htmlFor="email">Email</label>
                 <div className="input__container">
                   <input
                     type="text"
@@ -79,7 +79,7 @@ const ContactPage = ({ data }) => {
                   <textarea
                     name="textmessage"
                     id="textmessage"
-                    placeholder="... Ihre Nachricht an mich"
+                    placeholder="... Your message"
                     value={values.textmessage}
                     onChange={updateValue}
                     className="effect-9"
@@ -94,7 +94,7 @@ const ContactPage = ({ data }) => {
         </fieldset>
         <div className="grid grid--lg grid--fit estimate">
           <fieldset className="grid__item " disabled={loading}>
-            <legend>Ich bin interessiert an...</legend>
+            <legend>I'm interested in ...</legend>
 
             <EstimateSelection
               categories={categories}
@@ -104,7 +104,7 @@ const ContactPage = ({ data }) => {
           </fieldset>
           <div className="grid__item ">
             <fieldset className="estimate__calculation " disabled={loading}>
-              <legend>Ihre Wunschliste</legend>
+              <legend>My wishlist</legend>
               <Estimate
                 estimate={estimate}
                 removeFromEstimate={removeFromEstimate}
@@ -114,7 +114,7 @@ const ContactPage = ({ data }) => {
             {error ? <p> {error} </p> : ''}
             {message ? <p> {message} </p> : ''}
             <button type="submit" disabled={loading}>
-              {loading ? 'Anfrage wird versendet ...' : 'Absenden'}
+              {loading ? '... sending ' : 'Send'}
             </button>
           </div>
         </div>

@@ -21,7 +21,7 @@ export const StyledAkkordion = styled.div`
     padding: 1em;
     position: relative;
     top: -1px;
-    div p:last-of-type {
+    p:last-of-type {
       margin-bottom: 0;
     }
   }

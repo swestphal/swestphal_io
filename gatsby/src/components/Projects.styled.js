@@ -193,15 +193,21 @@ export const PortfolioItem = styled.div`
     }
 
     width: 100%;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     transition: all 0.3s ease-out;
 
     background-position: center;
 
-    &:hover,
-    &.isActive {
-      background-size: 103%;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      transition: inherit;
     }
   }
   .post__image:before {
@@ -221,5 +227,9 @@ export const PortfolioItem = styled.div`
     @media (min-width: 1100px) {
       margin-bottom: calc(400px + 1em);
     }
+  }
+  &:hover .post__image::after,
+  .post__image.isActive::after {
+    transform: scale(1.1);
   }
 `;

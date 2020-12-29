@@ -66,7 +66,7 @@ export default function CategoriesFilter({ activeCategory, currentPage }) {
     <StyledCategoriesFilter>
       <ul>
         <StyledListItem key="00" colour="#000">
-          <StyledBadgeLink className="badge all" to="/projekte">
+          <StyledBadgeLink className="badge all" to="/projects">
             <span className="badge__name">All</span>
             <span className="badge__count">{projects.nodes.length}</span>
           </StyledBadgeLink>
@@ -75,7 +75,7 @@ export default function CategoriesFilter({ activeCategory, currentPage }) {
           <StyledListItem key={`'filter_' + ${i}`}>
             <StyledBadgeLink
               className="badge"
-              to={`/projekte/${category.slug}`}
+              to={`/projects/${category.slug}`}
               key={category.id}
               colour={category.colour}
             >

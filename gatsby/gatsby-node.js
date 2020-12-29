@@ -1,4 +1,5 @@
 import path from 'path';
+import project from '../sanity/schemas/project';
 
 function countProjectsInCategories(projects) {
   // Return the projects with counts
@@ -29,7 +30,8 @@ function countProjectsInCategories(projects) {
     name: 'All',
     colour: 'none',
     slug: '',
-    count: 20,
+    count: 9,
+    // todo check if correct base for length!
   };
   // sort them based on their count
   const sortedCategories = Object.values(counts).sort(
@@ -40,7 +42,7 @@ function countProjectsInCategories(projects) {
 
 async function turnProjectCategoriesIntoPages({ graphql, actions }) {
   // 1. Get the template
-  const categoryTemplate = path.resolve('./src/pages/projekte.js');
+  const categoryTemplate = path.resolve('./src/pages/projects.js');
   // 2. query all the categories
   const { data } = await graphql(`
     query {
@@ -55,7 +57,7 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
           }
         }
       }
-      projects: allSanityProject {
+      projects: allSanityProject(filter: { isOnline: { eq: true } }) {
         nodes {
           id
           title
@@ -77,11 +79,11 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
     }
   `);
   // turn each project in a single page
-  const projectTemplate = path.resolve('./src/templates/Projekt.js');
+  const projectTemplate = path.resolve('./src/templates/Project.js');
   data.projects.nodes.forEach((project) => {
     actions.createPage({
       component: projectTemplate,
-      path: `projekt/${project.slug.current}`,
+      path: `project/${project.slug.current}`,
       context: {
         name: project.name,
         slug: project.slug.current,
@@ -90,6 +92,7 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
   });
 
   // get count of pages of that category
+  /*
   const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
   const categoriesWithCounts = countProjectsInCategories(data.projects.nodes);
   categoriesWithCounts.forEach((category) => {
@@ -147,6 +150,30 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
       });
     }); */
   // 4. Pass category data to project.js
+
+  const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
+  const projectCounts = data.projects.nodes.length;
+
+  const pageCount = Math.ceil(projectCounts / pageSize);
+  Array.from({ length: pageCount }).forEach((a, i) => {
+    const rootSlug = 'projects';
+    let numSlug = `/${i + 1}`;
+    if (i === 0) numSlug = '';
+
+    actions.createPage({
+      path: `${rootSlug + numSlug}`,
+      component: categoryTemplate,
+      context: {
+        skip: i * pageSize,
+        currentPage: i + 1,
+        pageSize,
+        totalCount: projectCounts,
+        categoryRegexName: '',
+        categoryName: `All`,
+        categorySlug: '',
+      },
+    });
+  });
 }
 
 export async function createPages(params) {

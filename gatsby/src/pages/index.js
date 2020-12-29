@@ -4,17 +4,16 @@ import { AboutSingle } from '../components/About';
 import Testimonials from '../components/Testimonials';
 import ServiceList from '../components/Services';
 import Skills from '../components/Skills';
-import ProjectList from '../components/Projekte';
+import ProjectList from '../components/Projects';
 
 export default function AboutPage({ data, pageContext }) {
   const [about] = data.about.nodes;
   const categories = data.categories.nodes;
-
+  // <ServiceList categories={categories} about={about} />
   return (
     <div className="page page-index ">
-      <h1>Professionelle Webentwicklung</h1>
+      <h1>Custom Webdevelopement</h1>
       <div>
-        <ServiceList categories={categories} about={about} />
         <AboutSingle about={about} />
       </div>
     </div>

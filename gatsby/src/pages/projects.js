@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
 import { graphql } from 'gatsby';
-import ProjectList from '../components/Projekte';
+import ProjectList from '../components/Projects';
 import CategoriesFilter from '../components/CategoriesFilter';
 import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';
 
 export default function ProjectsPage({ data, pageContext }) {
+  console.log(pageContext);
   const projects = data.projects.nodes;
   const myRef = useRef(null);
   const scroll = () => {
@@ -24,27 +25,33 @@ export default function ProjectsPage({ data, pageContext }) {
       <div className="page-projects --has-no-first-grid">
         <div className="page__intro --dashed-border">
           <p>
-            Nachfolgend finden sie eine kleine Auswahl meiner öffentlich
+            {/* Nachfolgend finden sie eine kleine Auswahl meiner öffentlich
             zugänglichen Projekte. Diese habe ich sowohl direkt für kleine und
             mittelständische Unternehmen erstellt, als auch für Agenturen.
           </p>
           <p>
             Bitte beachten Sie, dass ich einen Großteil meiner Arbeiten im
             White-Label Bereich durchführe oder diese Projekte unter NDA stehen
-            und ich sie daher nicht veröffentlichen kann.
+            und ich sie daher nicht veröffentlichen kann. */}
+            Below you will find a small selection of my publicly accessible
+            projects. I created these directly for small and medium-sized
+            companies as well as for agencies. <br />
+            Please note that I carry out a large part of my work in the white
+            label area or that these projects are under NDA and therefore I
+            cannot publish them.
           </p>
         </div>
-        <CategoriesFilter
+        {/* <CategoriesFilter
           activeCategory={pageContext.categorySlug}
           currentPage={pageContext.currentPage}
-        />
+        /> */}
         <ProjectList ref={myRef} projects={projects} />
         <Pagination
           pageSize={pageContext.pageSize}
           totalCount={pageContext.totalCount}
           currentPage={pageContext.currentPage || ''}
           skip={pageContext.skip}
-          base="/projekte"
+          base="/projects"
           categorySlug={pageContext.categorySlug}
           categoryRegexName={pageContext.categoryRegexName}
           onClick={scroll}
@@ -55,14 +62,14 @@ export default function ProjectsPage({ data, pageContext }) {
 }
 
 export const query = graphql`
-  query ProjectQuery($categoryRegexName: String, $skip: Int, $pageSize: Int) {
+  query ProjectQuery($skip: Int, $pageSize: Int) {
     projects: allSanityProject(
       skip: $skip
+      sort: { fields: index }
       limit: $pageSize
       filter: {
-        relatedCategories: {
-          elemMatch: { classification: { name: { regex: $categoryRegexName } } }
-        }
+        relatedCategories: { elemMatch: { classification: { name: {} } } }
+        isOnline: { eq: true }
       }
     ) {
       totalCount

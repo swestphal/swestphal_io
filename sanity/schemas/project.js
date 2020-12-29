@@ -9,6 +9,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'isOnline',
+      title: 'Online ?',
+      type: 'boolean',
+    },
+    {
       name: 'index',
       title: 'Index',
       type: 'number',
@@ -37,22 +42,32 @@ export default {
       type: 'blockText',
     },
     {
-      name: 'startedAt',
-      title: 'Started at',
-      type: 'datetime',
-    },
-    {
-      name: 'endedAt',
-      title: 'Ended at',
-      type: 'datetime',
-    },
-    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: 'secondaryImage',
+      title: 'Detail Container Image',
+      type: 'image',
+    },
+    {
+      name: 'secondaryColour',
+      title: 'Detail Container Colour',
+      type: 'string',
+    },
+    {
+      name: 'secondaryBackground',
+      title: 'Detail Container Background',
+      type: 'image',
+    },
+    {
+      name: 'secondaryLogo',
+      title: 'Detail Container Logo',
+      type: 'image',
     },
     {
       name: 'imageGallery',
@@ -98,18 +113,6 @@ export default {
     select: {
       title: 'title',
       media: 'mainImage',
-      tag0: 'tags.0.name',
-      tag1: 'tags.1.name',
-      tag2: 'tags.2.name',
-      tag3: 'tags.3.name',
-    },
-    prepare: ({ title, media, ...tags }) => {
-      const tagsArr = Object.values(tags).filter(Boolean);
-      return {
-        title,
-        media,
-        subtitle: tagsArr.join(', '),
-      };
     },
   },
 };

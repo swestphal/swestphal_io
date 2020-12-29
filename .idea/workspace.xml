@@ -20,14 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c28f0b6-a01e-4d97-ae9d-4189cc076680" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/gatsby/src/components/BadgeButton.styled.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gatsby/src/components/Pagination.styled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/public/page-data/index/page-data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/AkkordionStyled.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/AkkordionStyled.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/CategoriesFilter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Nav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Projekte.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/components/Projekte.styled.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/components/Projects.styled.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/blog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/kontakt.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/pages/projekte.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/projects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby/src/pages/services.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/pages/services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/OwnStyles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/styles/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby/src/templates/Projekt.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby/src/templates/Project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/schemas/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/schemas/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sanity/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/sanity/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +58,9 @@
     <bower-package value="" />
     <bower.json value="" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1kk5NaZe2XpMyPr6keGgRmuPca0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,7 +70,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/gatsby/src/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/gatsby/static" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
@@ -66,13 +85,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gatsby/src/components" />
+      <recent name="$PROJECT_DIR$/gatsby/static" />
       <recent name="$PROJECT_DIR$/gatsby/src/pages" />
+      <recent name="$PROJECT_DIR$/gatsby/src/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/gatsby/src/assets" />
+      <recent name="$PROJECT_DIR$/gatsby/src/styles" />
+      <recent name="$PROJECT_DIR$/gatsby/static" />
+      <recent name="$PROJECT_DIR$/gatsby/src/templates" />
       <recent name="$PROJECT_DIR$/sanity/sample-data" />
-      <recent name="$PROJECT_DIR$/gatsby/src/assets/images" />
-      <recent name="$PROJECT_DIR$/gatsby/public/static" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,7 +112,9 @@
       <workItem from="1606558662274" duration="57088000" />
       <workItem from="1606932642778" duration="6914000" />
       <workItem from="1607249143175" duration="563000" />
-      <workItem from="1608017262226" duration="29922000" />
+      <workItem from="1608017262226" duration="60664000" />
+      <workItem from="1608316136512" duration="9013000" />
+      <workItem from="1608368212042" duration="111192000" />
     </task>
     <servers />
   </component>

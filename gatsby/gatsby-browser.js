@@ -16,11 +16,11 @@ export const shouldUpdateScroll = ({
   getSavedScrollPosition,
 }) => {
   // Retain scroll position when user is on the projects page
-  const pagesToRetainScollPosition = location.pathname.includes('projekte');
+  const pagesToRetainScollPosition = location.pathname.includes('projects');
   console.log(location.pathname);
   if (
-    location.pathname.includes('projekte') &&
-    location.pathname !== '/projekte/'
+    location.pathname.includes('projects') &&
+    location.pathname !== '/projects/'
   ) {
     /* no scroll at all
     if (pagesToRetainScollPosition) {
@@ -29,10 +29,9 @@ export const shouldUpdateScroll = ({
     window.scrollTo(currentPosition || [0, 0]);
     return false;
     */
-
     /* only on main projekte page */
-    const element = document.querySelector('.projects__container');
+    /* const element = document.querySelector('.projects__container');
     element.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    return false;
+    return false; */
   }
 };

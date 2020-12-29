@@ -10,7 +10,7 @@ export default {
   siteMetadata: {
     title: 'swestphal.io',
     siteUrl: 'http://localhost:8888',
-    description: 'Webentwicklung Simone Westphal',
+    description: 'Webdevelopment Simone Westphal',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -29,7 +29,7 @@ export default {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: ['projekte.js'],
+        ignore: ['projects.js'],
       },
     },
     {

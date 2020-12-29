@@ -131,8 +131,6 @@ export const query = graphql`
           list
           _rawChildren
         }
-        startedAt
-        endedAt
 
         mainImage {
           crop {

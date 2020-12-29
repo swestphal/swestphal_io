@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import styled from 'styled-components';
 import BlockContent from '@sanity/block-content-to-react';
 import BackgroundImage from 'gatsby-background-image';
-import { OuterContent, PortfolioItem } from './Projekte.styled';
+import { OuterContent, PortfolioItem } from './Projects.styled';
 
 const PortfolioContainer = styled.div`
   margin-left: -1em;
@@ -51,15 +51,15 @@ class SingleProject extends React.Component {
         <div className="post__inner" onClick={this.onClick}>
           <div
             className={`post__image ${
-              this.project.expanded === 'true' ? 'isActive' : 'nie'
+              this.project.expanded === 'true' ? 'isActive' : ''
             }`}
             style={{
               backgroundImage: `url(${this.project.secondaryBackground?.asset.url}?h=300)`,
             }}
-          />
-
-          <div className="post__logo">
-            <Img fluid={this.project.secondaryLogo?.asset.fluid} />
+          >
+            <div className="post__logo">
+              <Img fluid={this.project.secondaryLogo?.asset.fluid} />
+            </div>
           </div>
         </div>
 
