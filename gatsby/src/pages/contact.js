@@ -79,7 +79,7 @@ const ContactPage = ({ data }) => {
                   <textarea
                     name="textmessage"
                     id="textmessage"
-                    placeholder="... Your message"
+                    placeholder="Your message"
                     value={values.textmessage}
                     onChange={updateValue}
                     className="effect-9"
@@ -94,7 +94,7 @@ const ContactPage = ({ data }) => {
         </fieldset>
         <div className="grid grid--lg grid--fit estimate">
           <fieldset className="grid__item " disabled={loading}>
-            <legend>I'm interested in ...</legend>
+            <legend>I'm interested in:</legend>
 
             <EstimateSelection
               categories={categories}

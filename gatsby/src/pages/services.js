@@ -1,10 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
+import { FiCheckCircle } from 'react-icons/fi';
 import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 import { StyledBadgeButton } from '../components/BadgeButton.styled';
 import { StyledAkkordion } from '../components/AkkordionStyled';
 
+export const StyledListItem = styled.li`
+  position: relative;
+  padding: 0 1em;
+  &:first-of-type {
+    margin-top: 1em;
+  }
+  svg {
+    position: absolute;
+    font-size: 1.5rem;
+    left: 0.5rem;
+    color: black;
+    -webkit-filter: drop-shadow(3px 3px 0px #fded27);
+    filter: drop-shadow(3px 3px 0px #fded27);
+  }
+  div.list__content {
+    margin-left: 1.5rem;
+  }
+`;
+export const AkkordionContent = styled.div`
+  li {
+    background: ${(props) => props.colour};
+    color: white;
+  }
+`;
 export default function ServicesPage({ data, pageContext }) {
   const [services, setServices] = useState(data.services.nodes);
   const [value, setValue] = useState(0);
@@ -12,28 +37,46 @@ export default function ServicesPage({ data, pageContext }) {
   return (
     <section className="page page-services">
       <h1>What can I do for you?</h1>
-      <h3>Your are...</h3>
-      <ul>
-        <li>
-          An art director and/or web designer who would prefer to avoid coding.
-          <br />
-          Let me code that for you!
-        </li>
+      <h2>Your are...</h2>
+      <ul className="services__list">
+        <StyledListItem>
+          <FiCheckCircle />
+          <div className="list__content">
+            <p>
+              An art director and/or web designer who would prefer to avoid
+              coding.
+              <br />
+              Let me code that for you!
+            </p>
+          </div>
+        </StyledListItem>
 
-        <li>
-          A Digital Media firms needing an extra hand with overflow projects?
-          <br />
-          I'm also open to a more permanent role in part time with the right
-          company.
-        </li>
-        <li>
-          A Small to medium-sized businesses needing expert guidance and
-          assistance with websites, apps, social media and more?
-          <br />
-          If I can't help, I can assist you with finding the appropriate
-          service.
-        </li>
+        <StyledListItem>
+          <FiCheckCircle />
+          <div className="list__content">
+            <p>
+              A Digital Media firm needing an extra hand with overflow projects?
+              <br />
+              I'm also open to a more permanent role in part time with the right
+              company.
+            </p>
+          </div>
+        </StyledListItem>
+        <StyledListItem>
+          <FiCheckCircle />
+          <div className="list__content">
+            <p>
+              A Small to medium-sized businesses needing expert guidance and
+              assistance with websites, apps and more?
+              <br />
+              If I can't help, I can assist you with finding the appropriate
+              service.
+            </p>
+          </div>
+        </StyledListItem>
       </ul>
+      <br />
+      <h2>My toolbelt</h2>
       <StyledAkkordion className="tab">
         <div className="tab__nav">
           {services.map((service, index) => (
@@ -48,7 +91,7 @@ export default function ServicesPage({ data, pageContext }) {
               >
                 <span className="badge__name">{service.name}</span>
               </StyledBadgeButton>
-              <div
+              <AkkordionContent
                 className={`${
                   (index === value && 'tab__accordion--active') || ''
                 } tab__container tab__accordion --dashed-border`}
@@ -57,18 +100,18 @@ export default function ServicesPage({ data, pageContext }) {
                 {services[value]._rawBody && (
                   <BlockContent blocks={services[value]._rawBody} />
                 )}
-              </div>
+              </AkkordionContent>
             </>
           ))}
         </div>
-        <div
+        <AkkordionContent
           className="tab__container tab__tabs --dashed-border"
           colour={services[value].colour}
         >
           {services[value]._rawBody && (
             <BlockContent blocks={services[value]._rawBody} />
           )}
-        </div>
+        </AkkordionContent>
       </StyledAkkordion>
     </section>
   );

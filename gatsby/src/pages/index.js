@@ -12,7 +12,7 @@ export default function AboutPage({ data, pageContext }) {
   // <ServiceList categories={categories} about={about} />
   return (
     <div className="page page-index ">
-      <h1>Custom Webdevelopement</h1>
+      <h1>Custom Web&shy;developement</h1>
       <div>
         <AboutSingle about={about} />
       </div>
@@ -29,8 +29,8 @@ export const query = graphql`
         aboutTitle
         aboutMainImage {
           asset {
-            fixed(width: 360) {
-              ...GatsbySanityImageFixed
+            fluid(maxWidth: 360) {
+              ...GatsbySanityImageFluid
             }
           }
           _key

@@ -49,6 +49,7 @@ const GlobalStyles = createGlobalStyle`
 /* =  Header
 /*-------------------------------------------------*/
 
+
 header {
     display: block;
     width: 300px;

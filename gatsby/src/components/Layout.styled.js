@@ -22,15 +22,25 @@ export const StyledLayout = styled.div`
     display: block;
     width: 15em;
     float: left;
-    height: 100vh;
     text-align: right;
+
     z-index: 4;
-    position: fixed;
+
     overflow: auto;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+
+  @media (min-width: 980px) {
+    #sidebar {
+      position: fixed;
+      min-height: 100vh;
+    }
+    .sidebar__infos {
+      margin: 2em 1.5em 2rem 0;
     }
   }
   #sidebar__inner {
@@ -39,11 +49,16 @@ export const StyledLayout = styled.div`
   }
   @media (max-width: 979px) {
     #sidebar {
-      height: auto;
       width: 100%;
+      height: 4em;
       &__inner {
         width: 100%;
       }
+    }
+    .sidebar__infos {
+      min-height: 4em;
+      margin: 0;
+      padding: 0.5em 1em 0 0;
     }
   }
 
@@ -64,7 +79,7 @@ export const StyledLayout = styled.div`
   }
 
   .page {
-    padding: 9em 0 3em;
+    padding: 6em 0 3em;
     @media (min-width: 980px) {
       padding: 2em 0 3em;
     }
@@ -79,11 +94,6 @@ export const StyledLayout = styled.div`
 `;
 
 export const StyledSidebar = styled.header`
-  .sidebar__menu {
-    @media (max-width: 979px) {
-      margin-top: 1em;
-    }
-  }
   .sidebar__social {
     margin: 2rem 24px 2rem 0;
     .social__icons li {
@@ -96,8 +106,6 @@ export const StyledSidebar = styled.header`
   }
 
   .sidebar__infos {
-    margin: 0 1.5em 2rem 0;
-
     @media (max-width: 979px) {
       display: flex;
       flex-direction: row;
@@ -106,6 +114,7 @@ export const StyledSidebar = styled.header`
       a + a {
         margin-left: 2em;
       }
+
       .s__copyright {
         display: none;
       }
@@ -116,7 +125,7 @@ export const StyledSidebar = styled.header`
     a {
       cursor: pointer;
       color: #d2d2d2;
-      padding: 8px 0;
+      padding: 0 0 8px;
       font-size: 0.75em;
       display: block;
       &:hover {

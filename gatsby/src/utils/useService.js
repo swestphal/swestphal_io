@@ -89,7 +89,9 @@ export default function useService({ categories, inputs }) {
     if (validateEmail(inputs.email) && inputs.name && inputs.name.length >= 3)
       submitContactform(e);
     e.preventDefault();
-    setMessage(inputs.name ? 'E-Mail fehlt' : 'Bitte einen Namen eintragen');
+    setMessage(
+      inputs.name ? 'Please enter your email' : 'Please enter your name'
+    );
   }
   async function submitContactform(e) {
     e.preventDefault();

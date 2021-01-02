@@ -18,7 +18,7 @@ export const StyledAkkordion = styled.div`
     margin-top: 1.5em;
   }
   .tab__container {
-    padding: 1em;
+    padding: 1em 1em 0.5em;
     position: relative;
     top: -1px;
     p:last-of-type {
@@ -53,5 +53,14 @@ export const StyledAkkordion = styled.div`
     @media (min-width: 1359px) {
       display: none;
     }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+  li {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.25rem 0.75rem;
   }
 `;

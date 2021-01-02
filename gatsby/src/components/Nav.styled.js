@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledNav = styled.nav`
+  z-index: 1;
   ul.menu,
   ul.archives,
   ul.categories {
