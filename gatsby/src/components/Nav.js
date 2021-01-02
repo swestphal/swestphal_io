@@ -45,11 +45,6 @@ export default function Nav({ location }) {
                 </Link>
               </li>
               <li onClick={() => setOpen(!open)}>
-                <Link to="/blog/">
-                  <span>Blog</span>
-                </Link>
-              </li>
-              <li onClick={() => setOpen(!open)}>
                 <Link to="/services/">
                   <span>Services</span>
                 </Link>
