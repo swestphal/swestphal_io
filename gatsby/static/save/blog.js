@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Blog from '../components/Blog';
-import CategoriesFilter from '../components/CategoriesFilter';
-import ProjectList from '../components/Projects';
+import Blog from '../../src/components/Blog';
+import CategoriesFilter from '../../src/components/CategoriesFilter';
+import ProjectList from '../../src/components/Projects';
 
 export default function BlogPage({ data, pageContext }) {
   const posts = data.posts.nodes;
