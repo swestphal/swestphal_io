@@ -651,9 +651,12 @@ sub {
 
 
 .sidebar__infos--legal--mb {
+  display: none;
   @media (max-width: 979px) {
+    display: block;
     padding: .5em 1em;
     p {
+      font-size:.75em;
       margin:0;
     }
   }
