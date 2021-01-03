@@ -17,11 +17,11 @@ function generateContactEmail({ body, total }) {
 // create transport for nodemailer
 
 const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
+  host: 'smtp.sendgrip.net',
   port: 587,
   auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
+    user: 'smtp',
+    pass: process.env.SENDGRID_API_KEY,
   },
 });
 
