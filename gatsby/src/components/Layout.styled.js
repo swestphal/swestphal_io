@@ -54,9 +54,12 @@ export const StyledLayout = styled.div`
         display: block;
         position: absolute;
         font-size: 0.75em;
-        top: calc(100vh - 2em);
+        top: calc(100vh - 4em);
         left: 4.5em;
         background: black;
+        p {
+          margin: 0;
+        }
       }
     }
   }
