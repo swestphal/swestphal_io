@@ -111,8 +111,8 @@ const ContactPage = ({ data }) => {
                 categories={categories}
               />
             </fieldset>
-            {error ? <p> {error} </p> : ''}
-            {message ? <p> {message} </p> : ''}
+            {error ? <p>{error} </p> : ''}
+            {message ? <p>{message} </p> : ''}
             <button type="submit" disabled={loading}>
               {loading ? '... sending ' : 'Send'}
             </button>

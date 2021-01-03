@@ -89,9 +89,10 @@ export default function useService({ categories, inputs }) {
     if (validateEmail(inputs.email) && inputs.name && inputs.name.length >= 3)
       submitContactform(e);
     e.preventDefault();
-    setMessage(
-      inputs.name ? 'Please enter your email' : 'Please enter your name'
-    );
+    if (!inputs.name || !inputs.email)
+      setMessage(
+        inputs.name ? 'Please enter your email' : 'Please enter your name'
+      );
   }
   async function submitContactform(e) {
     e.preventDefault();
@@ -127,7 +128,7 @@ export default function useService({ categories, inputs }) {
       setError(text.message);
     } else {
       setLoading(false);
-      setMessage('Ihre Anfrage wurde gesendet');
+      setMessage('Thanks for your request. I will contact you soon!');
     }
   }
 

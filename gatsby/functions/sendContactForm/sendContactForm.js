@@ -1,4 +1,11 @@
 const nodemailer = require('nodemailer');
+const nodemailerSendgrid = require('nodemailer-sendgrid');
+
+const transport = nodemailer.createTransport(
+  nodemailerSendgrid({
+    apiKey: process.env.SENDGRID_API_KEY,
+  })
+);
 
 function generateContactEmail({ body, total }) {
   return `<div>
@@ -41,9 +48,9 @@ exports.handler = async (event, context) => {
   }
 
   // send mail
-  const info = await transporter.sendMail({
-    from: 'swestphal <hello@example.com>',
-    to: `${body.name} <${body.email}>`,
+  const info = await transport.sendMail({
+    from: 'swestphal <hello@swestphal.io>',
+    to: `hello@swestphal.io`,
     subject: 'New contact request',
     html: generateContactEmail({ body, total: body.total }),
   });
