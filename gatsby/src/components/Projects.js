@@ -158,6 +158,16 @@ class SingleDetail extends React.Component {
 
   render() {
     const imageData = this.project.secondaryBackground.asset.fluid;
+    const renderedTags =
+      this.project.tags.length > 0 ? (
+        <ul className="port__tags">
+          {this.project.tags.map((tag) => (
+            <li>#{tag}</li>
+          ))}
+        </ul>
+      ) : (
+        ''
+      );
     return (
       <OuterContent
         ref={(node) => (this.node = node)}
@@ -185,14 +195,11 @@ class SingleDetail extends React.Component {
                 fluid={this.project.secondaryImage.asset.fluid}
                 alt={this.project.name}
               />
+              {renderedTags}
             </div>
             <div className="port__item port__item--text">
               <h4>{this.project.title}</h4>
-
               <BlockContent blocks={this.project._rawExcerpt} />
-              <a href="link" className="btn">
-                Anschauen
-              </a>
             </div>
           </div>
         </BackgroundImage>

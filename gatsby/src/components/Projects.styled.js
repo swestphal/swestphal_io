@@ -6,9 +6,9 @@ export const OuterContent = styled.div`
   height: 0;
   width: calc(100% - 2em);
   @media (min-width: 980px) {
-    width: calc(100% - 13em - 5em);
+    width: calc(100% - 13em - 3em);
   }
-  margin-top: 30px;
+  margin-top: 1em;
   color: #fff;
   position: absolute;
   left: 1em;
@@ -33,15 +33,30 @@ export const OuterContent = styled.div`
   .closeDetail {
     position: absolute;
     right: 1em;
-    bottom:530px;
+    bottom:520px;
     @media(min-width:1100px) {
-      bottom: 310px;
+      bottom: 380px;
     }
     color: #ffed27;
     background: black;
     border-radius: 50%;
     padding: 1px;
     cursor: pointer;
+  }
+  .port__tags {
+    margin-top:1em;
+    line-height: 16px;
+    margin-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      
+      padding-right: 10px;
+      font-size: 16px;
+     
+      font-family: 'jura', sans-serif;
+    }
   }
   .content {
     overflow: hidden;
@@ -106,7 +121,7 @@ export const OuterContent = styled.div`
   }
   .port__item--img {
     padding: 0 1em;
-    width:80%;
+    width:60%;
     height:400px;
     display: flex;
     margin: auto 0;
@@ -150,18 +165,18 @@ export const PortfolioItem = styled.div`
   .out {
     height: 600px;
     @media (min-width: 1100px) {
-      height: 400px;
+      height: 470px;
     }
   }
   .in {
     height: 0;
   }
-  width: calc(100%);
+  width: 100%;
   @media (min-width: 500px) {
-    width: calc((100% - 1em) / 2);
+    width: calc(100% / 2);
   }
-  @media (min-width: 980px) {
-    width: calc((100% - 2em) / 3);
+  @media (min-width: 630px) {
+    width: calc(100% / 3);
   }
 
   .post__inner {
@@ -179,14 +194,18 @@ export const PortfolioItem = styled.div`
     transform: translate(-50%, -50%);
   }
   .post__image {
+    cursor: pointer;
     position: relative;
     box-shadow: 0 5px 13px 5px rgba(36, 50, 66, 0.12);
     top: 0;
 
     left: 0;
-    height: calc(100% - 2em);
+    height: calc(100vw - 2em);
     @media (min-width: 500px) {
       height: calc((100vw - 5em) / 2);
+    }
+    @media (min-width: 630px) {
+      height: calc((100vw - 5em) / 3);
     }
     @media (min-width: 980px) {
       height: calc((100vw - 15em - 5em) / 3);
@@ -223,9 +242,9 @@ export const PortfolioItem = styled.div`
   }
 
   &.isExpanded {
-    margin-bottom: calc(600px + 1em);
+    margin-bottom: 600px;
     @media (min-width: 1100px) {
-      margin-bottom: calc(400px + 1em);
+      margin-bottom: 470px;
     }
   }
   &:hover .post__image::after,

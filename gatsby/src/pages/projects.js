@@ -79,7 +79,7 @@ export const query = graphql`
         slug {
           current
         }
-
+        tags
         secondaryBackground {
           asset {
             fluid(maxWidth: 800) {

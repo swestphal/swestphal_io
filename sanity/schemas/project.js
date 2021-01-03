@@ -96,6 +96,12 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
       name: 'relatedProjects',
       title: 'Related projects',
       type: 'array',

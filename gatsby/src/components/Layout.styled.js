@@ -47,19 +47,25 @@ export const StyledLayout = styled.div`
     width: 13em;
     position: absolute;
     background: black;
+    @media (min-width: 980px) and (max-height: 650px) {
+      padding-bottom: 3em;
+    }
     .sidebar__infos--legal--dt {
       display: none;
 
       @media (min-width: 980px) {
         display: block;
         position: absolute;
-        font-size: 0.75em;
+        font-size: 0.7em;
         top: calc(100vh - 4em);
-        left: 4.5em;
+        left: 5.5em;
         background: black;
         p {
           margin: 0;
         }
+      }
+      @media (min-width: 980px) and (max-height: 650px) {
+        top: calc(100% - 4em);
       }
     }
   }
@@ -69,6 +75,8 @@ export const StyledLayout = styled.div`
       height: 4em;
       &__inner {
         width: 100%;
+        position: fixed;
+        z-index: 9;
       }
     }
     .sidebar__infos {
