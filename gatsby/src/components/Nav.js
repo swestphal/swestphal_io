@@ -65,7 +65,11 @@ export default function Nav({ location }) {
             </ul>
           </StyledNav>
 
-          <div className="sidebar__infos">
+          <div className="sidebar__infos--legal--dt">
+            <p className="infos__legal">
+              <Link to="/imprint">Imprint</Link>&nbsp;|&nbsp;
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </p>
             <p className="infos__copyright">
               <AiFillCopyrightCircle /> {new Date().getFullYear()} Simone
               Westphal

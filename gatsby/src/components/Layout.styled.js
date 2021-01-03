@@ -45,7 +45,20 @@ export const StyledLayout = styled.div`
   }
   #sidebar__inner {
     width: 13em;
+    position: absolute;
     background: black;
+    .sidebar__infos--legal--dt {
+      display: none;
+
+      @media (min-width: 980px) {
+        display: block;
+        position: absolute;
+        font-size: 0.75em;
+        top: calc(100vh - 2em);
+        left: 4.5em;
+        background: black;
+      }
+    }
   }
   @media (max-width: 979px) {
     #sidebar {

@@ -16,6 +16,7 @@ body {
     opacity:1;
     background: black;
     height: 100%;
+  overflow-x: hidden;
 }
 
 body.active {
@@ -648,7 +649,16 @@ sub {
 }
 .grid-att { grid-area: att; }
 
-  
+
+.sidebar__infos--legal--mb {
+  @media (max-width: 979px) {
+    padding: .5em 1em;
+    p {
+      margin:0;
+    }
+  }
+}
+
   
 `;
 

@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 import 'normalize.css';
 import CookieConsent from 'react-cookie-consent';
+import { AiFillCopyrightCircle } from 'react-icons/ai';
+import { Link } from 'gatsby';
 import ScrollToTop from './ScrollToTop';
 import Nav from './Nav';
 import Footer from './Footer';
 import Contentarea from './Contentarea';
-
 import OwnStyles from '../styles/OwnStyles';
 import { StyledLayout } from './Layout.styled';
 
@@ -46,6 +47,15 @@ export default function Layout({ children, location }) {
         <Nav location={location} />
         <Contentarea content={children} />
       </StyledLayout>
+      <div className="sidebar__infos--legal--mb">
+        <p className="infos__legal">
+          <Link to="/imprint">Imprint</Link>&nbsp;|&nbsp;
+          <Link to="/privacy-policy">Privacy Policy</Link>
+        </p>
+        <p className="infos__copyright">
+          <AiFillCopyrightCircle /> {new Date().getFullYear()} Simone Westphal
+        </p>
+      </div>
       <ScrollToTop />
       <Footer />
     </>
