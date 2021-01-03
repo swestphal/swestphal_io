@@ -22,6 +22,9 @@ const ContactPage = ({ data }) => {
     error,
     loading,
     message,
+    messageName,
+    messageEmail,
+    messageSuccess,
     submitContactform,
     virtualCats,
     checkForm,
@@ -35,13 +38,23 @@ const ContactPage = ({ data }) => {
     <div className="page page-contact">
       <h1>New project planned?</h1>
       <SEO title="Get in contact" />
-      <form className="form" onSubmit={checkForm}>
+      <form className="form" onSubmit={checkForm} autoComplete="off">
         <fieldset disabled={loading}>
           <legend>Your contact details</legend>
           <div className="grid grid--lg  estimate">
             <div className="grid__item ">
               <div className="form__container">
-                <label htmlFor="name">Name</label>
+                <label
+                  className={`${
+                    !values.name && messageName ? 'label__error' : ''
+                  }`}
+                  htmlFor="name"
+                >
+                  Name
+                </label>
+                <p className="form__error">
+                  {!values.name && messageName ? messageName : ''}
+                </p>
                 <div className="input__container">
                   <input
                     type="text"
@@ -49,15 +62,27 @@ const ContactPage = ({ data }) => {
                     id="name"
                     value={values.name}
                     onChange={updateValue}
+                    autoComplete="new-name"
                     className="effect-9"
                   />
+
                   <span className="focus-border">
                     <i />
                   </span>
                 </div>
               </div>
               <div className="form__container">
-                <label htmlFor="email">Email</label>
+                <label
+                  className={`${
+                    !values.name && messageName ? 'label__error' : ''
+                  }`}
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <p className="form__error">
+                  {!values.email && messageEmail ? messageEmail : ''}
+                </p>
                 <div className="input__container">
                   <input
                     type="text"
@@ -65,6 +90,7 @@ const ContactPage = ({ data }) => {
                     id="email"
                     value={values.email}
                     onChange={updateValue}
+                    autoComplete="new-email"
                     className="effect-9"
                   />
                   <span className="focus-border">
@@ -77,6 +103,7 @@ const ContactPage = ({ data }) => {
               <div className="form__container">
                 <div className="input__container --textarea">
                   <textarea
+                    autoComplete="new-content"
                     name="textmessage"
                     id="textmessage"
                     placeholder="Your message"
@@ -112,10 +139,21 @@ const ContactPage = ({ data }) => {
               />
             </fieldset>
             {error ? <p>{error} </p> : ''}
-            {message ? <p>{message} </p> : ''}
+
+            {!values.email || !values.name ? (
+              <p
+                className={!values.email || !values.name ? 'label__error' : ''}
+              >
+                {message}
+              </p>
+            ) : (
+              ''
+            )}
+
             <button type="submit" disabled={loading}>
               {loading ? '... sending ' : 'Send'}
             </button>
+            {messageSuccess ? `<p>${messageSuccess}</p>` : ''}
           </div>
         </div>
       </form>

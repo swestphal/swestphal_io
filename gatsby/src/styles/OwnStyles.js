@@ -410,15 +410,26 @@ sub {
     
     
 .form {
+  &__error {
+    position: absolute;
+    font-size: .5em;
+    color: red;
+    top: 3.9em;
+    left: 8em;
+  }
+  .label__error {
+    color:red;
+  }
+
     &__container {
-     
-        padding:.25em 0;
+        position: relative;
+        padding:.5em 0 .25em 0;
         display:flex;
         justify-content:space-between;
         textarea {
             width:100%;
            
-          height: 100px;
+          height: 3.79em;
           margin-bottom: -5px;
         }
           input:focus,
@@ -427,6 +438,9 @@ sub {
             position: relative;
             padding: 5px 14px 7px;
           }
+        textarea {
+          margin-left:-14px;
+        }
     }
   .grid--lg.estimate {
     @media(max-width:1200px) {
@@ -441,14 +455,15 @@ sub {
   }
   .input__container {
     position: relative;
-    width:inherit;
-    margin: 0 1em;
+    width: 100%;
+    margin: 0 0 0 1em;
     @media(max-width:880px) {
       margin-right:0;
     }
     &.--textarea {
+
       width:100%;
-      margin-right: 0;
+      margin: 0;
       @media(max-width:880px) {
         margin-left:0;
       }
@@ -495,7 +510,7 @@ sub {
   }
 
  
-  .effect-9{border: 0;  border: 1px solid transparent; border-bottom-color: #ccc; transition: 0.4s;}
+  .effect-9{border: 0;  border: 1px solid transparent; width:100%;border-bottom-color: #ccc; transition: 0.4s;}
   
   .effect-9:focus{ transition: 0.4s;}
 
@@ -503,8 +518,14 @@ sub {
   .effect-9:focus ~ .focus-border{width:100%;   transition: 0.4s; border: 2px solid #fced28;}
   .effect-9:focus ~ .focus-border:after{position: absolute;content:"";left:-1px;bottom:1px;display:block;height:100%;width:100%;   transition: 0.4s; border: 2px solid black;}
 
+ textarea.effect-9 {
+   border:none;
+  
+ }
   textarea.effect-9:focus ~ .focus-border {
-    height:100px;
+    height:3.79em;
+    left: -14px;
+
   }
    
   button.disabled {

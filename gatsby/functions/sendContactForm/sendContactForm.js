@@ -34,7 +34,7 @@ exports.handler = async (event, context) => {
   await wait(5000);
   const requiredFields = ['name', 'email'];
   const body = JSON.parse(event.body);
-  console.log(body);
+
   for (const field of requiredFields) {
     console.log(`checking ${field} of form`);
     if (!body[field]) {

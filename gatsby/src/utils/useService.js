@@ -15,6 +15,9 @@ export default function useService({ categories, inputs }) {
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(false);
+  const [messageName, setMessageName] = useState(false);
+  const [messageEmail, setMessageEmail] = useState(false);
+  const [messageSuccess, setMessageSuccess] = useState(false);
   // todo multiple cats
   const firstCatsInit = categories[0].relatedCategories.map((cats) => ({
     ...cats,
@@ -25,7 +28,6 @@ export default function useService({ categories, inputs }) {
   // make a function add things to order
 
   function addToEstimate(orderedService) {
-    console.log('added');
     let oldItem;
     estimate.map((a) => {
       if (orderedService.id === a.id) oldItem = true;
@@ -48,8 +50,7 @@ export default function useService({ categories, inputs }) {
       copies[index] = copy; // 4. Put it back into our array. N.B. we *are* mutating the array here, but that's why we made a copy first
       // 5. Set the state to our new copy
       setVirtualCats(copies);
-      console.log(orderedService);
-      console.log(...estimate);
+
       setEstimate([...estimate, orderedService]);
     }
   }
@@ -89,10 +90,9 @@ export default function useService({ categories, inputs }) {
     if (validateEmail(inputs.email) && inputs.name && inputs.name.length >= 3)
       submitContactform(e);
     e.preventDefault();
-    if (!inputs.name || !inputs.email)
-      setMessage(
-        inputs.name ? 'Please enter your email' : 'Please enter your name'
-      );
+    if (!inputs.name) setMessageName('Please enter your name');
+    if (!inputs.email) setMessageEmail('Please enter your email');
+    setMessage('Please enter the required fields!');
   }
   async function submitContactform(e) {
     e.preventDefault();
@@ -128,7 +128,7 @@ export default function useService({ categories, inputs }) {
       setError(text.message);
     } else {
       setLoading(false);
-      setMessage('Thanks for your request. I will contact you soon!');
+      setMessageSucess('Thanks for your request. I will contact you soon!');
     }
   }
 
@@ -139,6 +139,9 @@ export default function useService({ categories, inputs }) {
     error,
     loading,
     message,
+    messageName,
+    messageEmail,
+    messageSuccess,
     virtualCats,
     submitContactform,
     checkForm,
