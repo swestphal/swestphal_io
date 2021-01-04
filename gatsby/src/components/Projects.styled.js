@@ -146,9 +146,15 @@ export const OuterContent = styled.div`
       width: 50%;
     }
     p {
+      font-size:13px;
       color: white;
-      font-size: 18px;
       line-height: 23px;
+      @media(min-width:410px) {
+        font-size: 16px;
+      }
+      @media(min-width:) {
+        font-size: 18px;  
+      }
     }
     h4 {
       color:white;
