@@ -36,10 +36,10 @@ export default function Layout({ children, location }) {
         }}
       >
         <span style={{ fontSize: '.75em' }}>
-          Diese Webseite speichert Cookies auf Ihrem Computer, um die Webseite
-          und die Inhalte zu verbessern. Wenn Sie diesem nicht zustimmen
-          verbleibt ein einzelner Cookie, damit diese Voreinstellung für den
-          nächsten Besuch gespeichert ist.
+          This website stores cookies on your computer in order to use the
+          website and improve the content. If you do not agree to this, a single
+          cookie remains so that this default setting for the next visit is
+          saved.
         </span>
       </CookieConsent>
       <OwnStyles />
