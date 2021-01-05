@@ -476,9 +476,9 @@ sub {
    }
     fieldset{
       margin-bottom:2em;
+      position: relative;
    
-   
-        padding: 0 2em 1.5em 2em;
+      padding: 1em 2em 1.5em 2em;
       
       background-image: repeating-linear-gradient(-44deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(46deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(136deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px), repeating-linear-gradient(226deg, #6b6b6b, #6b6b6b 7px, transparent 7px, transparent 15px, #6b6b6b 15px);
       background-size: 1px 100%, 100% 1px, 1px 100% , 100% 1px;
@@ -487,9 +487,11 @@ sub {
       border:none;
     }
   legend {
+    position: absolute;
+    top:-0.75em;
     background: white;
     padding: 0 1em;
-    margin-bottom:1em;
+ 
     text-transform: uppercase;
     color: black;
     font-family:'jura',sans-serif;
