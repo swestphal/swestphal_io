@@ -21,9 +21,9 @@ export default function Layout({ children, location }) {
       <CookieConsent
         style={{ background: 'black', alignItems: 'center' }}
         location="bottom"
-        buttonText="Ok, verstanden"
+        buttonText="Yes"
         buttonStyle={{ background: '#fded27' }}
-        declineButtonText="Nein danke"
+        declineButtonText="No, thanks"
         buttonWrapperClasses="cookie__btn"
         declineButtonStyle={{
           backgroundColor: 'black',
