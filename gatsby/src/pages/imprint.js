@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const Imprint = () => (
   <div className="page page-imprint">
-    <SEO title="Get in contact" />
+    <SEO title="Imprint" />
     <h1>Imprint</h1>
     <h3>Information in accordance with section 5 TMG</h3>
     <p>

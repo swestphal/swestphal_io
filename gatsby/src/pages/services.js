@@ -5,6 +5,7 @@ import BlockContent from '@sanity/block-content-to-react';
 import styled from 'styled-components';
 import { StyledBadgeButton } from '../components/BadgeButton.styled';
 import { StyledAkkordion } from '../components/AkkordionStyled';
+import SEO from '../components/SEO';
 
 export const StyledListItem = styled.li`
   position: relative;
@@ -36,6 +37,10 @@ export default function ServicesPage({ data, pageContext }) {
 
   return (
     <section className="page page-services">
+      <SEO
+        title="Services & Skills"
+        description="You are a Small to medium-sized business who is looking for assistance or an agency and want to outsource coding? Have a look, what I can do for you!"
+      />
       <h1>What can I do for you?</h1>
       <h2>Your are...</h2>
       <ul className="services__list">
@@ -43,8 +48,11 @@ export default function ServicesPage({ data, pageContext }) {
           <FiCheckCircle />
           <div className="list__content">
             <p>
-              An art director and/or web designer who would prefer to avoid
-              coding.
+              An
+              <span className="internlink">
+                Art director and/or web designer
+              </span>{' '}
+              who would prefer to avoid coding.
               <br />
               Let me code that for you!
             </p>
@@ -55,7 +63,8 @@ export default function ServicesPage({ data, pageContext }) {
           <FiCheckCircle />
           <div className="list__content">
             <p>
-              A Digital Media firm needing an extra hand with overflow projects?
+              A <span className="internlink">Digital Media firm</span> needing
+              an extra hand with overflow projects?
               <br />
               I'm also open to a more permanent role in part time with the right
               company.
@@ -66,8 +75,12 @@ export default function ServicesPage({ data, pageContext }) {
           <FiCheckCircle />
           <div className="list__content">
             <p>
-              A Small to medium-sized businesses needing expert guidance and
-              assistance with websites, apps and more?
+              A
+              <span className="internlink">
+                Small to medium-sized businesses
+              </span>{' '}
+              needing expert guidance and assistance with websites, apps and
+              more?
               <br />
               If I can't help, I can assist you with finding the appropriate
               service.

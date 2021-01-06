@@ -4,7 +4,7 @@ import SEO from '../components/SEO';
 
 const PrivacyPolicyPage = () => (
   <div className="page page-privacy">
-    <SEO title="Get in contact" />
+    <SEO title="Privacy-policy" />
     <h1>Privacy Policy</h1>
     <p>Last updated: January 03, 2021</p>
     <p>

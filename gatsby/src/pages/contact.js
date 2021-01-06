@@ -36,8 +36,12 @@ const ContactPage = ({ data }) => {
   const categories = data.categories.nodes;
   return (
     <div className="page page-contact">
+      <SEO
+        title="Get in contact"
+        description="You are planning a new project in Gatsby, React or Node? Happy to hear from you!"
+      />
       <h1>New project planned?</h1>
-      <SEO title="Get in contact" />
+
       <form className="form" onSubmit={checkForm} autoComplete="off">
         <fieldset disabled={loading}>
           <legend>Your contact details</legend>

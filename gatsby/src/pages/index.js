@@ -5,6 +5,7 @@ import Testimonials from '../components/Testimonials';
 import ServiceList from '../components/Services';
 import Skills from '../components/Skills';
 import ProjectList from '../components/Projects';
+import SEO from '../components/SEO';
 
 export default function AboutPage({ data, pageContext }) {
   const [about] = data.about.nodes;
@@ -12,6 +13,10 @@ export default function AboutPage({ data, pageContext }) {
   // <ServiceList categories={categories} about={about} />
   return (
     <div className="page page-index ">
+      <SEO
+        title="React, Gatsby, Node development"
+        description="Looking for a JavaScript, React, Gatsby or Node related developer? Here I am!"
+      />
       <h1>Custom Web&shy;developement</h1>
       <div>
         <AboutSingle about={about} />
