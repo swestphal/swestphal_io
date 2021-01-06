@@ -9,7 +9,7 @@ export const StyledScrollToTop = styled.span`
   height: 2em;
   width: 2em;
   justify-content: center;
-  z-index: 1000;
+  z-index: 900;
   cursor: pointer;
   transition: opacity 1s;
   opacity: 1;
@@ -22,10 +22,12 @@ export const StyledScrollToTop = styled.span`
   }
   &:hover {
     animation: shake 0.3s linear infinite;
+    -webkit-animation: shake 0.3s linear infinite;
   }
 
   &.active {
     animation: liftup 1s;
+    -webkit-animation: liftup 1s;
   }
 
   @keyframes liftup {
