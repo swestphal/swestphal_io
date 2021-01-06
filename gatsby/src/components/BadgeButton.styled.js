@@ -4,6 +4,9 @@ export const StyledBadgeButton = styled.button`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 0 1rem;
+  // safari no gap issue
+  margin: 0 0.25em 0 0;
+
   align-items: center;
 
   text-decoration: none;
