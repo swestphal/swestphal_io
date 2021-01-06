@@ -8,7 +8,7 @@ dotenv.config({ path: '.env' });
 
 export default {
   siteMetadata: {
-    title: 'swestphal.io',
+    title: 'S. Westphal',
     siteUrl: 'http://localhost:8888',
     description: 'Webdevelopment Simone Westphal',
   },
