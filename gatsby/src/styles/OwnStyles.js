@@ -14,7 +14,7 @@ html{
 
 body {
     opacity:1;
-    background: black;
+    
     height: 100%;
   overflow-x: hidden;
 }

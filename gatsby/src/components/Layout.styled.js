@@ -47,6 +47,9 @@ export const StyledLayout = styled.div`
     width: 13em;
     position: absolute;
     background: black;
+    @media (min-width: 980px) {
+      height: 100%;
+    }
     @media (min-width: 980px) and (max-height: 650px) {
       padding-bottom: 3em;
     }
