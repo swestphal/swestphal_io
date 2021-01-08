@@ -1,10 +1,10 @@
-
 @font-face {
   font-family: 'enriqueta';
   src: url('../assets/fonts/Enriqueta-Regular.ttf');
+  font-display: swap;
 }
 @font-face {
   font-family: 'jura';
   src: url('../assets/fonts/Jura-Regular.ttf');
+  font-display: swap;
 }
-
