@@ -14,8 +14,8 @@ export default function AboutPage({ data, pageContext }) {
   return (
     <div className="page page-index ">
       <SEO
-        title="React, Gatsby, Node development"
-        description="Looking for a JavaScript, React, Gatsby or Node related developer? Here I am!"
+        title="Django, Vue, JS development"
+        description="Looking for a Django, Vue or JS related developer? Here I am!"
       />
       <h1>Custom Web&shy;developement</h1>
       <div>

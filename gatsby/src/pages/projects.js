@@ -16,7 +16,7 @@ export default function ProjectsPage({ data, pageContext }) {
     <div className="page page-projects">
       <SEO
         title="Projects"
-        description="Some of my work. Here you find as well javascript related applications as php sites"
+        description="Some of my work. Here you find as well django related applications as php sites"
       />
       <h1>I enjoyed working on it!</h1>
       <SEO
