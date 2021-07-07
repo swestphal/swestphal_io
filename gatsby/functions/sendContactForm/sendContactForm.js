@@ -8,11 +8,13 @@ const transport = nodemailer.createTransport(
 );
 */
 function generateContactEmail({ body, total }) {
-  return `<div>
+  const ret = `<div>
     <h2>Your Contact Request</h2>
     <p>From: ${body.name}</br>
     <p>Email: ${body.email}</p>
     <ul>${body.estimate.map((item) => `<li>${item.name}</li>`)}</ul></div>`;
+  console.log(ret);
+  return ret;
 }
 // create transport for nodemailer
 
