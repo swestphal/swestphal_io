@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
-/* const nodemailerSendgrid = require('nodemailer-sendgrid'); */
-/*
+/* const nodemailerSendgrid = require('nodemailer-sendgrid');
+
 const transport = nodemailer.createTransport(
   nodemailerSendgrid({
     apiKey: process.env.SENDGRID_API_KEY,
@@ -8,22 +8,20 @@ const transport = nodemailer.createTransport(
 );
 */
 function generateContactEmail({ body, total }) {
-  const ret = `<div>
+  return `<div>
     <h2>Your Contact Request</h2>
     <p>From: ${body.name}</br>
     <p>Email: ${body.email}</p>
     <ul>${body.estimate.map((item) => `<li>${item.name}</li>`)}</ul></div>`;
-  console.log(ret);
-  return ret;
 }
 // create transport for nodemailer
 
 const transporter = nodemailer.createTransport({
-  host: 'mail.agenturserver.de',
+  host: 'smtp.ethereal.email',
   port: 587,
   auth: {
-    user: 'p387407p27',
-    pass: 'Mar!ie2004Clematis',
+    user: 'nikita64@ethereal.email',
+    pass: 'SBRBKnb8nC8sf6mKPd',
   },
 });
 
@@ -52,7 +50,7 @@ exports.handler = async (event, context) => {
   // send mail
   const info = await transporter.sendMail({
     from: 'swestphal <hello@swestphal.io>',
-    to: 'hello@swestphal.io',
+    to: `hello@swestphal.io`,
     subject: 'New contact request',
     html: generateContactEmail({ body, total: body.total }),
   });
