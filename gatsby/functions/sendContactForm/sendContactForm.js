@@ -1,12 +1,12 @@
 const nodemailer = require('nodemailer');
-const nodemailerSendgrid = require('nodemailer-sendgrid');
-
+/* const nodemailerSendgrid = require('nodemailer-sendgrid'); */
+/*
 const transport = nodemailer.createTransport(
   nodemailerSendgrid({
     apiKey: process.env.SENDGRID_API_KEY,
   })
 );
-
+*/
 function generateContactEmail({ body, total }) {
   return `<div>
     <h2>Your Contact Request</h2>
@@ -18,7 +18,7 @@ function generateContactEmail({ body, total }) {
 
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
-  port: process.env.MAIL_PORT,
+  port: 587,
   auth: {
     user: process.env.MAIL_USER,
     pass: process.env.MAIL_PASS,
