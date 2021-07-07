@@ -17,11 +17,11 @@ function generateContactEmail({ body, total }) {
 // create transport for nodemailer
 
 const transporter = nodemailer.createTransport({
-  host: process.env.MAIL_HOST,
+  host: 'mail.agenturserver.de',
   port: 587,
   auth: {
-    user: process.env.MAIL_USER,
-    pass: process.env.MAIL_PASS,
+    user: 'p387407p27',
+    pass: 'Mar!ie2004Clematis',
   },
 });
 
@@ -50,7 +50,7 @@ exports.handler = async (event, context) => {
   // send mail
   const info = await transporter.sendMail({
     from: 'swestphal <hello@swestphal.io>',
-    to: `hello@swestphal.io`,
+    to: 'hello@swestphal.io',
     subject: 'New contact request',
     html: generateContactEmail({ body, total: body.total }),
   });
