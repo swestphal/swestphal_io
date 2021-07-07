@@ -17,11 +17,11 @@ function generateContactEmail({ body, total }) {
 // create transport for nodemailer
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.sendgrip.net',
-  port: 587,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   auth: {
-    user: 'smtp',
-    pass: process.env.SENDGRID_API_KEY,
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
 });
 
@@ -48,7 +48,7 @@ exports.handler = async (event, context) => {
   }
 
   // send mail
-  const info = await transport.sendMail({
+  const info = await transporter.sendMail({
     from: 'swestphal <hello@swestphal.io>',
     to: `hello@swestphal.io`,
     subject: 'New contact request',

@@ -55,7 +55,9 @@ export function AboutSingle({ about }) {
             I have 10 years of experience in PHP & SQL and also build large apps
             based on the MVC architecture from scratch as custom coded WordPress
             themes. In 2020 I've mainly been focusing on js, React, Node.js and
-            Express. Since 2021 I focus on python, django and vue.
+            Express.
+            <br />
+            Since 2021 I focus on python, django, django rest framework and vue.
           </p>
         </div>
 
