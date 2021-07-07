@@ -50,7 +50,7 @@ exports.handler = async (event, context) => {
   // send mail
   const info = await transporter.sendMail({
     from: 'swestphal <hello@swestphal.io>',
-    to: `hello@swestphal.io`,
+    to: `nikita64@ethereal.email`,
     subject: 'New contact request',
     html: generateContactEmail({ body, total: body.total }),
   });
