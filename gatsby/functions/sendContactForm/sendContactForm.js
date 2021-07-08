@@ -17,11 +17,11 @@ function generateContactEmail({ body, total }) {
 // create transport for nodemailer
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
+  host: 'mail.agenturserver.de',
+  port: 143,
   auth: {
-    user: 'nikita64@ethereal.email',
-    pass: 'SBRBKnb8nC8sf6mKPd',
+    user: 'p387407p27',
+    pass: 'Mar!e2004Clemat!s',
   },
 });
 
@@ -50,7 +50,7 @@ exports.handler = async (event, context) => {
   // send mail
   const info = await transporter.sendMail({
     from: 'swestphal <hello@swestphal.io>',
-    to: `nikita64@ethereal.email`,
+    to: `hello@swestphal.io`,
     subject: 'New contact request',
     html: generateContactEmail({ body, total: body.total }),
   });
