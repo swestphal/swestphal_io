@@ -54,6 +54,7 @@ export default function useService({ categories, inputs }) {
       setEstimate([...estimate, orderedService]);
     }
   }
+
   // make a function remove things from order
 
   function removeFromEstimate(index) {
@@ -79,6 +80,7 @@ export default function useService({ categories, inputs }) {
       ...estimate.slice(index + 1),
     ]);
   }
+
   // send data as a serverless function when they check out
 
   function validateEmail(email) {
@@ -94,6 +96,7 @@ export default function useService({ categories, inputs }) {
     if (!inputs.email) setMessageEmail('Please enter your email');
     setMessage('Please enter the required fields!');
   }
+
   async function submitContactform(e) {
     e.preventDefault();
     setLoading(true);
@@ -109,7 +112,9 @@ export default function useService({ categories, inputs }) {
     };
 
     // send data to the serverless function
-
+    console.log('fetch');
+    console.log(body);
+    console.log(inputs);
     const res = await fetch(
       `${process.env.GATSBY_SERVERLESS_BASE}/sendContactForm`,
       {
