@@ -20,8 +20,8 @@ const transporter = nodemailer.createTransport({
   host: 'mail.agenturserver.de',
   port: 143,
   auth: {
-    user: 'p387407p27',
-    pass: 'Mar!e2004Clemat!s',
+    user: '',
+    pass: '',
   },
 });
 
