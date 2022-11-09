@@ -153,14 +153,11 @@ async function turnProjectCategoriesIntoPages({ graphql, actions }) {
 
   const pageSize = parseInt(process.env.GATSBY_PROJECT_SIZE);
   const projectCounts = data.projects.nodes.length;
-  console.log("p",projectCounts)
   const pageCount = Math.ceil(projectCounts / pageSize);
-  console.log("pagevciunz",pageCount)
   Array.from({ length: pageCount }).forEach((a, i) => {
     const rootSlug = 'projects';
     let numSlug = `/${i + 1}`;
     if (i === 0) numSlug = '';
-  console.log("->",rootSlug + numSlug)
     actions.createPage({
       path: `${rootSlug + numSlug}`,
       component: categoryTemplate,
